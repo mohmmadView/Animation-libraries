@@ -1,0 +1,10 @@
+{
+    "workbench.preferredHighContrastColorTheme": "Visual Studio Light",
+    "color-highlight.markerType": "background",
+    "vim.highlightedyank.textColor": "red",
+    "vim.searchHighlightTextColor": "green",
+    "workbench.editor.highlightModifiedTabs": true,
+    "vim.enableNeovim": true,
+    "livePreview.defaultPreviewPath": "/home/darksouls/Documents/developer_Web/Training_Web_developer/libaryAnimation/index.html",
+    "liveServer.settings.port": 5501
+}

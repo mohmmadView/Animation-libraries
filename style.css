@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body, html {
+    background-color: #1a1a1a;
+    height: 100%;
+    
+  }
+  .wrapper {
+    width: 60%;
+    height: 100%;
+    margin: 100px auto;
+  }
+ #SVGRoot{
+cursor: pointer;
+
+ } 
+ .bounce{
+  width: 35%;
+ }
+ .arrow{
+  width: 15%;
+ }
+ .DivClassName{
+  width: 50%;
+ }
+ .title{
+  width: 80%;
+ }
+ #svg_2{
+  width: 100%;
+ }
+ .animateCss{
+  width: 40%;
+  font-family: 'FashionVictim';
+ }
+ .one{
+  width:3%
+ }
+   
