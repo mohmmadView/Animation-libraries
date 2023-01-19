@@ -706,6 +706,10 @@ video {
   margin-bottom: 1rem;
 }
 
+.mt-60 {
+  margin-top: 15rem;
+}
+
 .box-border {
   box-sizing: border-box;
 }
@@ -824,6 +828,10 @@ video {
 
 .h-40 {
   height: 10rem;
+}
+
+.h-96 {
+  height: 24rem;
 }
 
 .w-3\/4 {
@@ -2781,6 +2789,12 @@ body, html {
     .dark\:lg\:hover\:\[paint-order\:markers\]:hover {
       paint-order: markers;
     }
+  }
+}
+
+@media (min-width: 1536px) {
+  .\32xl\:mt-80 {
+    margin-top: 20rem;
   }
 }
    
