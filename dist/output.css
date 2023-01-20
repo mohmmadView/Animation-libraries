@@ -706,10 +706,6 @@ video {
   margin-bottom: 1rem;
 }
 
-.mt-60 {
-  margin-top: 15rem;
-}
-
 .box-border {
   box-sizing: border-box;
 }
@@ -818,6 +814,10 @@ video {
   height: 1rem;
 }
 
+.h-96 {
+  height: 24rem;
+}
+
 .h-8 {
   height: 2rem;
 }
@@ -830,8 +830,20 @@ video {
   height: 10rem;
 }
 
-.h-96 {
-  height: 24rem;
+.h-1 {
+  height: 0.25rem;
+}
+
+.h-14 {
+  height: 3.5rem;
+}
+
+.h-24 {
+  height: 6rem;
+}
+
+.h-28 {
+  height: 7rem;
 }
 
 .w-3\/4 {
@@ -864,6 +876,10 @@ video {
 
 .w-4 {
   width: 1rem;
+}
+
+.w-8 {
+  width: 2rem;
 }
 
 .flex-shrink {
@@ -2789,12 +2805,6 @@ body, html {
     .dark\:lg\:hover\:\[paint-order\:markers\]:hover {
       paint-order: markers;
     }
-  }
-}
-
-@media (min-width: 1536px) {
-  .\32xl\:mt-80 {
-    margin-top: 20rem;
   }
 }
    

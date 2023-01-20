@@ -131,7 +131,6 @@ function winScroll(number, element, classId) {
 
 //TODO --------------- TheEndScrollAnimateJs ----------------- */
 //@
-//?]]]]]]]]]]]]
 //! -------------------------------------------------------------------------- */
 //* ----------------------------- MenuAnimeJs -------------------------------- */
 //! -------------------------------------------------------------------------- */
@@ -147,23 +146,29 @@ console.log(elmDivAnimeJs);
 let createElm = document.createElement("div").innerHTML;
 console.log(elemAnimeJs_1);
 
-elemAnimeJs_1.addEventListener("click", animeJs_1, { once: true });
+elemAnimeJs_1.addEventListener("click", animeJs_1);
 console.log("best");
 let elmEl = document.querySelectorAll(".el");
 console.log(elmEl);
-
+  // let Body = document.querySelector("body");
+  // Body.onclick=()=>{
+  //  let divSampleCode = document.querySelector("#innerSourceCodeAnimeJs");
+  //  if(divSampleCode){
+  //  divSampleCode.innerHTML="";
+  //  console.log(divSampleCode);
+  // }}
+  // console.log(Body,"body");
 function animeJs_1() {
 
-  createElm.classList =
-    "relative bottom-56 w-3/4 h-52 animate__animated animate__zoomInDown bg-slate-200/30 border-8 ring ring-rose-500 border-double";
+  createElm.classList = "relative bottom-56 w-3/4 h-52 animate__animated animate__zoomInDown bg-slate-200/30 border-8 ring ring-rose-500 border-double";
   elmDivAnimeJs.classList.remove("mt-52");
   elmDivAnimeJs.classList.add("mt-2");
 
-//  elmTextAnimeJs.innerHTML="";
+  elmTextAnimeJs.innerHTML="";
  ////! source code  anime js 
   elmTextAnimeJs.insertAdjacentHTML(
-    "beforeend",`<div class="div flex justify-center">
-  <div id="innerSourceCodeAnimeJs" class="relative flex p-2   w-3/4 h-42 z-10 animate__animated animate__zoomInDown bg-slate-200/30 border-8 ring ring-rose-500  border-double">
+    "beforeend",`<div  class="div flex justify-center">
+  <div id="innerSourceCodeAnimeJs" class="relative flex p-2   w-full  h-42 z-10 animate__animated animate__zoomInDown bg-slate-200/30 border-8 ring ring-rose-500  border-double">
    <div class="w-2/4 p-2 bg-rose-600/20 text-white h-auto">
       <h2 class="text-white"><<span class="text-yellow-600">div</span> <span class="text-yellow-400"> class=</span>"<span class="text-green-700">function-based-params-demo</span>"> 
          <h2 class="text-white"><<span class="text-yellow-600">div</span> <span class="text-yellow-400"> class=</span>"<span class="text-green-700">el</span>">   <<span class="text-yellow-600">/div</span>></h2>
@@ -189,7 +194,8 @@ function animeJs_1() {
 `
     // textCodeMenuAnimeJs(codeAnimeJs1)
   );
- 
+
+ //! replay click fix animate
   anime({
     targets: ".function-based-params-anime-js .el",
     translateX: 210,
@@ -216,7 +222,7 @@ function animeJs_1() {
 //TODO --------------- animeJs-2 ----------------- */
 let elementAnimeJS_2=document.querySelector("#animejs-2");
 console.log(elementAnimeJS_2);
-elementAnimeJS_2.addEventListener('click',clickAnimejs_2,{ once: true })
+elementAnimeJS_2.addEventListener('click',clickAnimejs_2)
  function clickAnimejs_2() {
   /*DEMO*/
  let sourceCodeAnimJs = document.querySelector('#innerSourceCodeAnimeJs') 
@@ -227,11 +233,11 @@ elementAnimeJS_2.addEventListener('click',clickAnimejs_2,{ once: true })
   elmDivAnimeJs.classList.remove("mt-52");
   elmDivAnimeJs.classList.add("mt-2");
 
-//  elmTextAnimeJs.innerHTML="";
+  elmTextAnimeJs.innerHTML="";
  ////! source code  anime js 
   elmTextAnimeJs.insertAdjacentHTML(
     "beforeend",`<div class="div flex justify-center">
-  <div id="innerSourceCodeAnimeJs" class="relative flex p-2   w-3/4 h-42 z-10 animate__animated animate__zoomInDown bg-slate-200/30 border-8 ring ring-rose-500  border-double">
+  <div id="innerSourceCodeAnimeJs" class="relative flex p-2   w-full h-42 z-10 animate__animated animate__zoomInDown bg-slate-200/30 border-8 ring ring-rose-500  border-double">
    <div class="w-2/4 p-2 bg-rose-600/20 text-white h-auto">
       <h2 class="text-white"><<span class="text-yellow-600">div</span> <span class="text-yellow-400"> class=</span>"<span class="text-green-700">function-based-params-demo</span>"> 
          <h2 class="text-white"><<span class="text-yellow-600">div</span> <span class="text-yellow-400"> class=</span>"<span class="text-green-700">el</span>">   <<span class="text-yellow-600">/div</span>></h2>
@@ -258,7 +264,8 @@ elementAnimeJS_2.addEventListener('click',clickAnimejs_2,{ once: true })
   // let elmInnerSourceCode = document.querySelector('#innerSourceCodeAnimeJs');
   // elmInnerSourceCode.innerHTML="";
   // console.log(elmInnerSourceCode);
-  // console.log("test");
+  //!  fix Repaly Fix
+  //
   anime({
     targets: '.autoplay-true',
     translateX: 200,
@@ -273,12 +280,71 @@ elementAnimeJS_2.addEventListener('click',clickAnimejs_2,{ once: true })
     easing: 'easeInOutSine'
   });
   /*DEMO*/
-  animeJs_1()
+  // animeJs_1()
   }
 
 // function animeJs_2() {}
 
-menuAnimeJs();
+//TODO --------------- animeJs-3 ----------------- */
+let elementAnimeJS_3=document.querySelector("#animejs-3");
+console.log(elementAnimeJS_3);
+elementAnimeJS_3.addEventListener('click',clickAnimejs_3)
+ function clickAnimejs_3() {
+  /*DEMO*/
+ let sourceCodeAnimJs = document.querySelector('#innerSourceCodeAnimeJs') 
+ console.log(sourceCodeAnimJs);
+
+  createElm.classList =
+    "relative bottom-56 w-3/4 h-52 animate__animated animate__zoomInDown bg-slate-200/30 border-8 ring ring-rose-500 border-double";
+  elmDivAnimeJs.classList.remove("mt-52");
+  elmDivAnimeJs.classList.add("mt-2");
+
+  elmTextAnimeJs.innerHTML="";
+ ////! source code  anime js 
+  elmTextAnimeJs.insertAdjacentHTML(
+    "beforeend",`<div class="div flex justify-center">
+  <div id="innerSourceCodeAnimeJs" class="relative flex p-2   w-full h-42 z-10 animate__animated animate__zoomInDown bg-slate-200/30 border-8 ring ring-rose-500  border-double">
+   <div class="w-2/4 p-2 bg-rose-600/20 text-white h-auto">
+      <h2 class="text-white"><<span class="text-yellow-600">div</span> <span class="text-yellow-400"> class=</span>"<span class="text-green-700">function-based-params-demo</span>"> 
+         <h2 class="text-white"><<span class="text-yellow-600">div</span> <span class="text-yellow-400"> class=</span>"<span class="text-green-700">el</span>">   <<span class="text-yellow-600">/div</span>></h2>
+         <h2 class="text-white"><<span class="text-yellow-600">div</span> <span class="text-yellow-400"> class=</span>"<span class="text-green-700">el</span>"> 
+            <<span class="text-yellow-600">/div</span>></h2>
+         <<span class="text-yellow-600">/div</span>></h2>
+   </div>
+   <div class="w-2/4 bg-rose-600/20 text-xs h-auto">
+      <pre><span class="text-blue-800">anime</span>({
+    <span class="text-green-600"> targets:</span> <span class="text-yellow-400">'.function-based-params-demo .el'</span>,
+    <span class="text-green-600">translateX:</span><span class="text-yellow-400"> 270,</span>
+    <span class="text-green-600">direction:</span> <span class="text-yellow-400">'alternate',</span>
+    <span class="text-green-600">loop:</span><span class="text-yellow-400"> true,</span>
+    <span class="text-blue-600">delay:</span> <span class="text-yellow-400">function(el, i, l) {</span>
+     <span class="text-green-600"></span><span class="text-purple-700"> return</span> i * 100;
+    <span class="text-yellow-400">},</span>
+    <span class="text-blue-600">endDelay:</span><span class="text-yellow-400">function(el, i, l) {</span>
+     <span class="text-purple-700"> return</span> (l - i) * 100;
+    <span class="text-blue-600">}</span> }); </pre>
+   </div>
+    </div>
+ </div>
+`)
+  // let elmInnerSourceCode = document.querySelector('#innerSourceCodeAnimeJs');
+  // elmInnerSourceCode.innerHTML="";
+  // console.log(elmInnerSourceCode);
+  //!  fix Repaly Fix
+  //
+  anime({
+    targets: '.css-transforms-demo .el',
+    translateX: 180,
+    scale: 2,
+    rotate: '1turn'
+  });
+  /*DEMO*/
+  // animeJs_1()
+  }
+
+// function animeJs_2() {}
+
+
 function menuAnimeJs(colorBorder, colorBg, colorShadow) {
   let elmAll_Menu = document.querySelectorAll(".menuAnimeJs");
   for (let i = 0; i < elmAll_Menu.length; i++) {}
