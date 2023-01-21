@@ -248,16 +248,15 @@ elementAnimeJS_2.addEventListener('click',clickAnimejs_2)
    </div>
    <div class="w-2/4 bg-rose-600/20 text-xs h-auto">
       <pre><span class="text-blue-800">anime</span>({
-    <span class="text-green-600"> targets:</span> <span class="text-yellow-400">'.function-based-params-demo .el'</span>,
-    <span class="text-green-600">translateX:</span><span class="text-yellow-400"> 270,</span>
-    <span class="text-green-600">direction:</span> <span class="text-yellow-400">'alternate',</span>
-    <span class="text-green-600">loop:</span><span class="text-yellow-400"> true,</span>
-    <span class="text-blue-600">delay:</span> <span class="text-yellow-400">function(el, i, l) {</span>
-     <span class="text-green-600"></span><span class="text-purple-700"> return</span> i * 100;
-    <span class="text-yellow-400">},</span>
-    <span class="text-blue-600">endDelay:</span><span class="text-yellow-400">function(el, i, l) {</span>
-     <span class="text-purple-700"> return</span> (l - i) * 100;
-    <span class="text-blue-600">}</span> }); </pre>
+    <span class="text-green-600"> targets:</span> <span class="text-yellow-400">'.autoplay-true'</span>,
+    <span class="text-green-600">translateX:</span><span class="text-yellow-400"> 200,</span>
+    <span class="text-green-600">autoplay:</span> <span class="text-yellow-400">'true',</span>
+    <span class="text-green-600">easing:</span><span class="text-yellow-400"> 'easeInOutSine'</span><span class="text-black">})</span>
+    <span class="text-blue-800">anime</span>({
+      <span class="text-green-600"> targets:</span> <span class="text-yellow-400">'.autoplay-true'</span>,
+      <span class="text-green-600">translateX:</span><span class="text-yellow-400"> 200,</span>
+      <span class="text-green-600">autoplay:</span> <span class="text-yellow-400">'true',</span>
+      <span class="text-green-600">easing:</span><span class="text-yellow-400"> 'easeInOutSine'</span><span class="text-black">})</span> </pre>
    </div>
     </div>
  </div>
@@ -306,24 +305,19 @@ elementAnimeJS_3.addEventListener('click',clickAnimejs_3)
     "beforeend",`<div class="div flex justify-center">
   <div id="innerSourceCodeAnimeJs" class="relative flex p-2   w-full h-42 z-10 animate__animated animate__zoomInDown bg-slate-200/30 border-8 ring ring-rose-500  border-double">
    <div class="w-2/4 p-2 bg-rose-600/20 text-white h-auto">
-      <h2 class="text-white"><<span class="text-yellow-600">div</span> <span class="text-yellow-400"> class=</span>"<span class="text-green-700">function-based-params-demo</span>"> 
-         <h2 class="text-white"><<span class="text-yellow-600">div</span> <span class="text-yellow-400"> class=</span>"<span class="text-green-700">el</span>">   <<span class="text-yellow-600">/div</span>></h2>
+      <h2 class="text-white"><<span class="text-yellow-600">div</span> <span class="text-yellow-400"> class=</span>"<span class="text-green-700">css-transforms-demo</span>"> 
+        
          <h2 class="text-white"><<span class="text-yellow-600">div</span> <span class="text-yellow-400"> class=</span>"<span class="text-green-700">el</span>"> 
             <<span class="text-yellow-600">/div</span>></h2>
          <<span class="text-yellow-600">/div</span>></h2>
    </div>
    <div class="w-2/4 bg-rose-600/20 text-xs h-auto">
       <pre><span class="text-blue-800">anime</span>({
-    <span class="text-green-600"> targets:</span> <span class="text-yellow-400">'.function-based-params-demo .el'</span>,
-    <span class="text-green-600">translateX:</span><span class="text-yellow-400"> 270,</span>
-    <span class="text-green-600">direction:</span> <span class="text-yellow-400">'alternate',</span>
-    <span class="text-green-600">loop:</span><span class="text-yellow-400"> true,</span>
-    <span class="text-blue-600">delay:</span> <span class="text-yellow-400">function(el, i, l) {</span>
-     <span class="text-green-600"></span><span class="text-purple-700"> return</span> i * 100;
-    <span class="text-yellow-400">},</span>
-    <span class="text-blue-600">endDelay:</span><span class="text-yellow-400">function(el, i, l) {</span>
-     <span class="text-purple-700"> return</span> (l - i) * 100;
-    <span class="text-blue-600">}</span> }); </pre>
+    <span class="text-green-600"> targets:</span> <span class="text-yellow-400">'.css-transforms-demo .el'</span>,
+    <span class="text-green-600">translateX:</span><span class="text-yellow-400"> 180,</span>
+    <span class="text-green-600">scale:</span> <span class="text-yellow-400">'2',</span>
+    <span class="text-green-600">rotate:</span><span class="text-yellow-400"> 1turn,</span>
+   </pre>
    </div>
     </div>
  </div>
@@ -343,6 +337,7 @@ elementAnimeJS_3.addEventListener('click',clickAnimejs_3)
   // animeJs_1()
   }
 
+//TODO --------------- animeJs-4 ----------------- */
   let path = anime.path('.motion-path-demo path');
   let elementAnimeJS_4=document.querySelector("#animejs-4");
   console.log(elementAnimeJS_4);
@@ -370,31 +365,31 @@ elementAnimeJS_3.addEventListener('click',clickAnimejs_3)
     "beforeend",`<div class="div flex justify-center">
   <div id="innerSourceCodeAnimeJs" class="relative flex p-2   w-full h-42 z-10 animate__animated animate__zoomInDown bg-slate-200/30 border-8 ring ring-rose-500  border-double">
    <div class="w-2/4 p-2 bg-rose-600/20 text-white h-auto">
-      <h2 class="text-white"><<span class="text-yellow-600">div</span> <span class="text-yellow-400"> class=</span>"<span class="text-green-700">function-based-params-demo</span>"> 
-         <h2 class="text-white"><<span class="text-yellow-600">div</span> <span class="text-yellow-400"> class=</span>"<span class="text-green-700">el</span>">   <<span class="text-yellow-600">/div</span>></h2>
-         <h2 class="text-white"><<span class="text-yellow-600">div</span> <span class="text-yellow-400"> class=</span>"<span class="text-green-700">el</span>"> 
-            <<span class="text-yellow-600">/div</span>></h2>
-         <<span class="text-yellow-600">/div</span>></h2>
+      <h2 class="text-white"><<span class="text-yellow-600">div</span> <span class="text-yellow-400"> class=</span>"<span class="text-green-700">motion-path-demo</span>"> 
+         <h2 class="text-white"><<span class="text-yellow-600">div</span> <span class="text-yellow-400"> class=</span>"<span class="text-green-700">el follow-path</span>">   <<span class="text-yellow-600">/div</span>></h2>
+         <h2 class="text-white"><<span class="text-yellow-600">svg</span> <span class="text-yellow-400"> width=</span>"<span class="text-green-700">256</span>" <span class="text-yellow-400"> height=</span>"<span class="text-green-700">112</span>">
+       <br>< <span class="text-yellow-600">path</span>> <<span class="text-yellow-600">path</span>> <<span class="text-yellow-600">/svg</span>></h2>
+       <<span class="text-yellow-600">/div</span>></h2>
    </div>
    <div class="w-2/4 bg-rose-600/20 text-xs h-auto">
-      <pre><span class="text-blue-800">anime</span>({
-    <span class="text-green-600"> targets:</span> <span class="text-yellow-400">'.function-based-params-demo .el'</span>,
-    <span class="text-green-600">translateX:</span><span class="text-yellow-400"> 270,</span>
-    <span class="text-green-600">direction:</span> <span class="text-yellow-400">'alternate',</span>
-    <span class="text-green-600">loop:</span><span class="text-yellow-400"> true,</span>
-    <span class="text-blue-600">delay:</span> <span class="text-yellow-400">function(el, i, l) {</span>
-     <span class="text-green-600"></span><span class="text-purple-700"> return</span> i * 100;
-    <span class="text-yellow-400">},</span>
-    <span class="text-blue-600">endDelay:</span><span class="text-yellow-400">function(el, i, l) {</span>
-     <span class="text-purple-700"> return</span> (l - i) * 100;
-    <span class="text-blue-600">}</span> }); </pre>
+      <pre>
+      <span class="text-rose-400">let</span><span class="text-white"> path</span><span class="text-blue-400">=</span>anime.<span class="text-blue-600">path</span><span class="text-green-700">('.motion-path-demo path')</span>
+      <span class="text-blue-800">anime</span>({
+    <span class="text-green-600"> targets:</span> <span class="text-yellow-400">'.motion-path-demo .el'</span>,
+    <span class="text-green-600">translateX:</span><span class="text-yellow-400"> path('x'),</span>
+    <span class="text-green-600">translateY</span> <span class="text-yellow-400">path('y'),</span>
+    <span class="text-green-600">rotate:</span><span class="text-yellow-400"> path('angle')</span>
+    <span class="text-green-600"> easing:</span> <span class="text-yellow-400">'linear',</span>
+     <span class="text-green-600">duration:</span><span class="text-yellow-700"> 2000,</span>;
+     <span class="text-green-600">loop:</span><span class="text-yellow-700"> true,</span>;
+    <span class="text-yellow-400">})</span>
+     </pre>
    </div>
     </div>
  </div>
 `)
 // var myPath = anime.path('svg path');
 let path = anime.path('.motion-path-demo path');
-console.log(path);
 anime({
  targets: '.motion-path-demo .el',
  translateX: path('x'),
