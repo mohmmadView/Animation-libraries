@@ -240,8 +240,9 @@ elementAnimeJS_2.addEventListener('click',clickAnimejs_2)
   <div id="innerSourceCodeAnimeJs" class="relative flex p-2   w-full h-42 z-10 animate__animated animate__zoomInDown bg-slate-200/30 border-8 ring ring-rose-500  border-double">
    <div class="w-2/4 p-2 bg-rose-600/20 text-white h-auto">
       <h2 class="text-white"><<span class="text-yellow-600">div</span> <span class="text-yellow-400"> class=</span>"<span class="text-green-700">function-based-params-demo</span>"> 
-         <h2 class="text-white"><<span class="text-yellow-600">div</span> <span class="text-yellow-400"> class=</span>"<span class="text-green-700">el</span>">   <<span class="text-yellow-600">/div</span>></h2>
-         <h2 class="text-white"><<span class="text-yellow-600">div</span> <span class="text-yellow-400"> class=</span>"<span class="text-green-700">el</span>"> 
+         <h2 class="text-white"><<span class="text-yellow-600">div</span> <span class="text-yellow-400"> class=</span>"<span class="text-green-700">autoplay-true</span>">   <<span class="text-yellow-600">/div</span>></h2>
+         <h2 class="text-white"><<span class="text-yellow-600">div</span> <span class="text-yellow-400"> class=</span>"<span class="text-green-700">autoplay-false</span>">   <<span class="text-yellow-600">/div</span>></h2>
+         <h2 class="text-white"><<span class="text-yellow-600">div</span> <span class="text-yellow-400"> class=</span>"<span class="text-green-700">autoplay-true</span>"> 
             <<span class="text-yellow-600">/div</span>></h2>
          <<span class="text-yellow-600">/div</span>></h2>
    </div>
@@ -342,7 +343,70 @@ elementAnimeJS_3.addEventListener('click',clickAnimejs_3)
   // animeJs_1()
   }
 
-// function animeJs_2() {}
+  let path = anime.path('.motion-path-demo path');
+  let elementAnimeJS_4=document.querySelector("#animejs-4");
+  console.log(elementAnimeJS_4);
+  elementAnimeJS_4.addEventListener('click',clickAnimejs_4)
+
+
+//  function animeJs_4() {
+
+// var motionPath = function() {
+/*DEMO*/
+
+ function clickAnimejs_4() {
+  /*DEMO*/
+  console.log("test");
+ let sourceCodeAnimJs = document.querySelector('#innerSourceCodeAnimeJs') 
+
+  createElm.classList =
+    "relative bottom-56 w-3/4 h-52 animate__animated animate__zoomInDown bg-slate-200/30 border-8 ring ring-rose-500 border-double";
+  elmDivAnimeJs.classList.remove("mt-52");
+  elmDivAnimeJs.classList.add("mt-2");
+
+  elmTextAnimeJs.innerHTML="";
+ ////! source code  anime js 
+  elmTextAnimeJs.insertAdjacentHTML(
+    "beforeend",`<div class="div flex justify-center">
+  <div id="innerSourceCodeAnimeJs" class="relative flex p-2   w-full h-42 z-10 animate__animated animate__zoomInDown bg-slate-200/30 border-8 ring ring-rose-500  border-double">
+   <div class="w-2/4 p-2 bg-rose-600/20 text-white h-auto">
+      <h2 class="text-white"><<span class="text-yellow-600">div</span> <span class="text-yellow-400"> class=</span>"<span class="text-green-700">function-based-params-demo</span>"> 
+         <h2 class="text-white"><<span class="text-yellow-600">div</span> <span class="text-yellow-400"> class=</span>"<span class="text-green-700">el</span>">   <<span class="text-yellow-600">/div</span>></h2>
+         <h2 class="text-white"><<span class="text-yellow-600">div</span> <span class="text-yellow-400"> class=</span>"<span class="text-green-700">el</span>"> 
+            <<span class="text-yellow-600">/div</span>></h2>
+         <<span class="text-yellow-600">/div</span>></h2>
+   </div>
+   <div class="w-2/4 bg-rose-600/20 text-xs h-auto">
+      <pre><span class="text-blue-800">anime</span>({
+    <span class="text-green-600"> targets:</span> <span class="text-yellow-400">'.function-based-params-demo .el'</span>,
+    <span class="text-green-600">translateX:</span><span class="text-yellow-400"> 270,</span>
+    <span class="text-green-600">direction:</span> <span class="text-yellow-400">'alternate',</span>
+    <span class="text-green-600">loop:</span><span class="text-yellow-400"> true,</span>
+    <span class="text-blue-600">delay:</span> <span class="text-yellow-400">function(el, i, l) {</span>
+     <span class="text-green-600"></span><span class="text-purple-700"> return</span> i * 100;
+    <span class="text-yellow-400">},</span>
+    <span class="text-blue-600">endDelay:</span><span class="text-yellow-400">function(el, i, l) {</span>
+     <span class="text-purple-700"> return</span> (l - i) * 100;
+    <span class="text-blue-600">}</span> }); </pre>
+   </div>
+    </div>
+ </div>
+`)
+// var myPath = anime.path('svg path');
+let path = anime.path('.motion-path-demo path');
+console.log(path);
+anime({
+ targets: '.motion-path-demo .el',
+ translateX: path('x'),
+ translateY: path('y'),
+ rotate: path('angle'),
+ easing: 'linear',
+ duration: 2000,
+ loop: true
+});
+    
+//  }
+}
 
 
 function menuAnimeJs(colorBorder, colorBg, colorShadow) {
