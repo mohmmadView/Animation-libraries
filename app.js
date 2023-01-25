@@ -150,24 +150,25 @@ elemAnimeJs_1.addEventListener("click", animeJs_1);
 console.log("best");
 let elmEl = document.querySelectorAll(".el");
 console.log(elmEl);
-  // let Body = document.querySelector("body");
-  // Body.onclick=()=>{
-  //  let divSampleCode = document.querySelector("#innerSourceCodeAnimeJs");
-  //  if(divSampleCode){
-  //  divSampleCode.innerHTML="";
-  //  console.log(divSampleCode);
-  // }}
-  // console.log(Body,"body");
+// let Body = document.querySelector("body");
+// Body.onclick=()=>{
+//  let divSampleCode = document.querySelector("#innerSourceCodeAnimeJs");
+//  if(divSampleCode){
+//  divSampleCode.innerHTML="";
+//  console.log(divSampleCode);
+// }}
+// console.log(Body,"body");
 function animeJs_1() {
-
-  createElm.classList = "relative bottom-56 w-3/4 h-52 animate__animated animate__zoomInDown bg-slate-200/30 border-8 ring ring-rose-500 border-double";
+  createElm.classList =
+    "relative bottom-56 w-3/4 h-52 animate__animated animate__zoomInDown bg-slate-200/30 border-8 ring ring-rose-500 border-double";
   elmDivAnimeJs.classList.remove("mt-52");
   elmDivAnimeJs.classList.add("mt-2");
 
-  elmTextAnimeJs.innerHTML="";
- ////! source code  anime js 
+  elmTextAnimeJs.innerHTML = "";
+  ////! source code  anime js
   elmTextAnimeJs.insertAdjacentHTML(
-    "beforeend",`<div  class="div flex justify-center">
+    "beforeend",
+    `<div  class="div flex justify-center">
   <div id="innerSourceCodeAnimeJs" class="relative flex p-2   w-full  h-42 z-10 animate__animated animate__zoomInDown bg-slate-200/30 border-8 ring ring-rose-500  border-double">
    <div class="w-2/4 p-2 bg-rose-600/20 text-white h-auto">
       <h2 class="text-white"><<span class="text-yellow-600">div</span> <span class="text-yellow-400"> class=</span>"<span class="text-green-700">function-based-params-demo</span>"> 
@@ -195,10 +196,10 @@ function animeJs_1() {
     // textCodeMenuAnimeJs(codeAnimeJs1)
   );
 
- //!2test replay click fix animate
+  //!2test replay click fix animate
   anime({
     targets: ".function-based-params-anime-js .el",
-    translateX: 210,
+    translateX: 190,
     direction: "alternate",
     loop: true,
     delay: function (el, i, l) {
@@ -220,23 +221,24 @@ function animeJs_1() {
 // return   codeAnimeJs
 // }
 //TODO --------------- animeJs-2 ----------------- */
-let elementAnimeJS_2=document.querySelector("#animejs-2");
+let elementAnimeJS_2 = document.querySelector("#animejs-2");
 console.log(elementAnimeJS_2);
-elementAnimeJS_2.addEventListener('click',clickAnimejs_2)
- function clickAnimejs_2() {
+elementAnimeJS_2.addEventListener("click", clickAnimejs_2);
+function clickAnimejs_2() {
   /*DEMO*/
- let sourceCodeAnimJs = document.querySelector('#innerSourceCodeAnimeJs') 
- console.log(sourceCodeAnimJs);
+  let sourceCodeAnimJs = document.querySelector("#innerSourceCodeAnimeJs");
+  console.log(sourceCodeAnimJs);
 
   createElm.classList =
     "relative bottom-56 w-3/4 h-52 animate__animated animate__zoomInDown bg-slate-200/30 border-8 ring ring-rose-500 border-double";
   elmDivAnimeJs.classList.remove("mt-52");
   elmDivAnimeJs.classList.add("mt-2");
 
-  elmTextAnimeJs.innerHTML="";
- ////! source code  anime js 
+  elmTextAnimeJs.innerHTML = "";
+  ////! source code  anime js
   elmTextAnimeJs.insertAdjacentHTML(
-    "beforeend",`<div class="div flex justify-center">
+    "beforeend",
+    `<div class="div flex justify-center">
   <div id="innerSourceCodeAnimeJs" class="relative flex p-2   w-full h-42 z-10 animate__animated animate__zoomInDown bg-slate-200/30 border-8 ring ring-rose-500  border-double">
    <div class="w-2/4 p-2 bg-rose-600/20 text-white h-auto">
       <h2 class="text-white"><<span class="text-yellow-600">div</span> <span class="text-yellow-400"> class=</span>"<span class="text-green-700">function-based-params-demo</span>"> 
@@ -260,49 +262,51 @@ elementAnimeJS_2.addEventListener('click',clickAnimejs_2)
    </div>
     </div>
  </div>
-`)
+`
+  );
   // let elmInnerSourceCode = document.querySelector('#innerSourceCodeAnimeJs');
   // elmInnerSourceCode.innerHTML="";
   // console.log(elmInnerSourceCode);
   //!  fix Repaly Fix
   //
   anime({
-    targets: '.autoplay-true',
-    translateX: 200,
+    targets: ".autoplay-true",
+    translateX: 180,
     autoplay: true,
-    easing: 'easeInOutSine'
+    easing: "easeInOutSine",
   });
-  
+
   anime({
-    targets: '.autoplay-true',
+    targets: ".autoplay-true",
     translateX: 200,
     autoplay: false,
-    easing: 'easeInOutSine'
+    easing: "easeInOutSine",
   });
   /*DEMO*/
   // animeJs_1()
-  }
+}
 
 // function animeJs_2() {}
 
 //TODO --------------- animeJs-3 ----------------- */
-let elementAnimeJS_3=document.querySelector("#animejs-3");
+let elementAnimeJS_3 = document.querySelector("#animejs-3");
 console.log(elementAnimeJS_3);
-elementAnimeJS_3.addEventListener('click',clickAnimejs_3)
- function clickAnimejs_3() {
+elementAnimeJS_3.addEventListener("click", clickAnimejs_3);
+function clickAnimejs_3() {
   /*DEMO*/
- let sourceCodeAnimJs = document.querySelector('#innerSourceCodeAnimeJs') 
- console.log(sourceCodeAnimJs);
+  let sourceCodeAnimJs = document.querySelector("#innerSourceCodeAnimeJs");
+  console.log(sourceCodeAnimJs);
 
   createElm.classList =
     "relative bottom-56 w-3/4 h-52 animate__animated animate__zoomInDown bg-slate-200/30 border-8 ring ring-rose-500 border-double";
   elmDivAnimeJs.classList.remove("mt-52");
   elmDivAnimeJs.classList.add("mt-2");
 
-  elmTextAnimeJs.innerHTML="";
- ////! source code  anime js 
+  elmTextAnimeJs.innerHTML = "";
+  ////! source code  anime js
   elmTextAnimeJs.insertAdjacentHTML(
-    "beforeend",`<div class="div flex justify-center">
+    "beforeend",
+    `<div class="div flex justify-center">
   <div id="innerSourceCodeAnimeJs" class="relative flex p-2   w-full h-42 z-10 animate__animated animate__zoomInDown bg-slate-200/30 border-8 ring ring-rose-500  border-double">
    <div class="w-2/4 p-2 bg-rose-600/20 text-white h-auto">
       <h2 class="text-white"><<span class="text-yellow-600">div</span> <span class="text-yellow-400"> class=</span>"<span class="text-green-700">css-transforms-demo</span>"> 
@@ -321,48 +325,49 @@ elementAnimeJS_3.addEventListener('click',clickAnimejs_3)
    </div>
     </div>
  </div>
-`)
+`
+  );
   // let elmInnerSourceCode = document.querySelector('#innerSourceCodeAnimeJs');
   // elmInnerSourceCode.innerHTML="";
   // console.log(elmInnerSourceCode);
   //!  fix Repaly Fix
   //
   anime({
-    targets: '.css-transforms-demo .el',
+    targets: ".css-transforms-demo .el",
     translateX: 180,
     scale: 2,
-    rotate: '1turn'
+    rotate: "1turn",
   });
   /*DEMO*/
   // animeJs_1()
-  }
+}
 
 //TODO --------------- animeJs-4 ----------------- */
-  let path = anime.path('.motion-path-demo path');
-  let elementAnimeJS_4=document.querySelector("#animejs-4");
-  console.log(elementAnimeJS_4);
-  elementAnimeJS_4.addEventListener('click',clickAnimejs_4)
-
+let path = anime.path(".motion-path-demo path");
+let elementAnimeJS_4 = document.querySelector("#animejs-4");
+console.log(elementAnimeJS_4);
+elementAnimeJS_4.addEventListener("click", clickAnimejs_4);
 
 //  function animeJs_4() {
 
 // var motionPath = function() {
 /*DEMO*/
 
- function clickAnimejs_4() {
+function clickAnimejs_4() {
   /*DEMO*/
   console.log("test");
- let sourceCodeAnimJs = document.querySelector('#innerSourceCodeAnimeJs') 
+  let sourceCodeAnimJs = document.querySelector("#innerSourceCodeAnimeJs");
 
   createElm.classList =
     "relative bottom-56 w-3/4 h-52 animate__animated animate__zoomInDown bg-slate-200/30 border-8 ring ring-rose-500 border-double";
   elmDivAnimeJs.classList.remove("mt-52");
   elmDivAnimeJs.classList.add("mt-2");
 
-  elmTextAnimeJs.innerHTML="";
- ////! source code  anime js 
+  elmTextAnimeJs.innerHTML = "";
+  ////! source code  anime js
   elmTextAnimeJs.insertAdjacentHTML(
-    "beforeend",`<div class="div flex justify-center">
+    "beforeend",
+    `<div class="div flex justify-center">
   <div id="innerSourceCodeAnimeJs" class="relative flex p-2   w-full h-42 z-10 animate__animated animate__zoomInDown bg-slate-200/30 border-8 ring ring-rose-500  border-double">
    <div class="w-2/4 p-2 bg-rose-600/20 text-white h-auto">
       <h2 class="text-white"><<span class="text-yellow-600">div</span> <span class="text-yellow-400"> class=</span>"<span class="text-green-700">motion-path-demo</span>"> 
@@ -387,23 +392,100 @@ elementAnimeJS_3.addEventListener('click',clickAnimejs_3)
    </div>
     </div>
  </div>
-`)
-// var myPath = anime.path('svg path');
-let path = anime.path('.motion-path-demo path');
-anime({
- targets: '.motion-path-demo .el',
- translateX: path('x'),
- translateY: path('y'),
- rotate: path('angle'),
- easing: 'linear',
- duration: 2000,
- loop: true
-});
-    
-//  }
+`
+  );
+  // var myPath = anime.path('svg path');
+  let path = anime.path(".motion-path-demo path");
+  anime({
+    targets: ".motion-path-demo .el",
+    translateX: path("x"),
+    translateY: path("y"),
+    rotate: path("angle"),
+    easing: "linear",
+    duration: 2000,
+    loop: true,
+  });
+
+  //  }
 }
 
+//TODO --------------- animeJs-5 ----------------- */
+// let path = anime.path(".motion-path-demo path");
+let elementAnimeJS_5 = document.querySelector("#animejs-5");
+console.log(elementAnimeJS_5);
+elementAnimeJS_5.addEventListener("click", clickAnimejs_5);
 
+
+function clickAnimejs_5() {
+  /*DEMO*/
+  console.log("test");
+  let sourceCodeAnimJs = document.querySelector("#innerSourceCodeAnimeJs");
+
+  createElm.classList =
+    "relative bottom-56 w-3/4 h-52 animate__animated animate__zoomInDown bg-slate-200/30 border-8 ring ring-rose-500 border-double";
+  elmDivAnimeJs.classList.remove("mt-52");
+  elmDivAnimeJs.classList.add("mt-2");
+
+  elmTextAnimeJs.innerHTML = "";
+  ////! source code  anime js
+  elmTextAnimeJs.insertAdjacentHTML(
+    "beforeend",
+    `<div class="div flex justify-center">
+  <div id="innerSourceCodeAnimeJs" class="relative flex p-2   w-full h-42 z-10 animate__animated animate__zoomInDown bg-slate-200/30 border-8 ring ring-rose-500  border-double">
+   <div class="w-2/4 p-2 bg-rose-600/20 text-white h-auto">
+      <h2 class="text-white"><<span class="text-yellow-600">div</span> <span class="text-yellow-400"> class=</span>"<span class="text-green-700">motion-path-demo</span>"> 
+         <h2 class="text-white"><<span class="text-yellow-600">div</span> <span class="text-yellow-400"> class=</span>"<span class="text-green-700">el follow-path</span>">   <<span class="text-yellow-600">/div</span>></h2>
+         <h2 class="text-white"><<span class="text-yellow-600">svg</span> <span class="text-yellow-400"> width=</span>"<span class="text-green-700">256</span>" <span class="text-yellow-400"> height=</span>"<span class="text-green-700">112</span>">
+       <br>< <span class="text-yellow-600">path</span>> <<span class="text-yellow-600">path</span>> <<span class="text-yellow-600">/svg</span>></h2>
+       <<span class="text-yellow-600">/div</span>></h2>
+   </div>
+   <div class="w-2/4 bg-rose-600/20 text-xs h-auto">
+      <pre>
+      <span class="text-rose-400">let</span><span class="text-white"> path</span><span class="text-blue-400">=</span>anime.<span class="text-blue-600">path</span><span class="text-green-700">('.motion-path-demo path')</span>
+      <span class="text-blue-800">anime</span>({
+    <span class="text-green-600"> targets:</span> <span class="text-yellow-400">'.motion-path-demo .el'</span>,
+    <span class="text-green-600">translateX:</span><span class="text-yellow-400"> path('x'),</span>
+    <span class="text-green-600">translateY</span> <span class="text-yellow-400">path('y'),</span>
+    <span class="text-green-600">rotate:</span><span class="text-yellow-400"> path('angle')</span>
+    <span class="text-green-600"> easing:</span> <span class="text-yellow-400">'linear',</span>
+     <span class="text-green-600">duration:</span><span class="text-yellow-700"> 2000,</span>;
+     <span class="text-green-600">loop:</span><span class="text-yellow-700"> true,</span>;
+    <span class="text-yellow-400">})</span>
+     </pre>
+   </div>
+    </div>
+ </div>
+`
+  );
+  // var myPath = anime.path('svg path');
+anime({
+  targets: '.staggering-grid-demo .el',
+  scale: [
+    {value: .1, easing: 'easeOutSine', duration: 500},
+    {value: 1, easing: 'easeInOutQuad', duration: 1200}
+  ],
+  delay: anime.stagger(200, {grid: [14, 5], from: 'center'})
+});
+  
+
+  //  }
+}
+
+//TODO --------------- animeJs-6 ----------------- */
+
+var animation = anime({
+  targets: '.seek-anim-demo .el',
+  translateX: 180,
+  delay: function(el, i) { return i * 100; },
+  elasticity: 200,
+  easing: 'easeInOutSine',
+  autoplay: false
+});
+
+var seekProgressEl = document.querySelector('.seek-anim-demo .progress');
+seekProgressEl.oninput = function() {
+  animation.seek(animation.duration * (seekProgressEl.value / 100));
+};
 function menuAnimeJs(colorBorder, colorBg, colorShadow) {
   let elmAll_Menu = document.querySelectorAll(".menuAnimeJs");
   for (let i = 0; i < elmAll_Menu.length; i++) {}
