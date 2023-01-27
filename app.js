@@ -332,14 +332,42 @@ function clickAnimejs_3() {
   // console.log(elmInnerSourceCode);
   //!  fix Repaly Fix
   //
-  anime({
-    targets: ".css-transforms-demo .el",
-    translateX: 180,
-    scale: 2,
-    rotate: "1turn",
-  });
+  // anime({
+  //   targets: ".css-transforms-demo .el",
+  //   translateX: 180,
+  //   scale: 2,
+  //   rotate: "1turn",
+  // });
   /*DEMO*/
   // animeJs_1()
+  var progressLogEl = document.querySelector('.promise-demo .progress-log');
+var promiseEl = document.querySelector('.promise-demo .el');
+var finishedLogEl = document.querySelector('.promise-demo .finished-log');
+var demoPromiseResetTimeout;
+
+function logFinished() {
+  anime.set(finishedLogEl, {value: 'Promise resolved'});
+  anime.set(promiseEl, {backgroundColor: '#18FF92'});
+}
+
+var animation = anime.timeline({
+  targets: promiseEl,
+  delay: 400,
+  duration: 380,
+  endDelay: 400,
+  easing: 'easeInOutSine',
+  update: function(anim) {
+    progressLogEl.value = 'progress : '+Math.round(anim.progress)+'%';
+  }
+}).add({
+  translateX: 180
+}).add({
+  scale: 2
+}).add({
+  translateX: 0
+});
+
+animation.finished.then(logFinished);
 }
 
 //TODO --------------- animeJs-4 ----------------- */
@@ -490,3 +518,32 @@ function menuAnimeJs(colorBorder, colorBg, colorShadow) {
   let elmAll_Menu = document.querySelectorAll(".menuAnimeJs");
   for (let i = 0; i < elmAll_Menu.length; i++) {}
 }
+
+//TODO --------------- animeJs-7 ----------------- */
+// Wrap every letter in a span
+var textWrapper = document.querySelector('.ml1 .letters');
+textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+anime.timeline({loop: true})
+  .add({
+    targets: '.ml1 .letter',
+    scale: [0.3,1],
+    opacity: [0,1],
+    translateZ: 0,
+    easing: "easeOutExpo",
+    duration: 600,
+    delay: (el, i) => 70 * (i+1)
+  }).add({
+    targets: '.ml1 .line',
+    scaleX: [0,1],
+    opacity: [0.5,1],
+    easing: "easeOutExpo",
+    duration: 700,
+    offset: '-=875',
+    delay: (el, i, l) => 80 * (l - i)
+  }).add({
+    targets: '.ml1',
+    opacity: 0,
+    duration: 1000,
+    easing: "easeOutExpo",
+    delay: 1000
+  });
