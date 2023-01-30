@@ -1,3 +1,4 @@
+
 //TODO -------------------------------------------------------------------------- */
 //?  --------------------------------- moveBorder ------------------------------- */
 //TODO -------------------------------------------------------------------------- */
@@ -546,4 +547,58 @@ anime.timeline({loop: true})
     duration: 1000,
     easing: "easeOutExpo",
     delay: 1000
+  });
+
+
+
+
+console.log(mojs);
+
+  //====> moJs <=====\\
+  const bouncyCircle = new mojs.Shape({
+    parent:       '#bouncyCircle',
+    shape:        'circle',
+    fill:         {'#F64040': '#FC46AD'},
+    radius:       {20: 80},
+    duration:     2000,
+    isYoyo:       true,
+    isShowStart:  true,
+    easing:       'elastic.inout',
+    repeat:       1,
+  });
+// let mojs_1 = document.querySelector("#bouncyCircle2")
+// console.log(mojs_1);
+  bouncyCircle.play()
+
+  new mojs.Shape({
+    parent:       '#circle',
+    shape:        'circle',     // shape 'circle' is default
+    radius:       25,           // shape radius
+    radiusX:      30,
+    left:         '25%',
+    fill:         'transparent',// same as 'transparent'
+    stroke:       '#F64040',    // or 'cyan'
+    strokeWidth:  5,            // width of the stroke
+    isShowStart:  true,         // show before any animation starts
+  });
+  new mojs.Shape({
+    parent:       '#circle2',
+    shape:        'circle',     // shape 'circle' is default
+    radius:       15,           // shape radius
+    radiusX:      20,
+    left:         '25%',
+    fill:         'deeppink',// same as 'transparent'
+    stroke:       '#F64040',    // or 'cyan'
+    strokeWidth:  7,            // width of the stroke
+    isShowStart:  true,         // show before any animation starts
+  });
+  var rect = new mojs.Shape({
+    parent:       '#test',
+
+    stroke:       '#F64040',    // or 'cyan'
+    shape:        'rect',
+    radius:       15,
+    left:         '50%',
+    fill:         'cyan',
+    isShowStart:  true,
   });
