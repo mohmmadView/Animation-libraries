@@ -122,13 +122,6 @@ window.onscroll = () => {
   winScroll(384, elmLineAnimate, "animate__backInRight"); //! <=== جواب
   winScroll(845, elmDivAnimateJs, "animate__lightSpeedInLeft");
 };
-function winScroll(number, element, classId) {
-  if (window.scrollY > number) {
-    element.classList.add(classId);
-  } else {
-    element.classList.remove(classId);
-  }
-}
 
 //TODO --------------- TheEndScrollAnimateJs ----------------- */
 //@
@@ -459,6 +452,7 @@ function clickAnimejs_5() {
   ////! source code  anime js
   elmTextAnimeJs.insertAdjacentHTML(
     "beforeend",
+  
     `<div class="div flex justify-center">
   <div id="innerSourceCodeAnimeJs" class="relative flex p-2   w-full h-42 z-10 animate__animated animate__zoomInDown bg-slate-200/30 border-8 ring ring-rose-500  border-double">
    <div class="w-2/4 p-2 bg-rose-600/20 text-white h-auto">
@@ -554,7 +548,31 @@ anime.timeline({loop: true})
 
 console.log(mojs);
 
-  //====> moJs <=====\\
+  //!====> moJs <=====\\
+  let scr = window.scrollY
+console.log("scroolScreen",scr);
+let ElmMoveJs = document.querySelector('#moveMoJs');
+
+console.log(ElmMoveJs); 
+  // winScroll(1920,ElmMoveJs, 'autoplay-true')
+
+console.log(ElmMoveJs); 
+  //! move Mo.js \\
+  anime({
+    targets: "#moveMoJs",
+    translateX: 450,
+    autoplay: 'false',
+    easing: "easeInOutSine",
+  });
+
+  anime({
+    targets: "#moveMoJs2",
+    translateX: -450,
+    autoplay: "false",
+    easing: "easeInOutSine",
+  });
+  //? ======> MoveJs <======\\
+  
   const bouncyCircle = new mojs.Shape({
     parent:       '#bouncyCircle',
     shape:        'circle',
@@ -602,3 +620,12 @@ console.log(mojs);
     fill:         'cyan',
     isShowStart:  true,
   });
+  
+  function winScroll(number,element,classId) {
+    if (window.scrollY > number) {
+      element.classList.add(classId);
+    } else {
+      element.classList.remove(classId);
+    }
+  }
+  

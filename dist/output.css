@@ -870,10 +870,6 @@ video {
   height: 20rem;
 }
 
-.h-2 {
-  height: 0.5rem;
-}
-
 .w-3\/4 {
   width: 75%;
 }
@@ -920,14 +916,6 @@ video {
 
 .w-5\/6 {
   width: 83.333333%;
-}
-
-.w-2 {
-  width: 0.5rem;
-}
-
-.w-14 {
-  width: 3.5rem;
 }
 
 .flex-shrink {
@@ -2196,6 +2184,11 @@ video {
   line-height: 2.5rem;
 }
 
+.text-5xl {
+  font-size: 3rem;
+  line-height: 1;
+}
+
 .font-bold {
   font-weight: 700;
 }
@@ -2371,6 +2364,11 @@ video {
 .text-orange-600 {
   --tw-text-opacity: 1;
   color: rgb(234 88 12 / var(--tw-text-opacity));
+}
+
+.text-red-700 {
+  --tw-text-opacity: 1;
+  color: rgb(185 28 28 / var(--tw-text-opacity));
 }
 
 .text-\[\#336699\]\/\[\.35\] {
