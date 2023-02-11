@@ -548,36 +548,41 @@ anime.timeline({loop: true})
 
 console.log(mojs);
 
-  //!====> moJs <=====\\
-  let scr = window.scrollY
+  //!====>move moJs <=====\\
+  let scr = window.scrollY;
 console.log("scroolScreen",scr);
 let ElmMoveJs = document.querySelector('#moveMoJs');
 
 console.log(ElmMoveJs); 
   // winScroll(1920,ElmMoveJs, 'autoplay-true')
-
+window.addEventListener("scroll",()=>{
+if(1818 < window.scrollY)
+console.log("test good scroll");
+anime({
+  targets: "#moveMoJs",
+  translateX: 500,
+  autoplay: 'false',
+  easing: "easeInOutSine",
+});
+anime({
+  targets: "#moveMoJs2",
+  translateX: -500,
+  autoplay: "false",
+  easing: "easeInOutSine",
+});
+})
 console.log(ElmMoveJs); 
-  //! move Mo.js \\
-  anime({
-    targets: "#moveMoJs",
-    translateX: 450,
-    autoplay: 'false',
-    easing: "easeInOutSine",
-  });
+ 
+ //! move Mo.js \\
 
-  anime({
-    targets: "#moveMoJs2",
-    translateX: -450,
-    autoplay: "false",
-    easing: "easeInOutSine",
-  });
+ 
   //? ======> MoveJs <======\\
   
   const bouncyCircle = new mojs.Shape({
     parent:       '#bouncyCircle',
     shape:        'circle',
     fill:         {'#F64040': '#FC46AD'},
-    radius:       {20: 80},
+    radius:       {20: 40},
     duration:     2000,
     isYoyo:       true,
     isShowStart:  true,
