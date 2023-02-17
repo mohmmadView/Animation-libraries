@@ -587,13 +587,13 @@ console.log(ElmMoveJs);
     isYoyo:       true,
     isShowStart:  true,
     easing:       'elastic.inout',
-    repeat:       1,
+    repeat:       100,
   });
 // let mojs_1 = document.querySelector("#bouncyCircle2")
 // console.log(mojs_1);
   bouncyCircle.play()
 
-  new mojs.Shape({
+ new mojs.Shape({
     parent:       '#circle',
     shape:        'circle',     // shape 'circle' is default
     radius:       25,           // shape radius
@@ -604,11 +604,12 @@ console.log(ElmMoveJs);
     strokeWidth:  5,            // width of the stroke
     isShowStart:  true,         // show before any animation starts
   });
+
   new mojs.Shape({
     parent:       '#circle2',
     shape:        'circle',     // shape 'circle' is default
-    radius:       15,           // shape radius
-    radiusX:      20,
+    radius:       35,           // shape radius
+    radiusX:      60,
     left:         '25%',
     fill:         'deeppink',// same as 'transparent'
     stroke:       '#F64040',    // or 'cyan'
@@ -620,12 +621,114 @@ console.log(ElmMoveJs);
 
     stroke:       '#F64040',    // or 'cyan'
     shape:        'rect',
-    radius:       15,
+    radius:       35,
     left:         '50%',
     fill:         'cyan',
     isShowStart:  true,
   });
   
+  var polygon = new mojs.Shape({
+    parent:       '#polygon', 
+    shape:        'polygon',
+    radiusX:      50,
+    radiusY:      50,
+    left:         '75%',
+    fill:         'yellow',
+    isShowStart:  true,
+  });
+
+
+  var zigzag = new mojs.Shape({
+    parent:      '#zigzag',
+    shape:       'zigzag',
+    points:       11,
+    radius:       25,
+    radiusY:      50,
+    left:         '25%',
+    fill:         'none',
+    stroke:       'deeppink',
+    isShowStart:   true,
+  });
+  
+  var curve = new mojs.Shape({
+    parent:       '#curve',    
+    shape:        'curve',
+    points:       11,
+    radius:       25,
+    radiusY:      50,
+    left:         '50%',
+    fill:         'none',
+    stroke:       'deeppink',
+    isShowStart:   true,
+  });
+  
+  var cross = new mojs.Shape({
+    parent:       '#cross',
+    shape:        'cross',
+    points:       11,
+    radius:       25,
+    radiusX:      50,
+    left:         '75%',
+    fill:         'none',
+    stroke:       'deeppink',
+    isShowStart:   true,
+    y:            -25,
+  });
+
+  new mojs.Shape({
+    parent:       '#delta',
+    shape:        'circle',
+    scale:         { 0 : 1 },
+  
+    duration:      1000,
+    delay:         1000,
+    easing:        'cubic.out',
+    repeat:        100
+  }).play();
+
+
+
+  
+
+  // const circle5 = new mojs.Shape({
+  //   parent:       '#circle5',
+  //   shape:        'circle',
+  //   scale:        { 0 : 1 },
+  //   left:         '25%',
+  //   fill:         { 'cyan': 'yellow' },
+  //   radius:       25,
+  
+  //   duration:     2000,
+  //   repeat:       999,
+  // }).play();
+  
+  // const rect = new mojs.Shape({
+  //   shape:        'rect',
+  //   left:         '50%',
+  //   fill:         'none',
+  //   radius:       20,
+  //   stroke:       { 'rgba(0,255,255, 1)' : 'magenta' },
+  //   strokeWidth:  { 10: 0 },
+  //   strokeDasharray: '100%',
+  //   strokeDashoffset: { '-100%' : '100%' },
+  //   rotate:        { 0: 180 },
+  
+  //   duration:     2000,
+  //   repeat:       999,
+  // }).play();
+  
+  // const polygon = new mojs.Shape({
+  //   shape:        'polygon',
+  //   points:       5,
+  //   left:         '75%',
+  //   fill:         { 'deeppink' : '#00F87F' },
+  //   x:            { 'rand(-100%, -200%)' : 0  },
+  //   rotate:        { 0: 'rand(0, 360)' },
+  //   radius:       25,
+  
+  //   duration:     2000,
+  //   repeat:       999,
+  // }).play();
   function winScroll(number,element,classId) {
     if (window.scrollY > number) {
       element.classList.add(classId);
