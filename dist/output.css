@@ -621,16 +621,12 @@ video {
   bottom: 14rem;
 }
 
-.top-10 {
-  top: 2.5rem;
+.top-14 {
+  top: 3.5rem;
 }
 
 .left-1\/2 {
   left: 50%;
-}
-
-.bottom-4 {
-  bottom: 1rem;
 }
 
 .isolate {
@@ -1419,6 +1415,10 @@ video {
   gap: 1rem;
 }
 
+.gap-2 {
+  gap: 0.5rem;
+}
+
 .space-y-2 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-y-reverse: 0;
   margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
@@ -2091,10 +2091,6 @@ video {
 
 .p-0 {
   padding: 0px;
-}
-
-.p-6 {
-  padding: 1.5rem;
 }
 
 .px-10 {
