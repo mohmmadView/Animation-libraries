@@ -8,6 +8,22 @@ body, html {
     height: 100%;
     
   }
+  @layer base{
+    @font-face {
+      font-family: "FashionVictim";
+      src: local("FashionVictim"),
+        url("FashionVictim.woff") format("woff") tech(color-COLRv1), url("FashionVictim.ttf")
+          format("TrueType"), url("FashionVictim.eot") format("opentype");
+    }
+
+    #animateCss{
+      font-family: "FashionVictim" ;
+     }
+  }
+
+  
+  
+
   .wrapper {
     width: 60%;
     height: 100%;

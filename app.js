@@ -162,7 +162,7 @@ function animeJs_1() {
   ////! source code  anime js
   elmTextAnimeJs.insertAdjacentHTML(
     "beforeend",
-    `<div  class="div flex justify-center">
+    `<div  class="w-3/4 flex justify-center">
   <div id="innerSourceCodeAnimeJs" class="relative flex p-2   w-full  h-42 z-10 animate__animated animate__zoomInDown bg-slate-200/30 border-8 ring ring-rose-500  border-double">
    <div class="w-2/4 p-2 bg-rose-600/20 text-white h-auto">
       <h2 class="text-white"><<span class="text-yellow-600">div</span> <span class="text-yellow-400"> class=</span>"<span class="text-green-700">function-based-params-demo</span>"> 
@@ -171,7 +171,7 @@ function animeJs_1() {
             <<span class="text-yellow-600">/div</span>></h2>
          <<span class="text-yellow-600">/div</span>></h2>
    </div>
-   <div class="w-2/4 bg-rose-600/20 text-xs h-auto">
+   <div class="w-2/4 bg-rose-600/20  h-auto">
       <pre><span class="text-blue-800">anime</span>({
     <span class="text-green-600"> targets:</span> <span class="text-yellow-400">'.function-based-params-demo .el'</span>,
     <span class="text-green-600">translateX:</span><span class="text-yellow-400"> 270,</span>
@@ -232,9 +232,9 @@ function clickAnimejs_2() {
   ////! source code  anime js
   elmTextAnimeJs.insertAdjacentHTML(
     "beforeend",
-    `<div class="div flex justify-center">
-  <div id="innerSourceCodeAnimeJs" class="relative flex p-2   w-full h-42 z-10 animate__animated animate__zoomInDown bg-slate-200/30 border-8 ring ring-rose-500  border-double">
-   <div class="w-2/4 p-2 bg-rose-600/20 text-white h-auto">
+    `<div class="w-3/4 flex justify-center">
+  <div id="innerSourceCodeAnimeJs" class="relative flex p-2   w-full h-42 z-10 animate__animated animate__zoomInDown  border-8 ring ring-rose-500  border-double">
+   <div class="w-2/4 p-2 bg-blue-500 text-2xl text-white">
       <h2 class="text-white"><<span class="text-yellow-600">div</span> <span class="text-yellow-400"> class=</span>"<span class="text-green-700">function-based-params-demo</span>"> 
          <h2 class="text-white"><<span class="text-yellow-600">div</span> <span class="text-yellow-400"> class=</span>"<span class="text-green-700">autoplay-true</span>">   <<span class="text-yellow-600">/div</span>></h2>
          <h2 class="text-white"><<span class="text-yellow-600">div</span> <span class="text-yellow-400"> class=</span>"<span class="text-green-700">autoplay-false</span>">   <<span class="text-yellow-600">/div</span>></h2>
@@ -242,7 +242,7 @@ function clickAnimejs_2() {
             <<span class="text-yellow-600">/div</span>></h2>
          <<span class="text-yellow-600">/div</span>></h2>
    </div>
-   <div class="w-2/4 bg-rose-600/20 text-xs h-auto">
+   <div class="w-2/4 ">
       <pre><span class="text-blue-800">anime</span>({
     <span class="text-green-600"> targets:</span> <span class="text-yellow-400">'.autoplay-true'</span>,
     <span class="text-green-600">translateX:</span><span class="text-yellow-400"> 200,</span>
@@ -288,9 +288,7 @@ console.log(elementAnimeJS_3);
 elementAnimeJS_3.addEventListener("click", clickAnimejs_3);
 function clickAnimejs_3() {
   /*DEMO*/
-  let sourceCodeAnimJs = document.querySelector("#innerSourceCodeAnimeJs");
-  console.log(sourceCodeAnimJs);
-
+  
   createElm.classList =
     "relative bottom-56 w-3/4 h-52 animate__animated animate__zoomInDown bg-slate-200/30 border-8 ring ring-rose-500 border-double";
   elmDivAnimeJs.classList.remove("mt-52");
@@ -300,7 +298,7 @@ function clickAnimejs_3() {
   ////! source code  anime js
   elmTextAnimeJs.insertAdjacentHTML(
     "beforeend",
-    `<div class="div flex justify-center">
+    `<div class="w-3/4 flex justify-center">
   <div id="innerSourceCodeAnimeJs" class="relative flex p-2   w-full h-42 z-10 animate__animated animate__zoomInDown bg-slate-200/30 border-8 ring ring-rose-500  border-double">
    <div class="w-2/4 p-2 bg-rose-600/20 text-white h-auto">
       <h2 class="text-white"><<span class="text-yellow-600">div</span> <span class="text-yellow-400"> class=</span>"<span class="text-green-700">css-transforms-demo</span>"> 
@@ -309,7 +307,7 @@ function clickAnimejs_3() {
             <<span class="text-yellow-600">/div</span>></h2>
          <<span class="text-yellow-600">/div</span>></h2>
    </div>
-   <div class="w-2/4 bg-rose-600/20 text-xs h-auto">
+   <div class="w-2/4 bg-rose-600/20 ">
       <pre><span class="text-blue-800">anime</span>({
     <span class="text-green-600"> targets:</span> <span class="text-yellow-400">'.css-transforms-demo .el'</span>,
     <span class="text-green-600">translateX:</span><span class="text-yellow-400"> 180,</span>
@@ -321,6 +319,10 @@ function clickAnimejs_3() {
  </div>
 `
   );
+  let sourceCodeAnimJs = document.querySelector("#innerSourceCodeAnimeJs");
+  console.log(sourceCodeAnimJs);
+
+sourceCodeAnimJs.classList.add("text-2xl");
   // let elmInnerSourceCode = document.querySelector('#innerSourceCodeAnimeJs');
   // elmInnerSourceCode.innerHTML="";
   // console.log(elmInnerSourceCode);
@@ -377,8 +379,6 @@ elementAnimeJS_4.addEventListener("click", clickAnimejs_4);
 
 function clickAnimejs_4() {
   /*DEMO*/
-  console.log("test");
-  let sourceCodeAnimJs = document.querySelector("#innerSourceCodeAnimeJs");
 
   createElm.classList =
     "relative bottom-56 w-3/4 h-52 animate__animated animate__zoomInDown bg-slate-200/30 border-8 ring ring-rose-500 border-double";
@@ -389,16 +389,16 @@ function clickAnimejs_4() {
   ////! source code  anime js
   elmTextAnimeJs.insertAdjacentHTML(
     "beforeend",
-    `<div class="div flex justify-center">
-  <div id="innerSourceCodeAnimeJs" class="relative flex p-2   w-full h-42 z-10 animate__animated animate__zoomInDown bg-slate-200/30 border-8 ring ring-rose-500  border-double">
-   <div class="w-2/4 p-2 bg-rose-600/20 text-white h-auto">
+    `<div class="div w-3/4 h-2/6  flex absolute justify-center">
+  <div id="innerSourceCodeAnimeJs" class="relative flex p-2   w-full h-5/6 z-10 animate__animated animate__zoomInDown bg-slate-200/30 border-8 ring ring-rose-500  border-double">
+   <div class="w-2/4 p-2 bg-rose-600/20 text-white text-2xl">
       <h2 class="text-white"><<span class="text-yellow-600">div</span> <span class="text-yellow-400"> class=</span>"<span class="text-green-700">motion-path-demo</span>"> 
          <h2 class="text-white"><<span class="text-yellow-600">div</span> <span class="text-yellow-400"> class=</span>"<span class="text-green-700">el follow-path</span>">   <<span class="text-yellow-600">/div</span>></h2>
          <h2 class="text-white"><<span class="text-yellow-600">svg</span> <span class="text-yellow-400"> width=</span>"<span class="text-green-700">256</span>" <span class="text-yellow-400"> height=</span>"<span class="text-green-700">112</span>">
        <br>< <span class="text-yellow-600">path</span>> <<span class="text-yellow-600">path</span>> <<span class="text-yellow-600">/svg</span>></h2>
        <<span class="text-yellow-600">/div</span>></h2>
    </div>
-   <div class="w-2/4 bg-rose-600/20 text-xs h-auto">
+   <div class="w-2/4 bg-rose-600/20 text-xg ">
       <pre>
       <span class="text-rose-400">let</span><span class="text-white"> path</span><span class="text-blue-400">=</span>anime.<span class="text-blue-600">path</span><span class="text-green-700">('.motion-path-demo path')</span>
       <span class="text-blue-800">anime</span>({
@@ -416,6 +416,8 @@ function clickAnimejs_4() {
  </div>
 `
   );
+    let sourceCodeAnimJs = document.querySelector("#innerSourceCodeAnimeJs");
+    console.log(sourceCodeAnimJs);
   // var myPath = anime.path('svg path');
   let path = anime.path(".motion-path-demo path");
   anime({
@@ -453,7 +455,7 @@ function clickAnimejs_5() {
   elmTextAnimeJs.insertAdjacentHTML(
     "beforeend",
   
-    `<div class="div flex justify-center">
+    `<div class="w-3/4 flex justify-center">
   <div id="innerSourceCodeAnimeJs" class="relative flex p-2   w-full h-42 z-10 animate__animated animate__zoomInDown bg-slate-200/30 border-8 ring ring-rose-500  border-double">
    <div class="w-2/4 p-2 bg-rose-600/20 text-white h-auto">
       <h2 class="text-white"><<span class="text-yellow-600">div</span> <span class="text-yellow-400"> class=</span>"<span class="text-green-700">motion-path-demo</span>"> 
@@ -462,7 +464,7 @@ function clickAnimejs_5() {
        <br>< <span class="text-yellow-600">path</span>> <<span class="text-yellow-600">path</span>> <<span class="text-yellow-600">/svg</span>></h2>
        <<span class="text-yellow-600">/div</span>></h2>
    </div>
-   <div class="w-2/4 bg-rose-600/20 text-xs h-auto">
+   <div class="w-2/4 bg-rose-600/20 text-2xl h-auto">
       <pre>
       <span class="text-rose-400">let</span><span class="text-white"> path</span><span class="text-blue-400">=</span>anime.<span class="text-blue-600">path</span><span class="text-green-700">('.motion-path-demo path')</span>
       <span class="text-blue-800">anime</span>({
@@ -546,7 +548,6 @@ anime.timeline({loop: true})
 
 
 
-console.log(mojs);
 
   //!====>move moJs <=====\\
   let scr = window.scrollY;
@@ -587,13 +588,13 @@ console.log(ElmMoveJs);
     isYoyo:       true,
     isShowStart:  true,
     easing:       'elastic.inout',
-    repeat:       1,
+    repeat:       100,
   });
 // let mojs_1 = document.querySelector("#bouncyCircle2")
 // console.log(mojs_1);
   bouncyCircle.play()
 
-  new mojs.Shape({
+ new mojs.Shape({
     parent:       '#circle',
     shape:        'circle',     // shape 'circle' is default
     radius:       25,           // shape radius
@@ -604,11 +605,12 @@ console.log(ElmMoveJs);
     strokeWidth:  5,            // width of the stroke
     isShowStart:  true,         // show before any animation starts
   });
+
   new mojs.Shape({
     parent:       '#circle2',
     shape:        'circle',     // shape 'circle' is default
-    radius:       15,           // shape radius
-    radiusX:      20,
+    radius:       35,           // shape radius
+    radiusX:      60,
     left:         '25%',
     fill:         'deeppink',// same as 'transparent'
     stroke:       '#F64040',    // or 'cyan'
@@ -620,12 +622,60 @@ console.log(ElmMoveJs);
 
     stroke:       '#F64040',    // or 'cyan'
     shape:        'rect',
-    radius:       15,
+    radius:       35,
     left:         '50%',
     fill:         'cyan',
     isShowStart:  true,
   });
   
+  var polygon = new mojs.Shape({
+    parent:       '#polygon', 
+    shape:        'polygon',
+    radiusX:      50,
+    radiusY:      50,
+    left:         '75%',
+    fill:         'yellow',
+    isShowStart:  true,
+  });
+
+
+  var zigzag = new mojs.Shape({
+    parent:      '#zigzag',
+    shape:       'zigzag',
+    points:       11,
+    radius:       25,
+    radiusY:      50,
+    left:         '25%',
+    fill:         'none',
+    stroke:       'deeppink',
+    isShowStart:   true,
+  });
+  
+  var curve = new mojs.Shape({
+    parent:       '#curve',    
+    shape:        'curve',
+    points:       11,
+    radius:       25,
+    radiusY:      50,
+    left:         '50%',
+    fill:         'none',
+    stroke:       'deeppink',
+    isShowStart:   true,
+  });
+  
+  var cross = new mojs.Shape({
+    parent:       '#cross',
+    shape:        'cross',
+    points:       11,
+    radius:       25,
+    radiusX:      50,
+    left:         '75%',
+    fill:         'none',
+    stroke:       'deeppink',
+    isShowStart:   true,
+    y:            -25,
+  });
+
   function winScroll(number,element,classId) {
     if (window.scrollY > number) {
       element.classList.add(classId);
