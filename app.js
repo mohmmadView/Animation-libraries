@@ -1,4 +1,5 @@
-
+// import Prism from "prismjs";
+// console.log(Prism.languages);
 //TODO -------------------------------------------------------------------------- */
 //?  --------------------------------- moveBorder ------------------------------- */
 //TODO -------------------------------------------------------------------------- */
@@ -675,6 +676,428 @@ console.log(ElmMoveJs);
     isShowStart:   true,
     y:            -25,
   });
+  //======>Mojs 6<======\\
+//   const COLORS = {
+//     white:   '#ffffff',
+//     black:   '#000000',
+//     green:   '#49F2CC',
+//     lightGrey: '#777',
+//     grey:    '#29363B',
+//     cyan:    'cyan',
+//     yellow:  '#FFE202',
+//     hotpink: 'deeppink',
+//   };
+
+// const _getWindowSize = () => {
+// const w = document.querySelector('#mojs-div');
+// console.log(w.clientHeight);
+// return Math.max( w.innerWidth   )
+// }
+
+// const _calcScale = (radius) => {
+// return 1.4 * (_getWindowSize() / radius / 2);
+// }
+
+// let circleSize = 500,
+// scale      = _calcScale( circleSize ),
+// opts       = {
+//   radius:     circleSize,
+//   fill:       COLORS.grey,
+//   scale:      { 0.05 : 0.2 },
+//   duration:   465,
+//   easing:     'cubic.out',
+//   isShowEnd:  false,
+//   isForce3d:  true,
+// };
+
+// const circle1 = new mojs.Shape(opts)
+// .then({
+// easing:     'cubic.inout',
+// scale:      .125,
+// duration:   350
+// }).then({
+// easing:     'cubic.inout',
+// scale:      scale,
+// duration:   465
+// });
+
+// const circle2 = new mojs.Shape({
+// ...opts,
+// fill:       COLORS.lightGrey,
+// scale:      { 0 : .1125 },
+// duration:   407,
+// delay:      580
+// }).then({
+// easing:     'cubic.inout',
+// scale:      scale,
+// duration:   350
+// });
+
+// const circle3 = new mojs.Shape({
+// ...opts,
+// scale:        { 0: scale },
+// duration:     580,
+// delay:        1160,
+// isShowStart:  true,
+// // isShowEnd:    true
+// });
+
+// const smallCircle = new mojs.Shape({
+// radius:       { 5: 25 },
+// fill:         'none',
+// stroke:       COLORS.grey,
+// strokeWidth:  { 20: 0 },
+// isShowEnd:    false,
+// delay:        700,
+// duration:     290,
+// });
+
+// const triangleOpts = {
+// shape:      'polygon',
+// radius:     15,
+// duration:   407,
+// fill:       COLORS.lightGrey,
+// y:          { 80 : -15 },
+// scale:      {  1 : 0 },
+// delay:      495,
+// isForce3d:  true,
+// easing:     'cubic.out'
+// }
+// const triangle1 = new mojs.Shape( triangleOpts );
+
+// const triangle2 = new mojs.Shape({
+// ...triangleOpts,
+// y:        { [-80] : 15 },
+// angle:    180
+// });
+
+// const lineOpts = {
+// shape:            'line',
+// x:               -180,
+// radius:           50,
+// radiusY:          0,
+// stroke:           COLORS.grey,
+// strokeWidth:      {15 : 0},
+// duration:         580,
+// isShowEnd:        false,
+// strokeDasharray:  '100% 100%',
+// strokeDashoffset: { '-100%': '100%' },
+// easing:           'cubic.out',
+// }
+// const line1 = new mojs.Shape(lineOpts);
+
+// const line2 = new mojs.Shape({
+// ...lineOpts,
+// angle:  180,
+// x:      -lineOpts.x
+// });
+
+// const timeline = new mojs.Timeline();
+// timeline
+// .add(
+// circle1, circle2, circle3, smallCircle,
+// triangle1, triangle2,
+// line1, line2
+// );
+
+// new MojsPlayer({ add: timeline, isPlaying: true, isRepeat: true });
+
+const COLORS = {
+  white:   '#ffffff',
+  black:   '#000000',
+  green:   '#49F2CC',
+  lightGrey: '#777',
+  grey:    '#29363B',
+  cyan:    'cyan',
+  yellow:  '#FFE202',
+  hotpink: 'deeppink',
+};
+
+// ADD CUSTOM SHAPES
+class M extends mojs.CustomShape {
+  getShape () {
+    return '<path d="M91.5714286,44.4285714 L91.5714286,100 L96.7142857,100 L96.7142857,33.4285714 L49.8571429,72 L3,33.4285714 L3,100 L8.14285714,100 L8.14285714,44.4285714 L49.8571429,78.7142857 L91.5714286,44.4285714 Z M49.8571429,38.7142857 L92,3.85714286 L88.7142857,-6.50146603e-13 L49.8571429,31.8571429 L11,-6.50146603e-13 L7.71428571,3.85714286 L49.8571429,38.7142857 Z"></path>';
+  }
+}
+mojs.addShape('m', M);
+
+class J extends mojs.CustomShape {
+  getShape () {
+    return '<path d="M22,87.535014 C27.7422969,95.0980392 36.8459384,100 47.070028,100 C64.2969188,100 78.442577,88.6554622 78.442577,68.627451 L78.442577,0 L73.4005602,0 L73.4005602,68.627451 C73.4005602,85.8543417 61.4957983,94.9579832 47.070028,94.9579832 C38.3865546,94.9579832 30.5434174,90.6162465 25.7815126,84.0336134 L22,87.535014 Z"></path>';
+  }
+}
+mojs.addShape('j', J);
+
+class S extends mojs.CustomShape {
+  getShape () {
+    return '<path d="M15,71.0164835 C15,92.3076923 34.7802198,100 49.478022,100 C68.5714286,100 84.0934066,91.2087912 84.0934066,72.3901099 C84.0934066,61.5384615 79.2857143,51.7857143 61.978022,45.1923077 C45.2197802,38.8736264 27.2252747,35.5769231 27.2252747,21.8406593 C27.2252747,10.3021978 38.0769231,4.53296703 48.9285714,4.53296703 C59.9175824,4.53296703 70.7692308,10.3021978 70.7692308,21.8406593 L75.7142857,21.8406593 C75.7142857,7.14285714 62.6648352,0 49.478022,0 C36.0164835,0 22.2802198,7.41758242 22.2802198,21.8406593 C22.2802198,39.5604396 43.4340659,42.9945055 60.6043956,49.5879121 C74.8901099,55.0824176 79.1483516,63.7362637 79.1483516,72.5274725 C79.1483516,89.010989 64.1758242,95.0549451 49.478022,95.0549451 C35.3296703,95.0549451 19.9450549,87.6373626 19.9450549,71.0164835 L15,71.0164835 Z"></path>';
+  }
+}
+mojs.addShape('s', S);
+
+// VARIABLES
+const {approximate} = mojs.easing,
+      shiftCurve = approximate(mojs.easing.path( 'M0,100 C50,100 50,100 50,50 C50,0 50,0 100,0' )),
+      scaleCurve = approximate(mojs.easing.path( 'M0,100 C21.3776817,95.8051376 50,77.3262711 50,-700 C50,80.1708527 76.6222458,93.9449005 100,100' )),
+      charSize = 25,
+      leftStep = 22,
+      logo     = document.querySelector('#js-logo');
+
+const CHAR_OPTS = {
+        parent:       logo,
+        isForce3d:    true,
+        fill:         'white',
+        radius:       charSize/2,
+        stroke:       'white',
+        strokeWidth:  2
+      }
+
+const CHAR_HIDE_THEN = {
+        delay: 930,
+        isShowEnd: false
+      }
+
+// HELPERS
+const scale = function (curve, n) {
+  return (p) => { return n*curve(p); }
+}
+const increase = function (curve, n) {
+  return (p) => { return n + curve(p); }
+}
+
+// CURVES
+const scaleC = approximate( increase( scaleCurve, 1 ) ),
+      scaledCurve = ( amount ) => {
+        return increase( scale( scaleCurve, amount ), 1 );
+      },
+      scaleCShort = approximate( scaledCurve(.75) );
+
+
+// SHAPES
+const mCharacter = new mojs.Shape({
+    ...CHAR_OPTS,
+    shape:    'm',
+    left:     leftStep + '%',
+    x:        -7,
+    y:        { [350] : 150, easing: shiftCurve },
+    scaleY:   { 1 : 1, curve: scaleCShort },
+    origin:   { '50% 100%' : '50% 0%', easing: shiftCurve },
+    delay:    232,
+    duration: 680,
+  }).then({
+    delay:   115,
+    y:       { to: 0, easing: shiftCurve },
+    scaleY:  { 1: 1, curve: approximate( scaledCurve(.5) ) },
+    origin: { '50% 100%' : '50% 0%', easing: shiftCurve }
+  }).then(CHAR_HIDE_THEN);
+
+const oCharacter = new mojs.Shape({
+    ...CHAR_OPTS, 
+    shape:        'circle',
+    fill:         'none',
+    left:         2*leftStep + '%',
+    delay:        350,
+    duration:     465,
+    strokeWidth:  3,
+    x:            200,
+    y:            { [-100] : 250, easing: shiftCurve },
+    scaleY:       { 1: 1, curve: scaleC },
+    origin:       { '50% 0%' : '50% 100%', easing: shiftCurve }
+  }).then({
+    duration:     407,
+    x:            { to: 0, easing: shiftCurve },
+    scaleX:       { 1: 1, curve: scaleCShort },
+    origin:       { '100% 50%' : '0% 50%', easing: shiftCurve }
+  }).then({
+    duration:     700,
+    y:            { to: 0, easing: shiftCurve },
+    scaleY:       { 1: 1, curve: scaleCShort },
+    origin:       { '50% 100%' : '50% 0%', easing: shiftCurve }
+  }).then(CHAR_HIDE_THEN);
+
+const oCharacterInner = new mojs.Shape({
+    parent: oCharacter.el,
+    fill:         'white',
+    radius:       3,
+    delay:        1337,
+    y:            { 0: 35 },
+    easing:       'expo.out',
+    isForce3d:    true,
+    isShowStart:  true
+}).then({
+    y:            0,
+    easing:       'elastic.out',
+    duration:     1160,
+});
+
+const jCharacter = new mojs.Shape({
+      ...CHAR_OPTS,
+      shape:      'j',
+      left:       3*leftStep + '%',
+      delay:      40,
+      duration:   580,
+      x:         -200,
+      y:          { [250] : -100, easing: shiftCurve },
+      scaleY:     { 1: 1, curve: scaleC },
+      origin:     { '50% 100%' : '50% 0%', easing: shiftCurve }
+    })
+.then({
+      duration:   523,
+      x:          { to: 0, easing: shiftCurve },
+      scaleX:     { 1: 1, curve: scaleCShort },
+      origin:     { '0% 50%' : '100% 50%', easing: shiftCurve }
+    })
+.then({
+      y:          { to: 0, easing: shiftCurve },
+      // x:          { to: charSize, easing: shiftCurve },
+      scaleY:     { 1: 1, curve:  approximate( scaledCurve(.5) ) },
+      origin:     { '50% 0%' : '50% 100%', easing: shiftCurve }
+}).then(CHAR_HIDE_THEN);
+
+const sCharacter = new mojs.Shape({
+      ...CHAR_OPTS,
+      shape:      's',
+      left:       4*leftStep + '%',
+      delay:      116,
+      duration:   523,
+      x:          { 500: 0, easing: shiftCurve },
+      y:          200,
+      scaleX:     { 1: 1, curve: scaleC },
+      origin:     { '100% 50%' : '0% 100%', easing: shiftCurve }
+    })
+.then({
+      delay:      116,
+      y:          { to: 0, easing: shiftCurve },
+      scaleY:     { 1: 1, curve: scaleCShort },
+      origin:     { '50% 100%' : '50% 0%', easing: shiftCurve }
+    }).then({ ...CHAR_HIDE_THEN, delay: 1280 });
+
+// LINES
+
+let LINE_OPTS = {
+  shape:        'line',
+  strokeWidth:  { 10: 0 },
+  stroke:       COLORS.cyan,
+  radius:       44,
+  parent:       logo,
+  angle:        90,
+  duration:     465,
+  delay:        495,
+  radiusY:      0,
+  strokeDasharray: '100% 100%',
+  strokeDashoffset: { '100%': '-100%' }
+};
+
+let line1 = new mojs.Shape({
+  ...LINE_OPTS,
+  x:  189,
+  y:  { [-20] : 160 },
+});
+
+let line2 = new mojs.Shape({
+  ...LINE_OPTS,
+  x: -175,
+  y: { 200 : -20 },
+  stroke: COLORS.hotpink,
+  strokeDashoffset: { '-100%' : '100%' },
+  delay: 290
+});
+
+let line3 = new mojs.Shape({
+  ...LINE_OPTS,
+  radius: 53,
+  y: 30,
+  stroke: COLORS.yellow,
+  strokeDashoffset: { '-100%': '100%' },
+  delay: 804,
+  angle: 0
+});
+
+let StaggerShape = new mojs.stagger( mojs.Shape );
+
+let underlines = new StaggerShape({
+  ...LINE_OPTS,
+  radius: 53,
+  angle:  0,
+  radiusY: 0,
+  y: 30,
+  strokeWidth: 2,
+  stroke: [ COLORS.hotpink, COLORS.yellow, COLORS.cyan, COLORS.white ],
+  duration: 581,
+  delay: 'stagger(1686, 145)',
+  strokeDasharray: null,
+  strokeDashoffset: null,
+  scaleX: { 0: 1 },
+  origin: '0 50%',
+  quantifier: 'stroke',
+  easing: 'expo.out',
+  x: 1,
+  isForce3d: true
+});
+
+// SHAPES
+let shapes = new StaggerShape({
+  parent:       logo,
+  left:         '100%',
+  x:            [ -20, 10, 0 ],
+  y:            [ -25, -5, -35 ],
+  quantifier:   'shape',
+  shape:        [ 'circle', 'polygon', 'rect' ],
+  radius:       7,
+  fill:         'none',
+  stroke:       [ 'deeppink', COLORS.cyan, COLORS.yellow ],
+  strokeWidth:  { 5 : 0 },
+  scale:        { .75 : 1 },
+  delay:        'stagger(1860, 58)',
+  isTimelineLess: true
+});
+
+// LOGO SHIFT
+let yShift = 0;
+const getYShift = () => {
+  const w = window;
+  const height = w.innerHeight || e.clientHeight || g.clientHeight;
+  yShift = height/1.5;
+}
+
+getYShift();
+window.addEventListener('resize', getYShift);
+
+
+let logoShift = new mojs.Tween({
+  duration: 349,
+  delay:    2790,
+  onUpdate (p) {
+    var shiftP = mojs.easing.cubic.in( p );
+    var scaleP = mojs.easing.quad.in( p );
+    
+    mojs.h.setPrefixedStyle( logo, 'transform',
+      `translate(0px, ${ yShift*shiftP }px)
+      scaleY(${ 1 + 25*scaleP })`
+    );
+  }
+})
+
+const timeline = new mojs.Timeline({
+  onStart () {
+    mojs.h.setPrefixedStyle( logo, 'transform', 'none' );
+  },
+  onComplete () {
+    let modules = underlines.childModules;
+    for (var i = 0; i < modules.length; i++) {
+      modules[i]._hide();
+    }
+  }
+});
+timeline
+  .add(
+  mCharacter, oCharacter, oCharacterInner, jCharacter, sCharacter,
+  underlines, line1, line2, line3,
+  shapes,
+  logoShift
+);
+
+// var hoter = new MojsPlayer({ add: timeline, isPlaying: true, isRepeat: true });
 
   function winScroll(number,element,classId) {
     if (window.scrollY > number) {
@@ -683,849 +1106,3 @@ console.log(ElmMoveJs);
       element.classList.remove(classId);
     }
   }
- /**
-	Prism Live: Code editor based on Prism.js
-	Works best in Chrome. Currently only very basic support in other browsers (no snippets, no shortcuts)
-	@author Lea Verou
-*/
-(async function() {
-
-  const CURRENT_URL = document.currentScript? new URL(document.currentScript.src) : null;
-  
-  if (!window.Bliss) {
-    // Load Bliss if not loaded
-    console.log("Bliss not loaded. Loading remotely from blissfuljs.com");
-  
-    let bliss = document.createElement("script");
-    bliss.src = "https://blissfuljs.com/bliss.shy.min.js";
-    document.head.appendChild(bliss);
-  
-    await new Promise(resolve => bliss.onload = resolve);
-  }
-  
-  var $ = Bliss, $$ = Bliss.$;
-  var ready = Promise.resolve();
-  
-  if (CURRENT_URL) {
-    // Tiny dynamic loader. Use e.g. ?load=css,markup,javascript to load components
-    var load = CURRENT_URL.searchParams.get("load");
-  
-    if (load !== null) {
-      var files = ["../prism-live.css"];
-  
-      if (load) {
-        files.push(...load.split(/,/).map(c => /\./.test(c)? c : `prism-live-${c}.js`));
-      }
-  
-      ready = Promise.all(files.map(url => $.load(url, CURRENT_URL)));
-    }
-  }
-  
-  var superKey = navigator.platform.indexOf("Mac") === 0? "metaKey" : "ctrlKey";
-  
-  var _ = Prism.Live = class PrismLive {
-    constructor(source) {
-      this.source = source;
-      this.sourceType = source.nodeName.toLowerCase();
-  
-      this.wrapper = $.create({
-        className: "prism-live",
-        around: this.source
-      });
-  
-      if (this.sourceType === "textarea") {
-        this.textarea = this.source;
-        this.code = $.create("code");
-  
-        this.pre = $.create("pre", {
-          className: this.textarea.className + " no-whitespace-normalization",
-          contents: this.code,
-          before: this.textarea
-        });
-      }
-      else {
-        this.pre = this.source;
-        // Normalize once, to fix indentation from markup and then remove normalization
-        // so we can enter blank lines etc
-  
-        // Prism.plugins.NormalizeWhitespace.normalize($("code", this.pre), {});
-        this.pre.classList.add("no-whitespace-normalization");
-        this.code = $("code", this.pre);
-  
-        this.textarea = $.create("textarea", {
-          className: this.pre.className,
-          value: this.pre.textContent,
-          after: this.pre
-        });
-      }
-  
-      _.all.set(this.textarea, this);
-      _.all.set(this.pre, this);
-      _.all.set(this.code, this);
-  
-      this.pre.classList.add("prism-live");
-      this.textarea.classList.add("prism-live");
-      this.source.classList.add("prism-live-source");
-  
-      if (self.Incrementable) {
-        // TODO data-* attribute for modifier
-        // TODO load dynamically if not present
-        new Incrementable(this.textarea);
-      }
-  
-      $.bind(this.textarea, {
-        input: evt => this.update(),
-  
-        keyup: evt => {
-          if (evt.key == "Enter") { // Enter
-            // Maintain indent on line breaks
-            this.insert(this.currentIndent);
-            this.syncScroll();
-          }
-        },
-  
-        keydown: evt => {
-          if (evt.key == "Tab" && !evt.altKey) {
-            // Default is to move focus off the textarea
-            // this is never desirable in an editor
-            evt.preventDefault();
-  
-            if (this.tabstops && this.tabstops.length > 0) {
-              // We have tabstops to go
-              this.moveCaret(this.tabstops.shift());
-            }
-            else if (this.hasSelection) {
-              var before = this.beforeCaret("\n");
-              var outdent = evt.shiftKey;
-  
-              this.selectionStart -= before.length;
-  
-              var selection = _.adjustIndentation(this.selection, {
-                relative: true,
-                indentation: outdent? -1 : 1
-              });
-  
-              this.replace(selection);
-  
-              if (outdent) {
-                var indentStart = _.regexp.gm`^${this.indent}`;
-                var isBeforeIndented = indentStart.test(before);
-                this.selectionStart += before.length + 1 - (outdent + isBeforeIndented);
-              }
-              else { // Indent
-                var hasLineAbove = before.length == this.selectionStart;
-                this.selectionStart += before.length + 1 + !hasLineAbove;
-              }
-            }
-            else {
-              // Nothing selected, expand snippet
-              var selector = _.match(this.beforeCaret(), /\S*$/);
-              var snippetExpanded = this.expandSnippet(selector);
-  
-              if (snippetExpanded) {
-                requestAnimationFrame(() => $.fire(this.textarea, "input"));
-              }
-              else {
-                this.insert(this.indent);
-              }
-            }
-          }
-          else if (_.pairs[evt.key]) {
-            var other = _.pairs[evt.key];
-            this.wrapSelection({
-              before: evt.key,
-              after: other,
-              outside: true
-            });
-            evt.preventDefault();
-          }
-          else if (Object.values(_.pairs).includes(evt.key)) {
-            if (this.selectionStart == this.selectionEnd && this.textarea.value[this.selectionEnd] == evt.key) {
-              this.selectionStart += 1;
-              this.selectionEnd += 1;
-              evt.preventDefault();
-            }
-          }
-          else {
-            for (let shortcut in _.shortcuts) {
-              if (_.checkShortcut(shortcut, evt)) {
-                _.shortcuts[shortcut].call(this, evt);
-                evt.preventDefault();
-              }
-            }
-          }
-        },
-  
-        click: evt => {
-          var l = this.getLine();
-          var v = this.value;
-          var ss = this.selectionStart;
-          //console.log(ss, v[ss], l, v.slice(l.start, l.end));
-        },
-  
-        "click keyup": evt => {
-          if (!evt.key || evt.key.lastIndexOf("Arrow") > -1) {
-            // Caret moved
-            this.tabstops = null;
-          }
-        }
-      });
-  
-      // this.syncScroll();
-      this.textarea.addEventListener("scroll", this, {passive: true});
-  
-      $.bind(window, {
-        "resize": evt => this.syncStyles()
-      });
-  
-      // Copy styles with a delay
-      requestAnimationFrame(() => {
-        this.syncStyles();
-  
-        var sourceCS = getComputedStyle(this.source);
-  
-        this.pre.style.height = this.source.style.height || sourceCS.getPropertyValue("--height");
-        this.pre.style.maxHeight = this.source.style.maxHeight || sourceCS.getPropertyValue("--max-height");
-        this.textarea.spellcheck = this.source.spellcheck || sourceCS.getPropertyValue("--spellcheck");
-      });
-  
-      this.update();
-      this.lang = (this.code.className.match(/lang(?:uage)?-(\w+)/i) || [,])[1];
-  
-      this.observer = new MutationObserver(r => {
-        if (document.activeElement !== this.textarea) {
-          this.textarea.value = this.pre.textContent;
-        }
-      });
-  
-      this.observe();
-  
-      this.source.dispatchEvent(new CustomEvent("prism-live-init", {bubbles: true, detail: this}));
-    }
-  
-    handleEvent(evt) {
-      if (evt.type === "scroll") {
-        this.syncScroll();
-      }
-    }
-  
-    observe () {
-      return this.observer && this.observer.observe(this.pre, {
-        childList: true,
-        subtree: true,
-        characterData: true
-      });
-    }
-  
-    unobserve () {
-      if (this.observer) {
-        this.observer.takeRecords();
-        this.observer.disconnect();
-      }
-    }
-  
-    expandSnippet(text) {
-      if (!text) {
-        return false;
-      }
-  
-      var context = this.context;
-  
-      if (text in context.snippets || text in _.snippets) {
-        // Static Snippets
-        var expansion = context.snippets[text] || _.snippets[text];
-      }
-      else if (context.snippets.custom) {
-        var expansion = context.snippets.custom.call(this, text);
-      }
-  
-      if (expansion) {
-        // Insert snippet
-        var stops = [];
-        var replacement = [];
-        var str = expansion;
-        var match;
-  
-        while (match = _.CARET_INDICATOR.exec(str)) {
-          stops.push(match.index + 1);
-          replacement.push(str.slice(0, match.index + match[1].length));
-          str = str.slice(match.index + match[0].length);
-          _.CARET_INDICATOR.lastIndex = 0;
-        }
-  
-        replacement.push(str);
-        replacement = replacement.join("");
-  
-        if (stops.length > 0) {
-          // make first stop relative to end, all others relative to previous stop
-          stops[0] -= replacement.length;
-        }
-  
-        this.delete(text);
-        this.insert(replacement, {matchIndentation: true});
-        this.tabstops = stops;
-        this.moveCaret(this.tabstops.shift());
-      }
-  
-      return !!expansion;
-    }
-  
-    get selectionStart() {
-      return this.textarea.selectionStart;
-    }
-    set selectionStart(v) {
-      this.textarea.selectionStart = v;
-    }
-  
-    get selectionEnd() {
-      return this.textarea.selectionEnd;
-    }
-    set selectionEnd(v) {
-      this.textarea.selectionEnd = v;
-    }
-  
-    get hasSelection() {
-      return this.selectionStart != this.selectionEnd;
-    }
-  
-    get selection() {
-      return this.value.slice(this.selectionStart, this.selectionEnd);
-    }
-  
-    get value() {
-      return this.textarea.value;
-    }
-    set value(v) {
-      this.textarea.value = v;
-    }
-  
-    get indent() {
-      return _.match(this.value, /^[\t ]+/m, _.DEFAULT_INDENT);
-    }
-  
-    get currentIndent() {
-      var before = this.value.slice(0, this.selectionStart-1);
-      return _.match(before, /^[\t ]*/mg, "", -1);
-    }
-  
-    // Current language at caret position
-    get currentLanguage() {
-      var node = this.getNode();
-      node = node? node.parentNode : this.code;
-      var lang = _.match(node.closest('[class*="language-"]').className, /language-(\w+)/, 1);
-      return _.aliases[lang] || lang;
-    }
-  
-    // Get settings based on current language
-    get context() {
-      var lang = this.currentLanguage;
-      return _.languages[lang] || _.languages.DEFAULT;
-    }
-  
-    setSelection(start, end) {
-      if (start && typeof start === "object" && (start.start || start.end)) {
-        end = start.end;
-        start = start.start;
-      }
-  
-      let prevStart = this.selectionStart;
-      let prevEnd = this.selectionEnd;
-  
-      if (start !== undefined) {
-        this.selectionStart = start;
-      }
-  
-      if (end !== undefined) {
-        this.selectionEnd = end;
-      }
-  
-      // If there is a selection, and it's not the same as the previous selection, fire appropriate select event
-      if (this.selectionStart !== this.selectionEnd && (prevStart !== this.selectionStart || prevEnd !== this.selectionEnd)) {
-        this.textarea.dispatchEvent(new Event("select", {bubbles: true}));
-      }
-    }
-  
-    update (force) {
-      var code = this.value;
-  
-      // If code ends in newline then browser "conveniently" trims it
-      // but we want to see the new line we just inserted!
-      // So we insert a zero-width space, which isn't trimmed
-      if (/\n$/.test(this.value)) {
-        code += "\u200b";
-      }
-  
-      if (!force && this.code.textContent === code && $(".token", this.code)) {
-        // Already highlighted
-        return;
-      }
-  
-      this.unobserve();
-      this.code.textContent = code;
-  
-      Prism.highlightElement(this.code);
-  
-      this.observe();
-    }
-  
-    syncStyles() {
-      // Copy pre metrics over to textarea
-      var cs = getComputedStyle(this.pre);
-  
-      // Copy styles from <pre> to textarea
-      this.textarea.style.caretColor = cs.color;
-  
-      var properties = /^(font|lineHeight)|[tT]abSize/gi;
-  
-      for (var prop in cs) {
-        if (cs[prop] && prop in this.textarea.style && properties.test(prop)) {
-          this.wrapper.style[prop] = cs[prop];
-          this.textarea.style[prop] = this.pre.style[prop] = "inherit";
-        }
-      }
-  
-      // This is primarily for supporting the line-numbers plugin.
-      this.textarea.style['padding-left'] = cs['padding-left'];
-  
-      this.update();
-    }
-  
-    syncScroll() {
-      if (this.pre.clientWidth === 0 && this.pre.clientHeight === 0) {
-        return;
-      }
-  
-      this.pre.scrollTop = this.textarea.scrollTop;
-      this.pre.scrollLeft = this.textarea.scrollLeft;
-    }
-  
-    beforeCaretIndex (until = "") {
-      return this.value.lastIndexOf(until, this.selectionStart);
-    }
-  
-    afterCaretIndex (until = "") {
-      return this.value.indexOf(until, this.selectionEnd);
-    }
-  
-    beforeCaret (until = "") {
-      var index = this.beforeCaretIndex(until);
-  
-      if (index === -1 || !until) {
-        index = 0;
-      }
-  
-      return this.value.slice(index, this.selectionStart);
-    }
-  
-    getLine(offset = this.selectionStart) {
-      var value = this.value;
-      var lf = "\n", cr = "\r";
-      var start, end, char;
-  
-      for (var start = this.selectionStart; char = value[start]; start--) {
-        if (char === lf || char === cr || !start) {
-          break;
-        }
-      }
-  
-      for (var end = this.selectionStart; char = value[end]; end++) {
-        if (char === lf || char === cr) {
-          break;
-        }
-      }
-  
-      return {start, end};
-    }
-  
-    afterCaret(until = "") {
-      var index = this.afterCaretIndex(until);
-  
-      if (index === -1 || !until) {
-        index = undefined;
-      }
-  
-      return this.value.slice(this.selectionEnd, index);
-    }
-  
-    setCaret(pos) {
-      this.selectionStart = this.selectionEnd = pos;
-    }
-  
-    moveCaret(chars) {
-      if (chars) {
-        this.setCaret(this.selectionEnd + chars);
-      }
-    }
-  
-    insert(text, {index} = {}) {
-      if (!text) {
-        return;
-      }
-  
-      this.textarea.focus();
-  
-      if (index === undefined) {
-        // No specified index, insert in current caret position
-        this.replace(text);
-      }
-      else {
-        // Specified index, first move caret there
-        var start = this.selectionStart;
-        var end = this.selectionEnd;
-  
-        this.selectionStart = this.selectionEnd = index;
-        this.replace(text);
-  
-        this.setSelection(
-          start + (index < start? text.length : 0),
-          end + (index <= end? text.length : 0)
-        );
-      }
-    }
-  
-    // Replace currently selected text
-    replace (text) {
-      var hadSelection = this.hasSelection;
-  
-      this.insertText(text);
-  
-      if (hadSelection) {
-        // By default inserText places the caret at the end, losing any selection
-        // What we want instead is the replaced text to be selected
-        this.setSelection({start: this.selectionEnd - text.length});
-      }
-    }
-  
-    // Set text between indexes and restore caret position
-    set (text, {start, end} = {}) {
-      var ss = this.selectionStart;
-      var se = this.selectionEnd;
-  
-      this.setSelection(start, end);
-  
-      this.insertText(text);
-  
-      this.setSelection(ss, se);
-    }
-  
-    insertText (text) {
-      if (!text) {
-        return;
-      }
-  
-      if (_.supportsExecCommand === true) {
-        document.execCommand("insertText", false, text);
-      }
-      else if (_.supportsExecCommand === undefined) {
-        // We still don't know if document.execCommand("insertText") is supported
-        let value = this.value;
-  
-        document.execCommand("insertText", false, text);
-  
-        _.supportsExecCommand = value !== this.value;
-      }
-  
-      if (_.supportsExecCommand === false) {
-        this.textarea.setRangeText(text, this.selectionStart, this.selectionEnd, "end");
-        requestAnimationFrame(() => this.update());
-      }
-  
-      return _.supportsExecCommand;
-    }
-  
-    /**
-     * Wrap text with strings
-     * @param before {String} The text to insert before
-     * @param after {String} The text to insert after
-     * @param start {Number} Character offset
-     * @param end {Number} Character offset
-     */
-    wrap ({before, after, start = this.selectionStart, end = this.selectionEnd} = {}) {
-      var ss = this.selectionStart;
-      var se = this.selectionEnd;
-      var between = this.value.slice(start, end);
-  
-      this.set(before + between + after, {start, end});
-  
-      if (ss > start) {
-        ss += before.length;
-      }
-  
-      if (se > start) {
-        se += before.length;
-      }
-  
-      if (ss > end) {
-        ss += after.length;
-      }
-  
-      if (se > end) {
-        se += after.length;
-      }
-  
-      this.setSelection(ss, se);
-    }
-  
-    wrapSelection (o = {}) {
-      var hadSelection = this.hasSelection;
-  
-      this.replace(o.before + this.selection + o.after);
-  
-      if (hadSelection) {
-        if (o.outside) {
-          // Do not include new text in selection
-          this.selectionStart += o.before.length;
-          this.selectionEnd -= o.after.length;
-        }
-      }
-      else {
-        this.moveCaret(-o.after.length);
-      }
-    }
-  
-    toggleComment() {
-      var comments = this.context.comments;
-  
-      // Are we inside a comment?
-      var node = this.getNode();
-      var commentNode = node.parentNode.closest(".token.comment");
-  
-      if (commentNode) {
-        // Remove comment
-        var start = this.getOffset(commentNode);
-        var commentText = commentNode.textContent;
-  
-        if (comments.singleline && commentText.indexOf(comments.singleline) === 0) {
-          var end = start + commentText.length;
-          this.set(this.value.slice(start + comments.singleline.length, end), {start, end});
-          this.moveCaret(-comments.singleline.length);
-        }
-        else {
-          comments = comments.multiline || comments;
-          var end = start + commentText.length - comments[1].length;
-          this.set(this.value.slice(start + comments[0].length, end), {start, end: end + comments[1].length});
-        }
-      }
-      else {
-        // Not inside comment, add
-        if (this.hasSelection) {
-          comments = comments.multiline || comments;
-  
-          this.wrapSelection({
-            before: comments[0],
-            after: comments[1]
-          });
-        }
-        else {
-          // No selection, wrap line
-          // FIXME *inside indent*
-          comments = comments.singleline? [comments.singleline, ""] : comments.multiline || comments;
-          end = this.afterCaretIndex("\n");
-          this.wrap({
-            before: comments[0],
-            after: comments[1],
-            start: this.beforeCaretIndex("\n") + 1,
-            end: end < 0? this.value.length : end
-          });
-        }
-      }
-    }
-  
-    duplicateContent () {
-      var before = this.beforeCaret("\n");
-      var after = this.afterCaret("\n");
-      var text = before + this.selection + after;
-  
-      this.insert(text, {index: this.selectionStart - before.length});
-    }
-  
-    delete (characters, {forward, pos} = {}) {
-      var i = characters = characters > 0? characters : (characters + "").length;
-  
-      if (pos) {
-        var selectionStart = this.selectionStart;
-        this.selectionStart = pos;
-        this.selectionEnd = pos + this.selectionEnd - selectionStart;
-      }
-  
-      while (i--) {
-        document.execCommand(forward? "forwardDelete" : "delete");
-      }
-  
-      if (pos) {
-        // Restore caret
-        this.selectionStart = selectionStart - characters;
-        this.selectionEnd = this.selectionEnd - pos + this.selectionStart;
-      }
-    }
-  
-    /**
-     * Get the text node at a given chracter offset
-     */
-    getNode(offset = this.selectionStart, container = this.code) {
-      var node, sum = 0;
-      var walk = document.createTreeWalker(container, NodeFilter.SHOW_TEXT);
-  
-      while (node = walk.nextNode()) {
-        sum += node.data.length;
-  
-        if (sum >= offset) {
-          return node;
-        }
-      }
-  
-      // if here, offset is larger than maximum
-      return null;
-    }
-  
-    /**
-     * Get the character offset of a given node in the highlighted source
-     */
-    getOffset(node) {
-      var range = document.createRange();
-      range.selectNodeContents(this.code);
-      range.setEnd(node, 0);
-      return range.toString().length;
-    }
-  
-    // Utility method to get regex matches
-    static match(str, regex, def, index = 0) {
-      if (typeof def === "number" && arguments.length === 3) {
-        index = def;
-        def = undefined;
-      }
-  
-      var match = str.match(regex);
-  
-      if (index < 0) {
-        index = match.length + index;
-      }
-  
-      return match? match[index] : def;
-    }
-  
-    static checkShortcut(shortcut, evt) {
-      return shortcut.trim().split(/\s*\+\s*/).every(key => {
-        switch (key) {
-          case "Cmd":   return evt[superKey];
-          case "Ctrl":  return evt.ctrlKey;
-          case "Shift": return evt.shiftKey;
-          case "Alt":   return evt.altKey;
-          default: return evt.key === key;
-        }
-      });
-    }
-  
-    static registerLanguage(name, context, parent = _.languages.DEFAULT) {
-      Object.setPrototypeOf(context, parent);
-      return _.languages[name] = context;
-    }
-  
-    static matchIndentation(text, currentIndent) {
-      // FIXME this assumes that text has no indentation of its own
-      // to make this more generally useful beyond snippets, we should first
-      // strip text's own indentation.
-      text = text.replace(/\r?\n/g, "$&" + currentIndent);
-    }
-  
-    static adjustIndentation(text, {indentation, relative = true, indent = _.DEFAULT_INDENT}) {
-      if (!relative) {
-        // First strip min indentation
-        var minIndent = text.match(_.regexp.gm`^(${indent})+`).sort()[0];
-  
-        if (minIndent) {
-          text.replace(_.regexp.gm`^${minIndent}`, "");
-        }
-      }
-  
-      if (indentation < 0) {
-        return text.replace(_.regexp.gm`^${indent}`, "");
-      }
-      else if (indentation > 0) { // Indent
-        return text.replace(/^/gm, indent);
-      }
-    }
-  
-    static create (source, ...args) {
-      let ret = _.all.get(source);
-      if (!ret) {
-        ret = new _(source);
-      }
-      return ret;
-    }
-  };
-  
-  // Static properties
-  Object.assign(_, {
-    all: new WeakMap(),
-    ready,
-    DEFAULT_INDENT: "\t",
-    CARET_INDICATOR: /(^|[^\\])\$(\d+)/g,
-    snippets: {
-      "test": "Snippets work!",
-    },
-    pairs: {
-      "(": ")",
-      "[": "]",
-      "{": "}",
-      '"': '"',
-      "'": "'",
-      "`": "`"
-    },
-    shortcuts: {
-      "Cmd + /": function() {
-        this.toggleComment();
-      },
-      "Ctrl + Shift + D": function() {
-        this.duplicateContent();
-      }
-    },
-    languages: {
-      DEFAULT: {
-        comments: {
-          multiline: ["/*", "*/"]
-        },
-        snippets: {}
-      }
-    },
-    // Map of Prism language ids and their canonical name
-    aliases: (() => {
-      var ret = {};
-      var canonical = new WeakMap(Object.entries(Prism.languages).map(x => x.reverse()).reverse());
-  
-      for (var id in Prism.languages) {
-        var grammar = Prism.languages[id];
-  
-        if (typeof grammar !== "function") {
-          ret[id] = canonical.get(grammar);
-        }
-      }
-  
-      return ret;
-    })(),
-  
-    regexp: (() => {
-      var escape = s => s.replace(/[-\/\\^$*+?.()|[\]{}]/g, "\\$&");
-      var _regexp = (flags, strings, ...values) => {
-        var pattern = strings[0] + values.map((v, i) => escape(v) + strings[i+1]).join("");
-        return RegExp(pattern, flags);
-      };
-      var cache = {};
-  
-      return new Proxy(_regexp.bind(_, ""), {
-        get: (t, property) => {
-          return t[property] || cache[property]
-               || (cache[property] = _regexp.bind(_, property));
-        }
-      });
-    })()
-  });
-  
-  _.supportsExecCommand = document.execCommand? undefined : false;
-  
-  $.ready().then(() => {
-    $$(":not(.prism-live) > textarea.prism-live, :not(.prism-live) > pre.prism-live").forEach(source => _.create(source));
-  });
-  
-  })();
-  

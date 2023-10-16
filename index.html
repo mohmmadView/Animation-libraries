@@ -11,9 +11,10 @@
    <!--TODO ------------------------- animateCSS ----------------------------->
    <link rel="stylesheet" href="./node_modules/animate.css/animate.min.css">
     <!--?------------------------- TheEnd animateCSS ---------------------- -->
-    <link rel="stylesheet" href="https://prismjs.com/themes/prism.css">
+    <link rel="stylesheet" href="./src/prism.css">
+    <!-- <link rel="stylesheet" href="https://prismjs.com/themes/prism.css">
 	<link rel="stylesheet" href="https://prismjs.com/plugins/line-numbers/prism-line-numbers.css">
-	<link rel="stylesheet" href="prism-live.css">
+	<link rel="stylesheet" href="prism-live.css"> -->
 	<link rel="stylesheet" href="./style.css">
     <title>Document</title>
 </head>
@@ -230,10 +231,10 @@
 </div>
 
 <!--!  title sourceCode -->
-<div class="w-5/6 h-2/4"> 
+<div class="w-full h-3/4"> 
 <div class=" flex justify-center relative w-full h-full divMenuAnimeJs">
-   <div class="absolute w-2/4 h-2/4 flex divAnimateJs animate__animated">
-      <svg viewBox="100 0 245 100" xmlns="http://www.w3.org/2000/svg">
+   <div class="absolute w-5/6 h-5/6 flex justify-center divAnimateJs animate__animated">
+      <svg class="w-full" viewBox="100 0 245 100" xmlns="http://www.w3.org/2000/svg">
          <defs></defs>
          <text class="animate_js  animate__animated" style="fill: rgb(235, 14, 14); font-family:Distro Extinct; stroke: rgb(124, 132, 97); stroke-dasharray: 30px; stroke-dashoffset: -50px; stroke-opacity: 0.53; stroke-width: 0.756387px; white-space: pre;" transform="matrix(4.114889, 0, 0, 3.817554, -392.250885, -53.289532)" x="119.835" y="32.323">AnimeJs</text>
        </svg>
@@ -953,7 +954,7 @@
 
 
  <div class="bg-slate-400 h-28"> </div>
- <div class="bg-slate-600/20 h-28">5</div>
+ <div id="mojs-div" class="bg-slate-600/20 h-28">5</div>
  <div class="bg-slate-600/20 h-28">6</div>
  <div class="bg-slate-600/20 h-28">7</div>
  <div class="bg-slate-600 h-28">7</div>
@@ -966,15 +967,15 @@
 <div>6</div>
 
 
+<div id="js-logo" class="logo"></div>
 
-
-
+<!-- 
 </div>
 </div>
 
 
  </div>
- 
+  -->
 
 <!-- 
     ///===========
@@ -1012,7 +1013,9 @@
 //    }); </pre>
 // </div> -->
 
-
+<pre><code class="language-js">elmDivAnimeJs.classList.remove("mt-52");
+  elmDivAnimeJs.classList.add("mt-2");
+</code></pre>
   
 <!--TODO ------------ library_MoJS ---------------- -->
 <script src="https://cdn.jsdelivr.net/npm/@mojs/core"></script>
@@ -1020,6 +1023,7 @@
 <script src="./node_modules/animejs/lib/anime.min.js"></script>
 <!--?----------------- TheEnd library -------------------- -->
 <script src="./app.js"></script>
+ <script  src="./src/prism.js"></script>
 </body>
 </html> 
 
