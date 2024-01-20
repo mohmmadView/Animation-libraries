@@ -422,13 +422,15 @@ video {
 @font-face {
   font-family: "FashionVictim";
 
-  src: local("FashionVictim"),
-        url("FashionVictim.woff") format("woff") tech(color-COLRv1), url("FashionVictim.ttf")
-          format("TrueType"), url("FashionVictim.eot") format("opentype");
+  src:
+      local("FashionVictim"),
+      url("FashionVictim.woff") format("woff") tech(color-COLRv1),
+      url("FashionVictim.ttf") format("TrueType"),
+      url("FashionVictim.eot") format("opentype");
 }
 
-#animateCss{
-  font-family: "FashionVictim" ;
+#animateCss {
+  font-family: "FashionVictim";
 }
 
 *, ::before, ::after {
@@ -2816,7 +2818,8 @@ video {
   content: var(--tw-content);
 }
 
-body, html {
+body,
+html {
   background-color: #1a1a1a;
   height: 100%;
 }
@@ -2827,37 +2830,37 @@ body, html {
   margin: 100px auto;
 }
 
-#SVGRoot{
+#SVGRoot {
   cursor: pointer;
 }
 
-.bounce{
+.bounce {
   width: 35%;
 }
 
-.arrow{
+.arrow {
   width: 15%;
 }
 
-.DivClassName{
+.DivClassName {
   width: 50%;
 }
 
-.title{
+.title {
   width: 80%;
 }
 
-#svg_2{
+#svg_2 {
   width: 100%;
 }
 
-.animateCss{
+.animateCss {
   width: 40%;
-  font-family: 'FashionVictim';
+  font-family: "FashionVictim";
 }
 
-.one{
-  width:3%
+.one {
+  width: 3%;
 }
 
 /* animateJs-6 */
@@ -2907,7 +2910,7 @@ div.prism-live {
 
 textarea.prism-live,
 pre.prism-live {
-  padding: .2rem .5rem;
+  padding: 0.2rem 0.5rem;
   box-sizing: border-box;
   margin: 0;
 }
@@ -2928,7 +2931,7 @@ textarea.prism-live {
   background: transparent;
   resize: none;
   --selection-background: hsl(320, 80%, 25%);
-  --selection-color: hsla(0, 0%, 100%, .8);
+  --selection-color: hsla(0, 0%, 100%, 0.8);
 }
 
 @supports (not (caret-color: black)) and (-webkit-text-fill-color: black) {
@@ -2963,7 +2966,7 @@ pre.prism-live {
 }
 
 pre.prism-live > code:empty::before {
-  content: " "
+  content: " ";
 }
 
 @media (min-width: 640px) {

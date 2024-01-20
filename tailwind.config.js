@@ -1,14 +1,12 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./**/*.{html,js}'],
+  content: ["./**/*.{html,js}"],
   theme: {
-    extend: {
-       },
+    extend: {},
     fontFamily: {
-     'body':['FashionVictim'],
-     'bookman':['URW Bookman L']
-
-    }
+      body: ["FashionVictim"],
+      bookman: ["URW Bookman L"],
+    },
   },
   plugins: [],
-}
+};
