@@ -1,5 +1,6 @@
 // import Prism from "prismjs";
 // console.log(Prism.languages);
+  
 //TODO -------------------------------------------------------------------------- */
 //?  --------------------------------- moveBorder ------------------------------- */
 //TODO -------------------------------------------------------------------------- */
@@ -86,10 +87,7 @@ for (let i = 0; i < ArrayListMove.length; i++) {
 //! -------------------------------------------------------------------------- */
 //* -------------------------- TheEndClassAnimation.css ----------------------------- */
 //! -------------------------------------------------------------------------- */
-// window.onscroll=()=>{
-//   console.log("test");
-// else{
-// }}
+
 
 //TODO ----------------------- FunctionViewClassAnimation ----------------------- */
 function handler(element, moveAnimate, time) {
@@ -102,8 +100,12 @@ function handler(element, moveAnimate, time) {
 //* ----------------------------- StartAnimate.js ----------------------------- */
 //! -------------------------------------------------------------------------- */
 let elmAnimateJs = document.querySelector(".animate_js");
+let elmContainerSvgAnimeJs = document.querySelector("#container-Svg-AnimeJs");
+let containerAnimateJs = document.querySelector("#Code-svgAnimateJs");
+console.log(elmContainerSvgAnimeJs);
 let offsetAnimateJs = anime.setDashoffset(elmAnimateJs);
-elmAnimate.setAttribute("stroke-dashoffset", offsetAnimateJs);
+function SvgAnimateJs() {
+  elmAnimate.setAttribute("stroke-dashoffset", offsetAnimateJs);
 anime({
   targets: elmAnimateJs,
   strokeDashoffset: [offsetAnimateJs, 25],
@@ -114,6 +116,25 @@ anime({
   easing: "easeInOutSine",
   autoplay: true,
 });
+
+  console.log("test.win");
+}
+containerAnimateJs.addEventListener("click",()=>{
+  console.log("containeAnimeJs");
+  // elmContainerSvgAnimeJs.classList.add("hidden");
+  elmTextAnimeJs.innerHTML = "";
+  elmTextAnimeJs.insertAdjacentHTML("beforeend", `
+  <div class="absolute w-5/6 h-5/6 flex justify-center divAnimateJs animate__animated animate__lightSpeedInLeft">
+         <svg class="w-full" viewBox="100 0 245 100" xmlns="http://www.w3.org/2000/svg">
+            <defs></defs>
+         <text class="animate_js  animate__animated" style="fill: rgb(235, 14, 14); font-family: &quot;Distro Extinct&quot;; stroke: rgb(124, 132, 97); stroke-dasharray: 30px; stroke-dashoffset: 3.37319px; stroke-opacity: 0.53; stroke-width: 0.756387px; white-space: pre;" transform="matrix(4.114889, 0, 0, 3.817554, -392.250885, -53.289532)" x="119.835" y="32.323" stroke-dasharray="undefined">AnimeJs</text>
+          </svg>
+  
+  `);
+  // sourceCodeAnimJs.remove();
+})
+SvgAnimateJs()
+
 //TODO --------------- scrollAnimateJs ----------------- */
 // let body = document.body;
 let elmDivAnimateJs = document.querySelector(".divAnimateJs");
@@ -129,14 +150,16 @@ window.onscroll = () => {
 //* ----------------------------- MenuAnimeJs -------------------------------- */
 //! -------------------------------------------------------------------------- */
 let elmMenuCodeAnimeJs = document.querySelector("#menuCodeAnimeJs");
+ let sourceCodeAnimJs = document.querySelector("#innerSourceCodeAnimeJ");
 //TODO --------------- animeJs-1 ----------------- */
 let elemAnimeJs_1 = document.querySelector("#animejs-1");
 let elmTextAnimeJs = document.querySelector(".divMenuAnimeJs");
 let elmDivAnimeJs = document.querySelector("#divAll");
-let createElm = document.createElement("div").innerHTML;
+let createElm = document.createElement("div");
 elemAnimeJs_1.addEventListener("click", animeJs_1);
 let elmEl = document.querySelectorAll(".el");
 function animeJs_1() {
+ 
   createElm.classList =
     "relative bottom-56 w-3/4 h-52 animate__animated animate__zoomInDown bg-slate-200/30 border-8 ring ring-rose-500 border-double";
   elmDivAnimeJs.classList.remove("mt-52");
@@ -162,7 +185,6 @@ function animeJs_1() {
 let elementAnimeJS_2 = document.querySelector("#animejs-2");
 elementAnimeJS_2.addEventListener("click", clickAnimejs_2);
 function clickAnimejs_2() {
-  let sourceCodeAnimJs = document.querySelector("#innerSourceCodeAnimeJs");
   createElm.classList =
     "relative bottom-56 w-3/4 h-52 animate__animated animate__zoomInDown bg-slate-200/30 border-8 ring ring-rose-500 border-double";
   elmDivAnimeJs.classList.remove("mt-52");
@@ -196,9 +218,8 @@ function clickAnimejs_3() {
   elmDivAnimeJs.classList.add("mt-2");
   elmTextAnimeJs.innerHTML = "";
   ////! source code  anime js
+ 
   elmTextAnimeJs.insertAdjacentHTML("beforeend", codeAnmieJs_All[2]);
-  let sourceCodeAnimJs = document.querySelector("#innerSourceCodeAnimeJs");
-  sourceCodeAnimJs.classList.add("text-2xl");
   //!  fix Repaly Fix
   var progressLogEl = document.querySelector(".promise-demo .progress-log");
   var promiseEl = document.querySelector(".promise-demo .el");
@@ -236,7 +257,6 @@ function clickAnimejs_4() {
   elmTextAnimeJs.innerHTML = "";
   ////! source code  anime js
   elmTextAnimeJs.insertAdjacentHTML("beforeend", codeAnmieJs_All[3]);
-  let sourceCodeAnimJs = document.querySelector("#innerSourceCodeAnimeJs");
   let path = anime.path(".motion-path-demo path");
   anime({
     targets: ".motion-path-demo .el",
@@ -251,9 +271,10 @@ function clickAnimejs_4() {
 }
 //TODO --------------- animeJs-5 ----------------- */
 let elementAnimeJS_5 = document.querySelector("#animejs-5");
+
 elementAnimeJS_5.addEventListener("click", clickAnimejs_5);
 function clickAnimejs_5() {
-  let sourceCodeAnimJs = document.querySelector("#innerSourceCodeAnimeJs");
+ 
   createElm.classList =
     "relative bottom-56 w-3/4 h-52 animate__animated animate__zoomInDown bg-slate-200/30 border-8 ring ring-rose-500 border-double";
   elmDivAnimeJs.classList.remove("mt-52");
@@ -348,12 +369,35 @@ window.addEventListener("scroll", () => {
     easing: "easeInOutSine",
   });
 });
-console.log(ElmMoveJs);
-
 //! move Mo.js \\
 
 //? ======> MoveJs <======\\
+const circleCopy = document.querySelector("#Layer_1"); 
+circleCopy.addEventListener("click",()=>{
+  console.log("clickCir");
+  ClipboardEvent
+  navigator.clipboard.writeText(`"
+  <div class="relative bg-black/20 h-28 ">
+  <div id="bouncyCircle2" class="absolute top-10 left-1/2  w-4  h-8" ></div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/@mojs/core"></script>
+<script>
+const bouncyCircle2 = new mojs.Shape({
+parent: "#bouncyCircle2",
+shape: "circle",
+fill: { "#F64040": "#FC46AD" },
+radius: { 20: 40 },
+duration: 2000,
+isYoyo: true,
+isShowStart: true,
+easing: "elastic.inout",
+repeat: 100,
+});
 
+bouncyCircle2.play();
+</script>`
+  );
+})
 const bouncyCircle = new mojs.Shape({
   parent: "#bouncyCircle",
   shape: "circle",
@@ -365,8 +409,7 @@ const bouncyCircle = new mojs.Shape({
   easing: "elastic.inout",
   repeat: 100,
 });
-// let mojs_1 = document.querySelector("#bouncyCircle2")
-// console.log(mojs_1);
+
 bouncyCircle.play();
 
 new mojs.Shape({
@@ -461,7 +504,11 @@ function winScroll(number, element, classId) {
 //? =========> Code AnimeJs ALL <========\\
 // ////////////////////////////////////////
 let codeAnmieJs_All = [
-  `<div  class="w-3/4 flex justify-center">
+  `
+  <div class="">
+  
+  </div>
+  <div  class="w-3/4 flex justify-center">
   <div id="innerSourceCodeAnimeJs" class="relative flex p-2   w-full  h-42 z-10 animate__animated animate__zoomInDown bg-slate-200/30 border-8 ring ring-rose-500  border-double">
    <div class="w-2/4 p-2 bg-rose-600/20 text-white h-auto">
       <h2 class="text-white"><<span class="text-yellow-600">div</span> <span class="text-yellow-400"> class=</span>"<span class="text-green-700">function-based-params-demo</span>"> 
