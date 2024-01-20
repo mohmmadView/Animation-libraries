@@ -488,7 +488,7 @@ let codeAnmieJs_All = [
 `,
   `<div class="w-3/4 flex justify-center">
   <div id="innerSourceCodeAnimeJs" class="relative flex p-2   w-full h-42 z-10 animate__animated animate__zoomInDown  border-8 ring ring-rose-500  border-double">
-   <div class="w-2/4 p-2 bg-blue-500 text-2xl text-white">
+   <div class="w-2/4 p-2 bg-blue-600/20 text-2xl text-white">
       <h2 class="text-white"><<span class="text-yellow-600">div</span> <span class="text-yellow-400"> class=</span>"<span class="text-green-700">function-based-params-demo</span>"> 
          <h2 class="text-white"><<span class="text-yellow-600">div</span> <span class="text-yellow-400"> class=</span>"<span class="text-green-700">autoplay-true</span>">   <<span class="text-yellow-600">/div</span>></h2>
          <h2 class="text-white"><<span class="text-yellow-600">div</span> <span class="text-yellow-400"> class=</span>"<span class="text-green-700">autoplay-false</span>">   <<span class="text-yellow-600">/div</span>></h2>
@@ -496,7 +496,7 @@ let codeAnmieJs_All = [
             <<span class="text-yellow-600">/div</span>></h2>
          <<span class="text-yellow-600">/div</span>></h2>
    </div>
-   <div class="w-2/4 ">
+   <div class="w-2/4  bg-blue-600/20">
       <pre><span class="text-blue-800">anime</span>({
     <span class="text-green-600"> targets:</span> <span class="text-yellow-400">'.autoplay-true'</span>,
     <span class="text-green-600">translateX:</span><span class="text-yellow-400"> 200,</span>
@@ -514,14 +514,14 @@ let codeAnmieJs_All = [
   `
      <div class="w-3/4 flex justify-center">
   <div id="innerSourceCodeAnimeJs" class="relative flex p-2   w-full h-42 z-10 animate__animated animate__zoomInDown bg-slate-200/30 border-8 ring ring-rose-500  border-double">
-   <div class="w-2/4 p-2 bg-rose-600/20 text-white h-auto">
+   <div class="w-2/4 p-2 bg-yellow-700/10 text-white  h-auto">
       <h2 class="text-white"><<span class="text-yellow-600">div</span> <span class="text-yellow-400"> class=</span>"<span class="text-green-700">css-transforms-demo</span>"> 
         
          <h2 class="text-white"><<span class="text-yellow-600">div</span> <span class="text-yellow-400"> class=</span>"<span class="text-green-700">el</span>"> 
             <<span class="text-yellow-600">/div</span>></h2>
          <<span class="text-yellow-600">/div</span>></h2>
    </div>
-   <div class="w-2/4 bg-rose-600/20 ">
+   <div class="w-2/4 bg-yellow-700/10">
       <pre><span class="text-blue-800">anime</span>({
     <span class="text-green-600"> targets:</span> <span class="text-yellow-400">'.css-transforms-demo .el'</span>,
     <span class="text-green-600">translateX:</span><span class="text-yellow-400"> 180,</span>
@@ -533,16 +533,16 @@ let codeAnmieJs_All = [
  </div>
      `,
   `
-      <div class="div w-3/4 h-2/6  flex absolute justify-center">
+      <div class="div w-3/4   flex absolute justify-center">
   <div id="innerSourceCodeAnimeJs" class="relative flex p-2   w-full h-5/6 z-10 animate__animated animate__zoomInDown bg-slate-200/30 border-8 ring ring-rose-500  border-double">
-   <div class="w-2/4 p-2 bg-rose-600/20 text-white text-2xl">
+   <div class="w-2/4 p-2 bg-green-600/10 text-white text-2xl">
       <h2 class="text-white"><<span class="text-yellow-600">div</span> <span class="text-yellow-400"> class=</span>"<span class="text-green-700">motion-path-demo</span>"> 
          <h2 class="text-white"><<span class="text-yellow-600">div</span> <span class="text-yellow-400"> class=</span>"<span class="text-green-700">el follow-path</span>">   <<span class="text-yellow-600">/div</span>></h2>
          <h2 class="text-white"><<span class="text-yellow-600">svg</span> <span class="text-yellow-400"> width=</span>"<span class="text-green-700">256</span>" <span class="text-yellow-400"> height=</span>"<span class="text-green-700">112</span>">
        <br>< <span class="text-yellow-600">path</span>> <<span class="text-yellow-600">path</span>> <<span class="text-yellow-600">/svg</span>></h2>
        <<span class="text-yellow-600">/div</span>></h2>
    </div>
-   <div class="w-2/4 bg-rose-600/20 text-xg ">
+   <div class="w-2/4 bg-green-600/10 text-xg ">
       <pre>
       <span class="text-rose-400">let</span><span class="text-white"> path</span><span class="text-blue-400">=</span>anime.<span class="text-blue-600">path</span><span class="text-green-700">('.motion-path-demo path')</span>
       <span class="text-blue-800">anime</span>({
@@ -562,7 +562,7 @@ let codeAnmieJs_All = [
       `,
   //4
   `
-      <div class="div w-3/4 h-2/6  flex absolute justify-center">
+      <div class="div w-3/4   flex absolute justify-center">
   <div id="innerSourceCodeAnimeJs" class="relative flex p-2   w-full h-42 z-10 animate__animated animate__zoomInDown bg-slate-200/30 border-8 ring ring-rose-500  border-double">
    <div class="w-2/4 p-2 bg-rose-600/20 text-white h-auto">
       <h2 class="text-white"><<span class="text-yellow-600">div</span> <span class="text-yellow-400"> class=</span>"<span class="text-green-700">staggering-grid-demo</span>"> 
