@@ -458,6 +458,7 @@ bouncyCircle2.play();
 </script>`
   );
 })
+
 const bouncyCircle = new mojs.Shape({
   parent: "#bouncyCircle",
   shape: "circle",
@@ -474,7 +475,7 @@ bouncyCircle.play();
 const bouncyTriangle = new mojs.Shape({
   parent:     '#triangle',
   shape:      'polygon',
-  fill:       'orange',
+  fill:       'red',
   radius:     65,
   rotate:      { [-120]: -40 },
   x:          { [-140]: 70 },
@@ -489,6 +490,95 @@ const bouncyTriangle = new mojs.Shape({
   isShowEnd:  false
 })
 bouncyTriangle.play()
+const OPTS = {
+  fill:           'none',
+  radius:         25,
+  strokeWidth:    { 50 : 0 },
+  scale:          { 0: 1 },
+  angle:          { 'rand(-35, -70)': 0 },
+  duration:       500,
+  left: 0,        top: 0,
+  easing: 'cubic.out'
+};
+
+const circle1 = new mojs.Shape({
+  ...OPTS,
+  stroke:         'cyan',
+});
+
+const circle2 = new mojs.Shape({
+  ...OPTS,
+  radius:         { 0 : 15 },
+  strokeWidth:    { 30: 0 },
+  stroke:         'magenta',
+  delay:          'rand(75, 150)'
+});
+
+document.querySelector('#mojs8').addEventListener( 'click', function (e) {
+  
+   circle1
+    .tune({ x: e.pageX, y: e.pageY  })
+    .replay();
+  
+  circle2
+    .tune({ x: e.pageX, y: e.pageY  })
+    .replay();
+  
+});
+
+const SWIRL_OPTS = {
+  left: 0, top: 0,
+  fill:           'green',
+  duration:       'rand(600, 1000)',
+  radius:         'rand(10, 20)',
+  pathScale:      'rand(.5, 1)',
+  swirlFrequency: 'rand(2,4)',
+  swirlSize: 'rand(6,14)',
+}
+
+const swirl1 = new mojs.ShapeSwirl({
+  ...SWIRL_OPTS
+});
+  
+const swirl2 = new mojs.ShapeSwirl({
+  ...SWIRL_OPTS,
+  direction: -1
+});
+
+const swirl3 = new mojs.ShapeSwirl({
+  ...SWIRL_OPTS
+});
+  
+const swirl4 = new mojs.ShapeSwirl({
+  ...SWIRL_OPTS
+});
+
+document.querySelector('#mojs9').addEventListener('click', (e)=> {  console.log("mouse");
+  const x = e.pageX,
+        y = { [e.pageY]: e.pageY-150 };
+  swirl1
+    .tune({ x, y })
+    .generate()
+    .replay();
+  
+  swirl2
+    .tune({ x, y })
+    .generate()
+    .replay();
+  
+  swirl3
+    .tune({ x, y })
+    .generate()
+    .replay();
+  
+  swirl4
+    .tune({ x, y })
+    .generate()
+    .replay();
+
+});
+
+
 function winScroll(number, element, classId) {
   if (window.scrollY > number) {
     element.classList.add(classId);

@@ -976,21 +976,128 @@
     </div>
   </div>
  </div>
+ <pre  class="h-64 m-0 p-0 "><code class="language-js">
+  const bouncyCircle = new mojs.Shape({
+    parent: "#bouncyCircle",
+    shape: "circle",
+    fill: { "#d98d6c": "#fa4d02" },
+    radius: { 20: 80 },
+    duration: 2000,
+    isYoyo: true,
+    isShowStart: true,
+    easing: "elastic.inout",
+    repeat: 100,
+  });
+  bouncyCircle.play();
+</code></pre>
 <!--TODO--------------- Mo.js-8 -------------------- -->
 
-<div class="bg-slate-400 h-44">
+<div id="mojs8" class="bg-slate-400 h-64">
+  <p class="text-center text-3xl">click in react</p>
   <div class="w-full h-40 flex justify-center  bottom-4  relative">
     <div id="" class="absolute self-center  w-4  h-8" >
       
     </div>
   </div>
  </div>
+  <pre  class="h-64 m-0 p-0 "><code class="language-js">
+    const OPTS = {
+      fill:           'none',
+      radius:         25,
+      strokeWidth:    { 50 : 0 },
+      scale:          { 0: 1 },
+      angle:          { 'rand(-35, -70)': 0 },
+      duration:       500,
+      left: 0,        top: 0,
+      easing: 'cubic.out'
+    };
+    const circle1 = new mojs.Shape({
+      ...OPTS,
+      stroke:         'cyan',
+    });
+    const circle2 = new mojs.Shape({
+      ...OPTS,
+      radius:         { 0 : 15 },
+      strokeWidth:    { 30: 0 },
+      stroke:         'magenta',
+      delay:          'rand(75, 150)'
+    });
+    document.querySelector('#mojs8').addEventListener( 'click', function (e) {
+       circle1
+        .tune({ x: e.pageX, y: e.pageY  })
+        .replay();
+      
+      circle2
+        .tune({ x: e.pageX, y: e.pageY  })
+        .replay();
+    });
+</code></pre>
 <!--TODO--------------- Mo.js-9 -------------------- -->
- <div class="relative bg-black/20 h-44 ">
-    <div id="bouncyCircle" class="absolute top-10 left-1/2  w-4  h-8" ></div>
+ 
+<div id="mojs9" class="bg-slate-400 h-64">
+  <p class="text-center text-3xl">click in react</p>
+  <div class="w-full h-40 flex justify-center  bottom-4  relative">
+    <div id="" class="absolute self-center  w-4  h-8" >
+      
+    </div>
+  </div>
  </div>
+ <pre  class="h-64 m-0 p-0 "><code class="language-js">
+ const SWIRL_OPTS = {
+  left: 0, top: 0,
+  fill:           'green',
+  duration:       'rand(600, 1000)',
+  radius:         'rand(10, 20)',
+  pathScale:      'rand(.5, 1)',
+  swirlFrequency: 'rand(2,4)',
+  swirlSize: 'rand(6,14)',
+}
 
- <div class="bg-slate-400 h-28"> </div>
+const swirl1 = new mojs.ShapeSwirl({
+  ...SWIRL_OPTS
+});
+  
+const swirl2 = new mojs.ShapeSwirl({
+  ...SWIRL_OPTS,
+  direction: -1
+});
+
+const swirl3 = new mojs.ShapeSwirl({
+  ...SWIRL_OPTS
+});
+  
+const swirl4 = new mojs.ShapeSwirl({
+  ...SWIRL_OPTS
+});
+
+document.querySelector('#mojs9').addEventListener('click', (e)=> {  console.log("mouse");
+  const x = e.pageX,
+        y = { [e.pageY]: e.pageY-150 };
+  swirl1
+    .tune({ x, y })
+    .generate()
+    .replay();
+  
+  swirl2
+    .tune({ x, y })
+    .generate()
+    .replay();
+  
+  swirl3
+    .tune({ x, y })
+    .generate()
+    .replay();
+  
+  swirl4
+    .tune({ x, y })
+    .generate()
+    .replay();
+
+});
+</code></pre>
+
+
+ <!-- <div class="bg-slate-400 h-28"> </div>
  <div id="mojs-div" class="bg-slate-600/20 h-44">5</div>
  <div class="bg-slate-600/20 h-44">6</div>
  <div class="bg-slate-600/20 h-44">7</div>
@@ -1001,7 +1108,7 @@
 <div class="w-full h-80">3</div>
 <div>4</div>
 <div>5</div>
-<div>6</div>
+<div>6</div> -->
 
 
 <div id="js-logo" class="logo"></div>
