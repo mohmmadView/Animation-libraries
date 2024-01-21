@@ -1,6 +1,6 @@
-// import Prism from "prismjs";
-// console.log(Prism.languages);
-  
+all()
+  function all(){
+
 //TODO -------------------------------------------------------------------------- */
 //?  --------------------------------- moveBorder ------------------------------- */
 //TODO -------------------------------------------------------------------------- */
@@ -372,9 +372,69 @@ window.addEventListener("scroll", () => {
 //! move Mo.js \\
 
 //? ======> MoveJs <======\\
+
+
+new mojs.Shape({
+  parent: "#circle",
+  shape: "circle", // shape 'circle' is default
+  radius: 25, // shape radius
+  radiusX: 30,
+  left: "25%",
+  isShowStart: true, // show before any animation starts
+});
+
+new mojs.Shape({
+  parent: "#polygon",
+  shape: "polygon", // shape 'polygon' and rect
+  radius: 35, // shape radius
+  radiusX: 60,
+  left: "25%",
+  fill: "yellow", // same as 'transparent'
+  stroke: "black", // or 'cyan'
+  strokeWidth: 4, // width of the stroke
+  isShowStart: true, // show before any animation starts
+});
+
+ new mojs.Shape({
+  parent: "#zigzag",
+  shape: "zigzag",
+  points: 8,
+  radius: 130,
+  radiusY: 50,
+  left: "45%",
+  top:"60%",
+  fill: "none",
+  stroke: "blue",
+  isShowStart: true,
+});
+
+// var curve = new mojs.Shape({
+//   parent: "#curve",
+//   shape: "curve",
+//   points: 11,
+//   radius: 60,
+//   radiusY: 50,
+//   left: "50%",
+//   fill: "none",
+//   stroke: "deeppink",
+//   isShowStart: true,
+//   x:55,
+//   y:40,
+// });
+
+new mojs.Shape({
+  parent: "#cross",
+  shape: "cross",
+  points: 11,
+  radius: 65,
+  radiusX: 95,
+  left: "75%",
+  stroke: "green",
+  isShowStart: true,
+ strokeWidth: 4,
+});
 const circleCopy = document.querySelector("#Layer_1"); 
 circleCopy.addEventListener("click",()=>{
-  console.log("clickCir");
   ClipboardEvent
   navigator.clipboard.writeText(`"
   <div class="relative bg-black/20 h-28 ">
@@ -401,98 +461,34 @@ bouncyCircle2.play();
 const bouncyCircle = new mojs.Shape({
   parent: "#bouncyCircle",
   shape: "circle",
-  fill: { "#F64040": "#FC46AD" },
-  radius: { 20: 40 },
+  fill: { "#d98d6c": "#fa4d02" },
+  radius: { 20: 80 },
   duration: 2000,
   isYoyo: true,
   isShowStart: true,
   easing: "elastic.inout",
   repeat: 100,
 });
-
 bouncyCircle.play();
-
-new mojs.Shape({
-  parent: "#circle",
-  shape: "circle", // shape 'circle' is default
-  radius: 25, // shape radius
-  radiusX: 30,
-  left: "25%",
-  fill: "transparent", // same as 'transparent'
-  stroke: "#F64040", // or 'cyan'
-  strokeWidth: 5, // width of the stroke
-  isShowStart: true, // show before any animation starts
-});
-
-new mojs.Shape({
-  parent: "#circle2",
-  shape: "circle", // shape 'circle' is default
-  radius: 35, // shape radius
-  radiusX: 60,
-  left: "25%",
-  fill: "deeppink", // same as 'transparent'
-  stroke: "#F64040", // or 'cyan'
-  strokeWidth: 7, // width of the stroke
-  isShowStart: true, // show before any animation starts
-});
-var rect = new mojs.Shape({
-  parent: "#test",
-
-  stroke: "#F64040", // or 'cyan'
-  shape: "rect",
-  radius: 35,
-  left: "50%",
-  fill: "cyan",
-  isShowStart: true,
-});
-
-var polygon = new mojs.Shape({
-  parent: "#polygon",
-  shape: "polygon",
-  radiusX: 50,
-  radiusY: 50,
-  left: "75%",
-  fill: "yellow",
-  isShowStart: true,
-});
-
-var zigzag = new mojs.Shape({
-  parent: "#zigzag",
-  shape: "zigzag",
-  points: 11,
-  radius: 25,
-  radiusY: 50,
-  left: "25%",
-  fill: "none",
-  stroke: "deeppink",
-  isShowStart: true,
-});
-
-var curve = new mojs.Shape({
-  parent: "#curve",
-  shape: "curve",
-  points: 11,
-  radius: 25,
-  radiusY: 50,
-  left: "50%",
-  fill: "none",
-  stroke: "deeppink",
-  isShowStart: true,
-});
-
-var cross = new mojs.Shape({
-  parent: "#cross",
-  shape: "cross",
-  points: 11,
-  radius: 25,
-  radiusX: 50,
-  left: "75%",
-  fill: "none",
-  stroke: "deeppink",
-  isShowStart: true,
-  y: -25,
-});
 //======>Mojs 6<======\\
+const bouncyTriangle = new mojs.Shape({
+  parent:     '#triangle',
+  shape:      'polygon',
+  fill:       'orange',
+  radius:     65,
+  rotate:      { [-120]: -40 },
+  x:          { [-140]: 70 },
+  y:          { [50]: -20 },
+  scaleX:     { 0 : 1.3 },
+
+  repeat:     150,
+  duration:   1500,
+  isYoyo:     true,
+  backwardEasing: 'sin.in',
+
+  isShowEnd:  false
+})
+bouncyTriangle.play()
 function winScroll(number, element, classId) {
   if (window.scrollY > number) {
     element.classList.add(classId);
@@ -637,3 +633,7 @@ let codeAnmieJs_All = [
       
       `,
 ];
+}
+
+
+

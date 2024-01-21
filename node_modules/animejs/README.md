@@ -1,3 +1,8 @@
+> [!IMPORTANT]
+> ## 🎉 Anime.js V4 is now available in early access 🎉
+>
+> After years in the making, Anime.js V4 is finally available in early access for my **[GitHub Sponsors](https://github.com/sponsors/juliangarnier)**!
+
 <h1 align="center">
   <a href="https://animejs.com"><img src="/documentation/assets/img/animejs-v3-header-animation.gif" width="250"/></a>
   <br>

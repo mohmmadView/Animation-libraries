@@ -89,69 +89,8 @@ html {
 .ml1 .line2 {
   bottom: 0;
 }
-div.prism-live {
-  position: relative;
-  box-sizing: border-box;
-  display: flex;
-  flex-flow: column;
-}
 
-textarea.prism-live,
-pre.prism-live {
-  padding: 0.2rem 0.5rem;
-  box-sizing: border-box;
-  margin: 0;
-}
-
-textarea.prism-live {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-  color: transparent;
-  /* color: hsla(0,0%,50%,.4); */
-  cursor: text;
-  white-space: pre;
-  border: 0;
-  outline: none;
-  background: transparent;
-  resize: none;
-  --selection-background: hsl(320, 80%, 25%);
-  --selection-color: hsla(0, 0%, 100%, 0.8);
-}
-
-@supports (not (caret-color: black)) and (-webkit-text-fill-color: black) {
-  textarea.prism-live {
-    color: inherit;
-    -webkit-text-fill-color: transparent;
-  }
-}
-
-/* Setting specific colors is needed
-	 * because otherwise Firefox shows blank text */
-textarea.prism-live::-moz-selection {
-  background: var(--selection-background);
-  color: var(--selection-color);
-}
-
-textarea.prism-live::selection {
-  background: var(--selection-background);
-  color: var(--selection-color);
-}
-
-pre.prism-live {
-  flex: 1;
-  position: relative;
-  pointer-events: none;
-  overflow: hidden;
-  max-height: 100%;
-  --scrollbar-width: 17px;
-  padding-bottom: var(--scrollbar-width);
-  padding-right: var(--scrollbar-width);
-}
-
-pre.prism-live > code:empty::before {
-  content: " ";
-}
+  /* PrismJS 1.29.0
+  https://prismjs.com/download.html#themes=prism-okaidia&languages=markup+css+clike+javascript */
+  code[class*=language-],pre[class*=language-]{color:#aaa1d4;background:0 0;text-shadow:0 1px rgba(0,0,0,.3);font-family:Consolas,Monaco,'Andale Mono','Ubuntu Mono',monospace;font-size:1em;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:0em;margin:0;overflow:auto;border-radius:.3em}:not(pre)>code[class*=language-],pre[class*=language-]{background:#272822}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal}.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#8292a2}.token.punctuation{color:#e9e911}.token.namespace{opacity:.7}.token.constant,.token.deleted,.token.property,.token.symbol,.token.tag{color:#f92672}.token.boolean,.token.number{color:#b15454}.token.attr-name,.token.builtin,.token.char,.token.inserted,.token.selector,.token.string{color:#a6e22e}.language-css .token.string,.style .token.string,.token.entity,.token.operator,.token.url,.token.variable{color:#b3b88b}.token.atrule,.token.attr-value,.token.class-name,.token.function{color:#e6db74}.token.keyword{color:#66d9ef}.token.important,.token.regex{color:#fd971f}.token.bold,.token.important{font-weight:700}.token.italic{font-style:italic}.token.entity{cursor:help}
+  

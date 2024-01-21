@@ -4,8 +4,9 @@
   },
   "dependencies": {
     "@mojs/core": "^1.4.0",
-    "@types/prismjs": "^1.26.1",
+    "@types/prismjs": "^1.26.3",
     "animate.css": "^4.1.1",
-    "animejs": "^3.2.1"
+    "animejs": "^3.2.1",
+    "prismjs": "^1.29.0"
   }
 }

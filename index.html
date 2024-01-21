@@ -11,15 +11,13 @@
    <!--TODO ------------------------- animateCSS ----------------------------->
    <link rel="stylesheet" href="./node_modules/animate.css/animate.min.css">
     <!--?------------------------- TheEnd animateCSS ---------------------- -->
-    <link rel="stylesheet" href="./src/prism.css">
-    <!-- <link rel="stylesheet" href="https://prismjs.com/themes/prism.css">
-	<link rel="stylesheet" href="https://prismjs.com/plugins/line-numbers/prism-line-numbers.css">
-	<link rel="stylesheet" href="prism-live.css"> -->
+    <!-- <link rel="stylesheet" href="./src/prism.css"> -->
+    <link rel="stylesheet" href="prismMini.css">
+	<!-- <link rel="stylesheet" href="prism-live.css">  -->
 	<link rel="stylesheet" href="./style.css">
     <title>Document</title>
 </head>
  <body class="p-5">
-   
    <!--?----------------------------------------------------------------------- -->
    <!--*------------------------------ Start_tite_svg ------------------------------- -->
    <!--?----------------------------------------------------------------------- -->
@@ -855,74 +853,149 @@
 <!--*----------------------------- List Mo.js ----------------------------- -->
 <!--?----------------------------------------------------------------------- -->
 <div class="grid grid-cols-4 gap-4  bg-red-50/30  border-2 border-dashed  outline-d outline-offset-2 outline-1  p-6 ">
+<!--TODO--------------- Mo.js-1 -------------------- -->
 
- <div class="relative bg-black/20 h-28 ">
-<svg  class="w-8 h-8  cursor-pointer" id="Layer_1" style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="512px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g><g><path d="M160,160h192c-1.7-20-9.7-35.2-27.9-40.1c-0.4-0.1-0.9-0.3-1.3-0.4c-12-3.4-20.8-7.5-20.8-20.7V78.2    c0-25.5-20.5-46.3-46-46.3c-25.5,0-46,20.7-46,46.3v20.6c0,13.1-8.8,17.2-20.8,20.6c-0.4,0.1-0.9,0.4-1.4,0.5    C169.6,124.8,161.9,140,160,160z M256,64.4c7.6,0,13.8,6.2,13.8,13.8c0,7.7-6.2,13.8-13.8,13.8c-7.6,0-13.8-6.2-13.8-13.8    C242.2,70.6,248.4,64.4,256,64.4z"/><path d="M404.6,63H331v14.5c0,10.6,8.7,18.5,19,18.5h37.2c6.7,0,12.1,5.7,12.4,12.5l0.1,327.2c-0.3,6.4-5.3,11.6-11.5,12.1    l-264.4,0.1c-6.2-0.5-11.1-5.7-11.5-12.1l-0.1-327.3c0.3-6.8,5.9-12.5,12.5-12.5H162c10.3,0,19-7.9,19-18.5V63h-73.6    C92.3,63,80,76.1,80,91.6V452c0,15.5,12.3,28,27.4,28H256h148.6c15.1,0,27.4-12.5,27.4-28V91.6C432,76.1,419.7,63,404.6,63z"/></g><rect height="16" width="112" x="144" y="192"/><rect height="16" width="160" x="144" y="288"/><rect height="16" width="129" x="144" y="384"/><rect height="16" width="176" x="144" y="336"/><rect height="16" width="208" x="144" y="240"/></g></svg>
-    <div id="bouncyCircle" class="absolute top-10 left-1/2  w-4  h-8" ></div>
- </div>
+<!--TODO--------------- Mo.js-2 -------------------- -->
 
- <div class="bg-slate-400  h-28">
-  <div class="w-full h-40 flex justify-center bottom-4  relative">
+ <div class="bg-slate-400  h-64">
+  <div class="w-full h-64 flex justify-center bottom-4  relative">
      <div id="circle" class="absolute  self-center  w-4  h-8" ></div>
    </div>
 </div>
+<pre  class="h-64 m-0 p-0 "><code class="language-js">
+  new mojs.Shape({
+    parent: "#circle",
+    shape: "circle", // shape 'circle' is default
+    radius: 25, // shape radius
+    radiusX: 30,
+    left: "25%",
+    isShowStart: true, // show before any animation starts
+  });
+  
+</code></pre>
+<!--TODO--------------- Mo.js-3 -------------------- -->
 
- <div class="bg-slate-400 h-28">
-  <div class="w-full h-40 flex justify-center  bottom-4  relative">
-    <div id="circle2" class="absolute self-center  w-4  h-8" ></div>
+ <div class="bg-slate-400 h-64">
+  <div class="w-full h-64 flex justify-center  bottom-4  relative">
+    <div id="polygon" class="absolute self-center  w-4  h-8" ></div>
   </div>
  </div>
+ <pre  class="h-64 m-0 p-0 "><code class="language-js">
+  new mojs.Shape({
+    parent: "#polygon",
+    shape: "polygon", // shape 'circle' is default
+    radius: 35, // shape radius
+    radiusX: 60,
+    left: "25%",
+    fill: "yellow", // same as 'transparent'
+    stroke: "black", // or 'cyan'
+    strokeWidth: 4, // width of the stroke
+    isShowStart: true, // show before any animation starts
+  });
+  
+</code></pre>
+<!--TODO--------------- Mo.js-4 -------------------- -->
  
 
- <div class="bg-slate-400 h-28">
-  <div class="w-full h-40 flex justify-center  bottom-4  relative">
-    <div id="test" class="absolute self-center  w-4  h-8" >
+ <div class="bg-slate-400 h-64">
+  <div class="w-full h-64 flex justify-center  bottom-4  relative">
+    <div id="zigzag" class="absolute self-center  w-3/4  h-full" >
 
     </div>
   </div>
  </div>
+  <pre  class="h-64 m-0 p-0 "><code class="language-js">
+    new mojs.Shape({
+      parent: "#zigzag",
+      shape: "zigzag",
+      points: 8,
+      radius: 130,
+      radiusY: 50,
+      left: "45%",
+      top:"60%",
+      fill: "none",
+      stroke: "blue",
+      isShowStart: true,
+    });
+  
+</code></pre>
+<!--TODO--------------- Mo.js-5 -------------------- -->
 
 
- <div class="bg-slate-400 h-28">
-  <div class="w-full h-40 flex justify-center  bottom-4  relative">
-    <div id="polygon" class="absolute self-center  w-4  h-8" >
-      
-    </div>
-  </div>
- </div>
-
-
- <div class="bg-slate-400 h-28">
-  <div class="w-full h-40 flex justify-center  bottom-4  relative">
-    <div id="zigzag" class="absolute self-center  w-4  h-8" >
-      
-    </div>
-  </div>
- </div>
-
- <div class="bg-slate-400 h-28">
-  <div class="w-full h-40 flex justify-center  bottom-4  relative">
-    <div id="curve" class="absolute self-center  w-4  h-8" >
-      
-    </div>
-  </div>
- </div>
-
-<div class="bg-slate-400 h-28">
-  <div class="w-full h-40 flex justify-center  bottom-4  relative">
+ <div class="bg-slate-400 h-64">
+  <div class="w-full h-64 flex justify-center  bottom-4  relative">
     <div id="cross" class="absolute self-center  w-4  h-8" >
       
     </div>
   </div>
  </div>
+   <pre  class="h-64 m-0 p-0 "><code class="language-js">
+ new mojs.Shape({
+  parent: "#cross",
+  shape: "cross",
+  points: 11,
+  radius: 65,
+  radiusX: 95,
+  left: "75%",
+  stroke: "green",
+  isShowStart: true,
+ strokeWidth: 4,
+});
+</code></pre>
+<!--TODO--------------- Mo.js-6 -------------------- -->
 
+
+ <div class="bg-slate-400 h-64">
+<svg  class="w-8 h-8  cursor-pointer" id="Layer_1" style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="512px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g><g><path d="M160,160h192c-1.7-20-9.7-35.2-27.9-40.1c-0.4-0.1-0.9-0.3-1.3-0.4c-12-3.4-20.8-7.5-20.8-20.7V78.2    c0-25.5-20.5-46.3-46-46.3c-25.5,0-46,20.7-46,46.3v20.6c0,13.1-8.8,17.2-20.8,20.6c-0.4,0.1-0.9,0.4-1.4,0.5    C169.6,124.8,161.9,140,160,160z M256,64.4c7.6,0,13.8,6.2,13.8,13.8c0,7.7-6.2,13.8-13.8,13.8c-7.6,0-13.8-6.2-13.8-13.8    C242.2,70.6,248.4,64.4,256,64.4z"/><path d="M404.6,63H331v14.5c0,10.6,8.7,18.5,19,18.5h37.2c6.7,0,12.1,5.7,12.4,12.5l0.1,327.2c-0.3,6.4-5.3,11.6-11.5,12.1    l-264.4,0.1c-6.2-0.5-11.1-5.7-11.5-12.1l-0.1-327.3c0.3-6.8,5.9-12.5,12.5-12.5H162c10.3,0,19-7.9,19-18.5V63h-73.6    C92.3,63,80,76.1,80,91.6V452c0,15.5,12.3,44,27.4,28H256h148.6c15.1,0,27.4-12.5,27.4-28V91.6C432,76.1,419.7,63,404.6,63z"/></g><rect height="16" width="112" x="144" y="192"/><rect height="16" width="160" x="144" y="288"/><rect height="16" width="129" x="144" y="384"/><rect height="16" width="176" x="144" y="336"/><rect height="16" width="208" x="144" y="240"/></g></svg>
+  <div class="w-full h-60 flex justify-center  bottom-4  relative">
+    <div id="bouncyCircle" class="absolute self-center  w-4  h-8" >
+      
+    </div>
+  </div>
+ </div>
+   <pre  class="h-64 m-0 p-0 "><code class="language-js">
+    const bouncyCircle = new mojs.Shape({
+      parent: "#bouncyCircle",
+      shape: "circle",
+      fill: { "#d98d6c": "#fa4d02" },
+      radius: { 20: 80 },
+      duration: 2000,
+      isYoyo: true,
+      isShowStart: true,
+      easing: "elastic.inout",
+      repeat: 100,
+    });
+    bouncyCircle.play();
+</code></pre>
+<!--TODO--------------- Mo.js-7 -------------------- -->
+
+ <div class="bg-slate-400 h-64">
+  <div class="w-full h-60 flex justify-center  bottom-4  relative">
+    <div id="triangle" class="absolute self-center  w-4  h-8" >
+      
+    </div>
+  </div>
+ </div>
+<!--TODO--------------- Mo.js-8 -------------------- -->
+
+<div class="bg-slate-400 h-44">
+  <div class="w-full h-40 flex justify-center  bottom-4  relative">
+    <div id="" class="absolute self-center  w-4  h-8" >
+      
+    </div>
+  </div>
+ </div>
+<!--TODO--------------- Mo.js-9 -------------------- -->
+ <div class="relative bg-black/20 h-44 ">
+    <div id="bouncyCircle" class="absolute top-10 left-1/2  w-4  h-8" ></div>
+ </div>
 
  <div class="bg-slate-400 h-28"> </div>
- <div id="mojs-div" class="bg-slate-600/20 h-28">5</div>
- <div class="bg-slate-600/20 h-28">6</div>
- <div class="bg-slate-600/20 h-28">7</div>
- <div class="bg-slate-600 h-28">7</div>
- <div class="bg-slate-600 h-28">7</div>
+ <div id="mojs-div" class="bg-slate-600/20 h-44">5</div>
+ <div class="bg-slate-600/20 h-44">6</div>
+ <div class="bg-slate-600/20 h-44">7</div>
+ <div class="bg-slate-600 h-44">7</div>
+ <div class="bg-slate-600 h-44">7</div>
   <div>09</div>
 </div>
 <div class="w-full h-80">3</div>
@@ -978,17 +1051,17 @@
 //    }); </pre>
 // </div> -->
 
-<pre><code class="language-js">elmDivAnimeJs.classList.remove("mt-52");
-  elmDivAnimeJs.classList.add("mt-2");
-</code></pre>
+
+  <script src="./src/prismMini.js">
   
+  </script>
 <!--TODO ------------ library_MoJS ---------------- -->
 <script src="https://cdn.jsdelivr.net/npm/@mojs/core"></script>
 <!--TODO ------------ library_animeJs ---------------- -->
 <script src="./node_modules/animejs/lib/anime.min.js"></script>
 <!--?----------------- TheEnd library -------------------- -->
 <script src="./app.js"></script>
- <script  src="./src/prism.js"></script>
+ <!-- <script  type="module" src="https://unpkg.com/prismjs@latest/components/prism-core.min.js" ></script>  -->
 </body>
 </html> 
 
