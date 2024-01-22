@@ -1,4 +1,10 @@
 {
+  "homepage": "http://Zarpoosh.github.io/Submit-Form",
+  "scripts": {
+    "deploy": "gh-pages -d build",
+    "start": "./index.html",
+    "build": "npm install"
+  },
   "devDependencies": {
     "tailwindcss": "^3.2.7"
   },
@@ -7,6 +13,7 @@
     "@types/prismjs": "^1.26.3",
     "animate.css": "^4.1.1",
     "animejs": "^3.2.1",
+    "gsap": "^3.12.5",
     "prismjs": "^1.29.0"
   }
 }
