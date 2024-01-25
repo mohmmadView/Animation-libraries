@@ -639,6 +639,25 @@ gsap.to(".violet-right", {
   delay: 1 // delay the start of this animation
 });
 
+
+gsap.to(".red-linear", { 
+  rotation: 360,
+  duration: 2,
+  repeat: -1,
+  repeatDelay: 2,
+  ease: 'none'
+});
+
+
+gsap.to(".violet-bounce", { 
+  rotation: 360,
+  duration: 2,
+  repeat: -1,
+  repeatDelay: 2,
+  ease: 'bounce.out'
+});
+
+
 // const cube = new Mesh(geometry, material)
 // scene.add(cube)
 
