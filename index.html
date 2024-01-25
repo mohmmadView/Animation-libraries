@@ -1107,6 +1107,37 @@ document.querySelector('#mojs9').addEventListener('click', (e)=> {  console.log(
 <h2 class="text-rose-300 text-2xl">or</h2> 
 </div>
 </div>
+
+
+<div class=" flex items-center justify-between h-44 mt-5 bg-zinc-50/15 overflow-hidden">
+<div class="block box-left w-32 h-32 rounded-lg bg-green-400"></div>
+<div class="block box-right w-32 h-32 rounded-lg bg-red-400"></div>
+</div>
+
+
+<div class="w-full h-64">
+  
+  <svg id="svg" class="w-full h-full" viewBox="0 0 100 100">
+     <rect class="svgBox" fill="#28a92b" x="0" y="35" width="40" height="40" rx="2" />
+  </svg>
+</div>
+
+<div class=" flex items-center justify-end h-44 mt-5 bg-zinc-50/15 overflow-hidden">
+<div class="block test w-32 h-32 rounded-full bg-orange-400"></div>
+</div>
+
+<div class="flex items-center justify-around h-44 mt-5  overflow-hidden">
+  
+  <canvas class="h-36 overflow-visible  border-2" id="canvas" width="300" height="300"></canvas>
+  
+  
+</div>
+<div class=" flex items-center justify-around h-44 mt-5 bg-zinc-50/15 overflow-hidden">
+  <div class="block red-left w-32 h-32 rounded-2xl ring-2 ring-red-950 bg-rose-600"></div>
+  <div class="block violet-right w-32 h-32 rounded-2xl ring-2 ring-violet-950 bg-violet-700"></div>
+  </div>
+  
+
  <!-- <div class="bg-slate-400 h-28"> </div>
  <div id="mojs-div" class="bg-slate-600/20 h-44">5</div>
  <div class="bg-slate-600/20 h-44">6</div>
@@ -1128,7 +1159,11 @@ document.querySelector('#mojs9').addEventListener('click', (e)=> {  console.log(
 <!--TODO ------------ library_animeJs ---------------- -->
 <script src="./node_modules/animejs/lib/anime.min.js"></script>
 <!--?----------------- TheEnd library -------------------- -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="./app.js"></script>
+
+
+
  <!-- <script  type="module" src="https://unpkg.com/prismjs@latest/components/prism-core.min.js" ></script>  -->
 </body>
 </html> 

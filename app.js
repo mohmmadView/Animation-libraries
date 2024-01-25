@@ -565,6 +565,95 @@ bouncyCircle2.play();
       element.classList.remove(classId);
     }
   }
+
+  gsap.to(".box-left", { 
+    x: '40vw',
+    rotation: 360,
+    duration:5,
+  });
+   gsap.to(".box-right", { 
+    x: '-40vw',
+    rotation: -360,
+    duration:5,
+  });
+  gsap.to(".svgBox", { 
+    duration: 2,
+    x: 300, // use transform shorthand (this is now using SVG units not px, the SVG viewBox is 100 units wide)
+    xPercent: -80,
+    // or target SVG attributes
+    attr: {
+      fill: '#8d3dae',
+      rx: 50, 
+    },
+  });
+//create an object
+let test = { myNum: 10, myColor: "red" };
+gsap.to("test",test, {
+  myNum: 200,
+  myColor: "blue",
+  onUpdate: () => console.log(test.myNum, test.myColor)
+});
+
+
+const canvas = document.getElementById("canvas");
+const ctx = canvas.getContext("2d");
+ctx.fillStyle = "#28a92b";
+
+let position = { x: 0, y: 0 };
+
+function draw() {
+  // erase the canvas
+  ctx.clearRect(0, 0, 400, 400);
+  // redraw the square at it's new position
+  ctx.fillRect(position.x, position.y, 100, 100);
+}
+//animate x and y of point
+gsap.to(position, { 
+  x: 200, 
+  y: 200, 
+  duration: 4,
+  // unlike DOM elements, canvas needs to be redrawn and cleared on every tick
+  onUpdate: draw 
+});
+gsap.to(".test", { 
+  rotation: 360,
+  x: '-100vw',
+  xPercent: 700,
+  // special properties
+  duration: 2, // how long the animation lasts
+  repeat:100, // the number of repeats - this will play 3 times
+  yoyo: true, // this will alternate back and forth on each repeat. Like a yoyo
+});
+
+gsap.to(".red-left", { 
+  rotation: 360,
+  duration: 1,
+  repeat: 1,
+  repeatDelay: 1,
+});
+
+
+gsap.to(".violet-right", { 
+  rotation: 360,
+  duration: 1,
+  delay: 1 // delay the start of this animation
+});
+
+// const cube = new Mesh(geometry, material)
+// scene.add(cube)
+
+// gsap.to(cube.rotation, {
+//   x: Math.PI * 2,
+//   y: Math.PI * 2,
+//   duration: 10,
+//   repeat: -1,
+//   ease: "none",
+//   onUpdate: () => {
+//     renderer.render(scene, camera)
+//   },
+// })
+
+
   // ////////////////////////////////////////
   //? =========> Code AnimeJs ALL <========\\
   // ////////////////////////////////////////
