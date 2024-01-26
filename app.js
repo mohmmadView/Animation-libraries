@@ -405,19 +405,6 @@ function all() {
     isShowStart: true,
   });
 
-  // var curve = new mojs.Shape({
-  //   parent: "#curve",
-  //   shape: "curve",
-  //   points: 11,
-  //   radius: 60,
-  //   radiusY: 50,
-  //   left: "50%",
-  //   fill: "none",
-  //   stroke: "deeppink",
-  //   isShowStart: true,
-  //   x:55,
-  //   y:40,
-  // });
 
   new mojs.Shape({
     parent: "#cross",
@@ -565,7 +552,7 @@ bouncyCircle2.play();
       element.classList.remove(classId);
     }
   }
-
+// * ======> GSAP <======\\
   gsap.to(".box-left", { 
     x: '40vw',
     rotation: 360,
@@ -703,7 +690,8 @@ gsap.to(".violet-bounce", {
      <span class="text-purple-700"> return</span> (l - i) * 100;
     <span class="text-blue-600">}</span> }); </pre>
    </div>
-    </div>
+    </div
+});>
  </div>
 `,
     `<div class="w-3/4 flex justify-center">
