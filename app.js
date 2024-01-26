@@ -1,5 +1,352 @@
 all();
 function all() {
+  animateCss()
+  animateJs()
+  moJs()
+  animateGsap()
+}
+function animateGsap(){
+// * ======> GSAP <======\\
+  gsap.to(".box-left", { 
+    x: '40vw',
+    rotation: 360,
+    duration:5,
+  });
+   gsap.to(".box-right", { 
+    x: '-40vw',
+    rotation: -360,
+    duration:5,
+  });
+  gsap.to(".svgBox", { 
+    duration: 2,
+    x: 300, // use transform shorthand (this is now using SVG units not px, the SVG viewBox is 100 units wide)
+    xPercent: -80,
+    // or target SVG attributes
+    attr: {
+      fill: '#8d3dae',
+      rx: 50, 
+    },
+  });
+//create an object
+let test = { myNum: 10, myColor: "red" };
+gsap.to("test",test, {
+  myNum: 200,
+  myColor: "blue",
+  onUpdate: () => console.log(test.myNum, test.myColor)
+});
+
+
+const canvas = document.getElementById("canvas");
+const ctx = canvas.getContext("2d");
+ctx.fillStyle = "#28a92b";
+
+let position = { x: 0, y: 0 };
+
+function draw() {
+  // erase the canvas
+  ctx.clearRect(0, 0, 400, 400);
+  // redraw the square at it's new position
+  ctx.fillRect(position.x, position.y, 100, 100);
+}
+//animate x and y of point
+gsap.to(position, { 
+  x: 200, 
+  y: 200, 
+  duration: 4,
+  // unlike DOM elements, canvas needs to be redrawn and cleared on every tick
+  onUpdate: draw 
+});
+gsap.to(".test", { 
+  rotation: 360,
+  x: '-100vw',
+  xPercent: 700,
+  // special properties
+  duration: 2, // how long the animation lasts
+  repeat:100, // the number of repeats - this will play 3 times
+  yoyo: true, // this will alternate back and forth on each repeat. Like a yoyo
+});
+
+gsap.to(".red-left", { 
+  rotation: 360,
+  duration: 1,
+  repeat: 1,
+  repeatDelay: 1,
+});
+
+
+gsap.to(".violet-right", { 
+  rotation: 360,
+  duration: 1,
+  delay: 1 // delay the start of this animation
+});
+
+
+gsap.to(".red-linear", { 
+  rotation: 360,
+  duration: 2,
+  repeat: -1,
+  repeatDelay: 2,
+  ease: 'none'
+});
+
+
+gsap.to(".violet-bounce", { 
+  rotation: 360,
+  duration: 2,
+  repeat: -1,
+  repeatDelay: 2,
+  ease: 'bounce.out'
+});
+}
+
+// const cube = new Mesh(geometry, material)
+// scene.add(cube)
+
+// gsap.to(cube.rotation, {
+//   x: Math.PI * 2,
+//   y: Math.PI * 2,
+//   duration: 10,
+//   repeat: -1,
+//   ease: "none",
+//   onUpdate: () => {
+//     renderer.render(scene, camera)
+//   },
+// })
+
+
+  // ////////////////////////////////////////
+  //? =========> Code AnimeJs ALL <========\\
+  // ////////////////////////////////////////
+  let codeAnmieJs_All = [
+    `
+  <div class="">
+  
+  </div>
+  <div  class="w-3/4 flex justify-center"function gsap(){
+    // * ======> GSAP <======\\
+      gsap.to(".box-left", { 
+        x: '40vw',
+        rotation: 360,
+        duration:5,
+      });
+       gsap.to(".box-right", { 
+        x: '-40vw',
+        rotation: -360,
+        duration:5,
+      });
+      gsap.to(".svgBox", { 
+        duration: 2,
+        x: 300, // use transform shorthand (this is now using SVG units not px, the SVG viewBox is 100 units wide)
+        xPercent: -80,
+        // or target SVG attributes
+        attr: {
+          fill: '#8d3dae',
+          rx: 50, 
+        },
+      });
+    //create an object
+    let test = { myNum: 10, myColor: "red" };
+    gsap.to("test",test, {
+      myNum: 200,
+      myColor: "blue",
+      onUpdate: () => console.log(test.myNum, test.myColor)
+    });
+    
+    
+    const canvas = document.getElementById("canvas");
+    const ctx = canvas.getContext("2d");
+    ctx.fillStyle = "#28a92b";
+    
+    let position = { x: 0, y: 0 };
+    
+    function draw() {
+      // erase the canvas
+      ctx.clearRect(0, 0, 400, 400);
+      // redraw the square at it's new position
+      ctx.fillRect(position.x, position.y, 100, 100);
+    }
+    //animate x and y of point
+    gsap.to(position, { 
+      x: 200, 
+      y: 200, 
+      duration: 4,
+      // unlike DOM elements, canvas needs to be redrawn and cleared on every tick
+      onUpdate: draw 
+    });
+    gsap.to(".test", { 
+      rotation: 360,
+      x: '-100vw',
+      xPercent: 700,
+      // special properties
+      duration: 2, // how long the animation lasts
+      repeat:100, // the number of repeats - this will play 3 times
+      yoyo: true, // this will alternate back and forth on each repeat. Like a yoyo
+    });
+    
+    gsap.to(".red-left", { 
+      rotation: 360,
+      duration: 1,
+      repeat: 1,
+      repeatDelay: 1,
+    });
+    
+    
+    gsap.to(".violet-right", { 
+      rotation: 360,
+      duration: 1,
+      delay: 1 // delay the start of this animation
+    });
+    
+    
+    gsap.to(".red-linear", { 
+      rotation: 360,
+      duration: 2,
+      repeat: -1,
+      repeatDelay: 2,
+      ease: 'none'
+    });
+    
+    
+    gsap.to(".violet-bounce", { 
+      rotation: 360,
+      duration: 2,
+      repeat: -1,
+      repeatDelay: 2,
+      ease: 'bounce.out'
+    });
+    }
+    >
+  <div id="innerSourceCodeAnimeJs" class="relative flex p-2   w-full  h-42 z-10 animate__animated animate__zoomInDown bg-slate-200/30 border-8 ring ring-rose-500  border-double">
+   <div class="w-2/4 p-2 bg-rose-600/20 text-white h-auto">
+      <h2 class="text-white"><<span class="text-yellow-600">div</span> <span class="text-yellow-400"> class=</span>"<span class="text-green-700">function-based-params-demo</span>"> 
+         <h2 class="text-white"><<span class="text-yellow-600">div</span> <span class="text-yellow-400"> class=</span>"<span class="text-green-700">el</span>">   <<span class="text-yellow-600">/div</span>></h2>
+         <h2 class="text-white"><<span class="text-yellow-600">div</span> <span class="text-yellow-400"> class=</span>"<span class="text-green-700">el</span>"> 
+            <<span class="text-yellow-600">/div</span>></h2>
+         <<span class="text-yellow-600">/div</span>></h2>
+   </div>
+   <div class="w-2/4 bg-rose-600/20  h-auto">
+      <pre><span class="text-blue-800">anime</span>({
+    <span class="text-green-600"> targets:</span> <span class="text-yellow-400">'.function-based-params-demo .el'</span>,
+    <span class="text-green-600">translateX:</span><span class="text-yellow-400"> 270,</span>
+    <span class="text-green-600">direction:</span> <span class="text-yellow-400">'alternate',</span>
+    <span class="text-green-600">loop:</span><span class="text-yellow-400"> true,</span>
+    <span class="text-blue-600">delay:</span> <span class="text-yellow-400">function(el, i, l) {</span>
+     <span class="text-green-600"></span><span class="text-purple-700"> return</span> i * 100;
+    <span class="text-yellow-400">},</span>
+    <span class="text-blue-600">endDelay:</span><span class="text-yellow-400">function(el, i, l) {</span>
+     <span class="text-purple-700"> return</span> (l - i) * 100;
+    <span class="text-blue-600">}</span> }); </pre>
+   </div>
+    </div
+});>
+ </div>
+`,
+    `<div class="w-3/4 flex justify-center">
+  <div id="innerSourceCodeAnimeJs" class="relative flex p-2   w-full h-42 z-10 animate__animated animate__zoomInDown  border-8 ring ring-rose-500  border-double">
+   <div class="w-2/4 p-2 bg-blue-600/20 text-2xl text-white">
+      <h2 class="text-white"><<span class="text-yellow-600">div</span> <span class="text-yellow-400"> class=</span>"<span class="text-green-700">function-based-params-demo</span>"> 
+         <h2 class="text-white"><<span class="text-yellow-600">div</span> <span class="text-yellow-400"> class=</span>"<span class="text-green-700">autoplay-true</span>">   <<span class="text-yellow-600">/div</span>></h2>
+         <h2 class="text-white"><<span class="text-yellow-600">div</span> <span class="text-yellow-400"> class=</span>"<span class="text-green-700">autoplay-false</span>">   <<span class="text-yellow-600">/div</span>></h2>
+         <h2 class="text-white"><<span class="text-yellow-600">div</span> <span class="text-yellow-400"> class=</span>"<span class="text-green-700">autoplay-true</span>"> 
+            <<span class="text-yellow-600">/div</span>></h2>
+         <<span class="text-yellow-600">/div</span>></h2>
+   </div>
+   <div class="w-2/4  bg-blue-600/20">
+      <pre><span class="text-blue-800">anime</span>({
+    <span class="text-green-600"> targets:</span> <span class="text-yellow-400">'.autoplay-true'</span>,
+    <span class="text-green-600">translateX:</span><span class="text-yellow-400"> 200,</span>
+    <span class="text-green-600">autoplay:</span> <span class="text-yellow-400">'true',</span>
+    <span class="text-green-600">easing:</span><span class="text-yellow-400"> 'easeInOutSine'</span><span class="text-black">})</span>
+    <span class="text-blue-800">anime</span>({
+      <span class="text-green-600"> targets:</span> <span class="text-yellow-400">'.autoplay-true'</span>,
+      <span class="text-green-600">translateX:</span><span class="text-yellow-400"> 200,</span>
+      <span class="text-green-600">autoplay:</span> <span class="text-yellow-400">'true',</span>
+      <span class="text-green-600">easing:</span><span class="text-yellow-400"> 'easeInOutSine'</span><span class="text-black">})</span> </pre>
+   </div>
+    </div>
+ </div>`,
+
+    `
+     <div class="w-3/4 flex justify-center">
+  <div id="innerSourceCodeAnimeJs" class="relative flex p-2   w-full h-42 z-10 animate__animated animate__zoomInDown bg-slate-200/30 border-8 ring ring-rose-500  border-double">
+   <div class="w-2/4 p-2 bg-yellow-700/10 text-white  h-auto">
+      <h2 class="text-white"><<span class="text-yellow-600">div</span> <span class="text-yellow-400"> class=</span>"<span class="text-green-700">css-transforms-demo</span>"> 
+        
+         <h2 class="text-white"><<span class="text-yellow-600">div</span> <span class="text-yellow-400"> class=</span>"<span class="text-green-700">el</span>"> 
+            <<span class="text-yellow-600">/div</span>></h2>
+         <<span class="text-yellow-600">/div</span>></h2>
+   </div>
+   <div class="w-2/4 bg-yellow-700/10">
+      <pre><span class="text-blue-800">anime</span>({
+    <span class="text-green-600"> targets:</span> <span class="text-yellow-400">'.css-transforms-demo .el'</span>,
+    <span class="text-green-600">translateX:</span><span class="text-yellow-400"> 180,</span>
+    <span class="text-green-600">scale:</span> <span class="text-yellow-400">'2',</span>
+    <span class="text-green-600">rotate:</span><span class="text-yellow-400"> 1turn,</span>
+   </pre>
+   </div>
+    </div>
+ </div>
+     `,
+    `
+      <div class="div w-3/4   flex absolute justify-center">
+  <div id="innerSourceCodeAnimeJs" class="relative flex p-2   w-full h-5/6 z-10 animate__animated animate__zoomInDown bg-slate-200/30 border-8 ring ring-rose-500  border-double">
+   <div class="w-2/4 p-2 bg-green-600/10 text-white text-2xl">
+      <h2 class="text-white"><<span class="text-yellow-600">div</span> <span class="text-yellow-400"> class=</span>"<span class="text-green-700">motion-path-demo</span>"> 
+         <h2 class="text-white"><<span class="text-yellow-600">div</span> <span class="text-yellow-400"> class=</span>"<span class="text-green-700">el follow-path</span>">   <<span class="text-yellow-600">/div</span>></h2>
+         <h2 class="text-white"><<span class="text-yellow-600">svg</span> <span class="text-yellow-400"> width=</span>"<span class="text-green-700">256</span>" <span class="text-yellow-400"> height=</span>"<span class="text-green-700">112</span>">
+       <br>< <span class="text-yellow-600">path</span>> <<span class="text-yellow-600">path</span>> <<span class="text-yellow-600">/svg</span>></h2>
+       <<span class="text-yellow-600">/div</span>></h2>
+   </div>
+   <div class="w-2/4 bg-green-600/10 text-xg ">
+      <pre>
+      <span class="text-rose-400">let</span><span class="text-white"> path</span><span class="text-blue-400">=</span>anime.<span class="text-blue-600">path</span><span class="text-green-700">('.motion-path-demo path')</span>
+      <span class="text-blue-800">anime</span>({
+    <span class="text-green-600"> targets:</span> <span class="text-yellow-400">'.motion-path-demo .el'</span>,
+    <span class="text-green-600">translateX:</span><span class="text-yellow-400"> path('x'),</span>
+    <span class="text-green-600">translateY</span> <span class="text-yellow-400">path('y'),</span>
+    <span class="text-green-600">rotate:</span><span class="text-yellow-400"> path('angle')</span>
+    <span class="text-green-600"> easing:</span> <span class="text-yellow-400">'linear',</span>
+     <span class="text-green-600">duration:</span><span class="text-yellow-700"> 2000,</span>;
+     <span class="text-green-600">loop:</span><span class="text-yellow-700"> true,</span>;
+    <span class="text-yellow-400">})</span>
+     </pre>
+   </div>
+    </div>
+ </div>
+      
+      `,
+    //4
+    `
+      <div class="div w-3/4   flex absolute justify-center">
+  <div id="innerSourceCodeAnimeJs" class="relative flex p-2   w-full h-42 z-10 animate__animated animate__zoomInDown bg-slate-200/30 border-8 ring ring-rose-500  border-double">
+   <div class="w-2/4 p-2 bg-rose-600/20 text-white h-auto">
+      <h2 class="text-white"><<span class="text-yellow-600">div</span> <span class="text-yellow-400"> class=</span>"<span class="text-green-700">staggering-grid-demo</span>"> 
+         <h2 class="text-white">  <<span class="text-yellow-600">div</span> <span class="text-yellow-400"> class=</span>"<span class="text-green-700"/>grid grid-cols-12 bg-gray-600</span>">     <div class="w-5 h-5  bg-red-600 border border-white ssmall square el" style="transform: scale(1);"></div> <<span class="text-yellow-600">/div</span>></h2>
+         <h2 class="text-white"><<span class="text-yellow-600">svg</span> <span class="text-yellow-400"> width=</span>"<span class="text-green-700">256</span>" <span class="text-yellow-400"> height=</span>"<span class="text-green-700">112</span>">
+       <br>< <span class="text-yellow-600">path</span>> <<span class="text-yellow-600">path</span>> <<span class="text-yellow-600">/svg</span>></h2>
+       <<span class="text-yellow-600">/div</span>></h2>
+   </div>
+   <div class="w-2/4 bg-rose-600/20 text-lg h-auto">
+      <pre>
+      <span class="text-rose-400">let</span><span class="text-white"> path</span><span class="text-blue-400">=</span>anime.<span class="text-blue-600">path</span><span class="text-green-700">('.motion-path-demo path')</span>
+      <span class="text-blue-800">anime</span>({
+    <span class="text-green-600"> targets:</span> <span class="text-yellow-400">'.motion-path-demo .el'</span>,
+    <span class="text-green-600">translateX:</span><span class="text-yellow-400"> path('x'),</span>
+    <span class="text-green-600">translateY</span> <span class="text-yellow-400">path('y'),</span>
+    <span class="text-green-600">rotate:</span><span class="text-yellow-400"> path('angle')</span>
+    <span class="text-green-600"> easing:</span> <span class="text-yellow-400">'linear',</span>
+     <span class="text-green-600">duration:</span><span class="text-yellow-700"> 2000,</span>;
+     <span class="text-green-600">loop:</span><span class="text-yellow-700"> true,</span>;
+    <span class="text-yellow-400">})</span>
+     </pre>
+   </div>
+    </div>
+ </div>
+      
+      `,
+  ];
+
+ function animateCss(){
   //TODO -------------------------------------------------------------------------- */
   //?  --------------------------------- moveBorder ------------------------------- */
   //TODO -------------------------------------------------------------------------- */
@@ -82,7 +429,6 @@ function all() {
       handler(elemAnimateCss, ArrayListMove[i], 800);
     };
   }
-
   //! -------------------------------------------------------------------------- */
   //* -------------------------- TheEndClassAnimation.css ----------------------------- */
   //! -------------------------------------------------------------------------- */
@@ -94,7 +440,9 @@ function all() {
       element.classList.remove(moveAnimate);
     }, time);
   }
-  //! -------------------------------------------------------------------------- */
+}
+function animateJs(){
+   //! -------------------------------------------------------------------------- */
   //* ----------------------------- StartAnimate.js ----------------------------- */
   //! -------------------------------------------------------------------------- */
   let elmAnimateJs = document.querySelector(".animate_js");
@@ -103,7 +451,7 @@ function all() {
   console.log(elmContainerSvgAnimeJs);
   let offsetAnimateJs = anime.setDashoffset(elmAnimateJs);
   function SvgAnimateJs() {
-    elmAnimate.setAttribute("stroke-dashoffset", offsetAnimateJs);
+    elmAnimateJs.setAttribute("stroke-dashoffset", offsetAnimateJs);
     anime({
       targets: elmAnimateJs,
       strokeDashoffset: [offsetAnimateJs, 25],
@@ -121,6 +469,7 @@ function all() {
     console.log("containeAnimeJs");
     // elmContainerSvgAnimeJs.classList.add("hidden");
     elmTextAnimeJs.innerHTML = "";
+   
     elmTextAnimeJs.insertAdjacentHTML(
       "beforeend",
       `
@@ -132,6 +481,7 @@ function all() {
   
   `,
     );
+     location.reload();
     // sourceCodeAnimJs.remove();
   });
   SvgAnimateJs();
@@ -199,6 +549,7 @@ function all() {
       translateX: 180,
       autoplay: true,
       easing: "easeInOutSine",
+      loop: true,
     });
 
     anime({
@@ -349,7 +700,10 @@ function all() {
       delay: 1000,
     });
 
-  //!====>move moJs <=====\\
+
+}
+function moJs(){
+   //!====>move moJs <=====\\
   let scr = window.scrollY;
   let ElmMoveJs = document.querySelector("#moveMoJs");
   window.addEventListener("scroll", () => {
@@ -545,257 +899,12 @@ bouncyCircle2.play();
     swirl4.tune({ x, y }).generate().replay();
   });
 
-  function winScroll(number, element, classId) {
+ 
+  }
+ function winScroll(number, element, classId) {
     if (window.scrollY > number) {
       element.classList.add(classId);
     } else {
       element.classList.remove(classId);
     }
   }
-// * ======> GSAP <======\\
-  gsap.to(".box-left", { 
-    x: '40vw',
-    rotation: 360,
-    duration:5,
-  });
-   gsap.to(".box-right", { 
-    x: '-40vw',
-    rotation: -360,
-    duration:5,
-  });
-  gsap.to(".svgBox", { 
-    duration: 2,
-    x: 300, // use transform shorthand (this is now using SVG units not px, the SVG viewBox is 100 units wide)
-    xPercent: -80,
-    // or target SVG attributes
-    attr: {
-      fill: '#8d3dae',
-      rx: 50, 
-    },
-  });
-//create an object
-let test = { myNum: 10, myColor: "red" };
-gsap.to("test",test, {
-  myNum: 200,
-  myColor: "blue",
-  onUpdate: () => console.log(test.myNum, test.myColor)
-});
-
-
-const canvas = document.getElementById("canvas");
-const ctx = canvas.getContext("2d");
-ctx.fillStyle = "#28a92b";
-
-let position = { x: 0, y: 0 };
-
-function draw() {
-  // erase the canvas
-  ctx.clearRect(0, 0, 400, 400);
-  // redraw the square at it's new position
-  ctx.fillRect(position.x, position.y, 100, 100);
-}
-//animate x and y of point
-gsap.to(position, { 
-  x: 200, 
-  y: 200, 
-  duration: 4,
-  // unlike DOM elements, canvas needs to be redrawn and cleared on every tick
-  onUpdate: draw 
-});
-gsap.to(".test", { 
-  rotation: 360,
-  x: '-100vw',
-  xPercent: 700,
-  // special properties
-  duration: 2, // how long the animation lasts
-  repeat:100, // the number of repeats - this will play 3 times
-  yoyo: true, // this will alternate back and forth on each repeat. Like a yoyo
-});
-
-gsap.to(".red-left", { 
-  rotation: 360,
-  duration: 1,
-  repeat: 1,
-  repeatDelay: 1,
-});
-
-
-gsap.to(".violet-right", { 
-  rotation: 360,
-  duration: 1,
-  delay: 1 // delay the start of this animation
-});
-
-
-gsap.to(".red-linear", { 
-  rotation: 360,
-  duration: 2,
-  repeat: -1,
-  repeatDelay: 2,
-  ease: 'none'
-});
-
-
-gsap.to(".violet-bounce", { 
-  rotation: 360,
-  duration: 2,
-  repeat: -1,
-  repeatDelay: 2,
-  ease: 'bounce.out'
-});
-
-
-// const cube = new Mesh(geometry, material)
-// scene.add(cube)
-
-// gsap.to(cube.rotation, {
-//   x: Math.PI * 2,
-//   y: Math.PI * 2,
-//   duration: 10,
-//   repeat: -1,
-//   ease: "none",
-//   onUpdate: () => {
-//     renderer.render(scene, camera)
-//   },
-// })
-
-
-  // ////////////////////////////////////////
-  //? =========> Code AnimeJs ALL <========\\
-  // ////////////////////////////////////////
-  let codeAnmieJs_All = [
-    `
-  <div class="">
-  
-  </div>
-  <div  class="w-3/4 flex justify-center">
-  <div id="innerSourceCodeAnimeJs" class="relative flex p-2   w-full  h-42 z-10 animate__animated animate__zoomInDown bg-slate-200/30 border-8 ring ring-rose-500  border-double">
-   <div class="w-2/4 p-2 bg-rose-600/20 text-white h-auto">
-      <h2 class="text-white"><<span class="text-yellow-600">div</span> <span class="text-yellow-400"> class=</span>"<span class="text-green-700">function-based-params-demo</span>"> 
-         <h2 class="text-white"><<span class="text-yellow-600">div</span> <span class="text-yellow-400"> class=</span>"<span class="text-green-700">el</span>">   <<span class="text-yellow-600">/div</span>></h2>
-         <h2 class="text-white"><<span class="text-yellow-600">div</span> <span class="text-yellow-400"> class=</span>"<span class="text-green-700">el</span>"> 
-            <<span class="text-yellow-600">/div</span>></h2>
-         <<span class="text-yellow-600">/div</span>></h2>
-   </div>
-   <div class="w-2/4 bg-rose-600/20  h-auto">
-      <pre><span class="text-blue-800">anime</span>({
-    <span class="text-green-600"> targets:</span> <span class="text-yellow-400">'.function-based-params-demo .el'</span>,
-    <span class="text-green-600">translateX:</span><span class="text-yellow-400"> 270,</span>
-    <span class="text-green-600">direction:</span> <span class="text-yellow-400">'alternate',</span>
-    <span class="text-green-600">loop:</span><span class="text-yellow-400"> true,</span>
-    <span class="text-blue-600">delay:</span> <span class="text-yellow-400">function(el, i, l) {</span>
-     <span class="text-green-600"></span><span class="text-purple-700"> return</span> i * 100;
-    <span class="text-yellow-400">},</span>
-    <span class="text-blue-600">endDelay:</span><span class="text-yellow-400">function(el, i, l) {</span>
-     <span class="text-purple-700"> return</span> (l - i) * 100;
-    <span class="text-blue-600">}</span> }); </pre>
-   </div>
-    </div
-});>
- </div>
-`,
-    `<div class="w-3/4 flex justify-center">
-  <div id="innerSourceCodeAnimeJs" class="relative flex p-2   w-full h-42 z-10 animate__animated animate__zoomInDown  border-8 ring ring-rose-500  border-double">
-   <div class="w-2/4 p-2 bg-blue-600/20 text-2xl text-white">
-      <h2 class="text-white"><<span class="text-yellow-600">div</span> <span class="text-yellow-400"> class=</span>"<span class="text-green-700">function-based-params-demo</span>"> 
-         <h2 class="text-white"><<span class="text-yellow-600">div</span> <span class="text-yellow-400"> class=</span>"<span class="text-green-700">autoplay-true</span>">   <<span class="text-yellow-600">/div</span>></h2>
-         <h2 class="text-white"><<span class="text-yellow-600">div</span> <span class="text-yellow-400"> class=</span>"<span class="text-green-700">autoplay-false</span>">   <<span class="text-yellow-600">/div</span>></h2>
-         <h2 class="text-white"><<span class="text-yellow-600">div</span> <span class="text-yellow-400"> class=</span>"<span class="text-green-700">autoplay-true</span>"> 
-            <<span class="text-yellow-600">/div</span>></h2>
-         <<span class="text-yellow-600">/div</span>></h2>
-   </div>
-   <div class="w-2/4  bg-blue-600/20">
-      <pre><span class="text-blue-800">anime</span>({
-    <span class="text-green-600"> targets:</span> <span class="text-yellow-400">'.autoplay-true'</span>,
-    <span class="text-green-600">translateX:</span><span class="text-yellow-400"> 200,</span>
-    <span class="text-green-600">autoplay:</span> <span class="text-yellow-400">'true',</span>
-    <span class="text-green-600">easing:</span><span class="text-yellow-400"> 'easeInOutSine'</span><span class="text-black">})</span>
-    <span class="text-blue-800">anime</span>({
-      <span class="text-green-600"> targets:</span> <span class="text-yellow-400">'.autoplay-true'</span>,
-      <span class="text-green-600">translateX:</span><span class="text-yellow-400"> 200,</span>
-      <span class="text-green-600">autoplay:</span> <span class="text-yellow-400">'true',</span>
-      <span class="text-green-600">easing:</span><span class="text-yellow-400"> 'easeInOutSine'</span><span class="text-black">})</span> </pre>
-   </div>
-    </div>
- </div>`,
-
-    `
-     <div class="w-3/4 flex justify-center">
-  <div id="innerSourceCodeAnimeJs" class="relative flex p-2   w-full h-42 z-10 animate__animated animate__zoomInDown bg-slate-200/30 border-8 ring ring-rose-500  border-double">
-   <div class="w-2/4 p-2 bg-yellow-700/10 text-white  h-auto">
-      <h2 class="text-white"><<span class="text-yellow-600">div</span> <span class="text-yellow-400"> class=</span>"<span class="text-green-700">css-transforms-demo</span>"> 
-        
-         <h2 class="text-white"><<span class="text-yellow-600">div</span> <span class="text-yellow-400"> class=</span>"<span class="text-green-700">el</span>"> 
-            <<span class="text-yellow-600">/div</span>></h2>
-         <<span class="text-yellow-600">/div</span>></h2>
-   </div>
-   <div class="w-2/4 bg-yellow-700/10">
-      <pre><span class="text-blue-800">anime</span>({
-    <span class="text-green-600"> targets:</span> <span class="text-yellow-400">'.css-transforms-demo .el'</span>,
-    <span class="text-green-600">translateX:</span><span class="text-yellow-400"> 180,</span>
-    <span class="text-green-600">scale:</span> <span class="text-yellow-400">'2',</span>
-    <span class="text-green-600">rotate:</span><span class="text-yellow-400"> 1turn,</span>
-   </pre>
-   </div>
-    </div>
- </div>
-     `,
-    `
-      <div class="div w-3/4   flex absolute justify-center">
-  <div id="innerSourceCodeAnimeJs" class="relative flex p-2   w-full h-5/6 z-10 animate__animated animate__zoomInDown bg-slate-200/30 border-8 ring ring-rose-500  border-double">
-   <div class="w-2/4 p-2 bg-green-600/10 text-white text-2xl">
-      <h2 class="text-white"><<span class="text-yellow-600">div</span> <span class="text-yellow-400"> class=</span>"<span class="text-green-700">motion-path-demo</span>"> 
-         <h2 class="text-white"><<span class="text-yellow-600">div</span> <span class="text-yellow-400"> class=</span>"<span class="text-green-700">el follow-path</span>">   <<span class="text-yellow-600">/div</span>></h2>
-         <h2 class="text-white"><<span class="text-yellow-600">svg</span> <span class="text-yellow-400"> width=</span>"<span class="text-green-700">256</span>" <span class="text-yellow-400"> height=</span>"<span class="text-green-700">112</span>">
-       <br>< <span class="text-yellow-600">path</span>> <<span class="text-yellow-600">path</span>> <<span class="text-yellow-600">/svg</span>></h2>
-       <<span class="text-yellow-600">/div</span>></h2>
-   </div>
-   <div class="w-2/4 bg-green-600/10 text-xg ">
-      <pre>
-      <span class="text-rose-400">let</span><span class="text-white"> path</span><span class="text-blue-400">=</span>anime.<span class="text-blue-600">path</span><span class="text-green-700">('.motion-path-demo path')</span>
-      <span class="text-blue-800">anime</span>({
-    <span class="text-green-600"> targets:</span> <span class="text-yellow-400">'.motion-path-demo .el'</span>,
-    <span class="text-green-600">translateX:</span><span class="text-yellow-400"> path('x'),</span>
-    <span class="text-green-600">translateY</span> <span class="text-yellow-400">path('y'),</span>
-    <span class="text-green-600">rotate:</span><span class="text-yellow-400"> path('angle')</span>
-    <span class="text-green-600"> easing:</span> <span class="text-yellow-400">'linear',</span>
-     <span class="text-green-600">duration:</span><span class="text-yellow-700"> 2000,</span>;
-     <span class="text-green-600">loop:</span><span class="text-yellow-700"> true,</span>;
-    <span class="text-yellow-400">})</span>
-     </pre>
-   </div>
-    </div>
- </div>
-      
-      `,
-    //4
-    `
-      <div class="div w-3/4   flex absolute justify-center">
-  <div id="innerSourceCodeAnimeJs" class="relative flex p-2   w-full h-42 z-10 animate__animated animate__zoomInDown bg-slate-200/30 border-8 ring ring-rose-500  border-double">
-   <div class="w-2/4 p-2 bg-rose-600/20 text-white h-auto">
-      <h2 class="text-white"><<span class="text-yellow-600">div</span> <span class="text-yellow-400"> class=</span>"<span class="text-green-700">staggering-grid-demo</span>"> 
-         <h2 class="text-white">  <<span class="text-yellow-600">div</span> <span class="text-yellow-400"> class=</span>"<span class="text-green-700"/>grid grid-cols-12 bg-gray-600</span>">     <div class="w-5 h-5  bg-red-600 border border-white ssmall square el" style="transform: scale(1);"></div> <<span class="text-yellow-600">/div</span>></h2>
-         <h2 class="text-white"><<span class="text-yellow-600">svg</span> <span class="text-yellow-400"> width=</span>"<span class="text-green-700">256</span>" <span class="text-yellow-400"> height=</span>"<span class="text-green-700">112</span>">
-       <br>< <span class="text-yellow-600">path</span>> <<span class="text-yellow-600">path</span>> <<span class="text-yellow-600">/svg</span>></h2>
-       <<span class="text-yellow-600">/div</span>></h2>
-   </div>
-   <div class="w-2/4 bg-rose-600/20 text-lg h-auto">
-      <pre>
-      <span class="text-rose-400">let</span><span class="text-white"> path</span><span class="text-blue-400">=</span>anime.<span class="text-blue-600">path</span><span class="text-green-700">('.motion-path-demo path')</span>
-      <span class="text-blue-800">anime</span>({
-    <span class="text-green-600"> targets:</span> <span class="text-yellow-400">'.motion-path-demo .el'</span>,
-    <span class="text-green-600">translateX:</span><span class="text-yellow-400"> path('x'),</span>
-    <span class="text-green-600">translateY</span> <span class="text-yellow-400">path('y'),</span>
-    <span class="text-green-600">rotate:</span><span class="text-yellow-400"> path('angle')</span>
-    <span class="text-green-600"> easing:</span> <span class="text-yellow-400">'linear',</span>
-     <span class="text-green-600">duration:</span><span class="text-yellow-700"> 2000,</span>;
-     <span class="text-green-600">loop:</span><span class="text-yellow-700"> true,</span>;
-    <span class="text-yellow-400">})</span>
-     </pre>
-   </div>
-    </div>
- </div>
-      
-      `,
-  ];
-}
