@@ -7,7 +7,10 @@ function all() {
 }
 function animateGsap(){
 // * ======> GSAP <======\\
-  gsap.to(".box-left", { 
+let btnGsap_1 = document.querySelector("#btnGsap-1");
+let btnGsap_2 = document.querySelector("#btnGsap-2");
+btnGsap_1.addEventListener("click", ()=>{
+   gsap.to(".box-left", { 
     x: '40vw',
     rotation: 360,
     duration:5,
@@ -17,6 +20,43 @@ function animateGsap(){
     rotation: -360,
     duration:5,
   });
+});
+btnGsap_1.removeEventListener("click", ()=>{
+
+    gsap.to(".box-left", { 
+    x: '0vw',
+    rotation: -360,
+    duration:5,
+  });
+   gsap.to(".box-right", { 
+    x: '0vw',
+    rotation: 360,
+    duration:5,
+  });
+});
+btnGsap_2.addEventListener("click", ()=>{
+  
+    gsap.to(".box-left", { 
+    x: '0vw',
+    rotation: -360,
+    duration:5,
+  });
+   gsap.to(".box-right", { 
+    x: '0vw',
+    rotation: 360,
+    duration:5,
+  });
+})
+  // gsap.to(".box-left", { 
+  //   x: '40vw',
+  //   rotation: 360,
+  //   duration:5,
+  // });
+  //  gsap.to(".box-right", { 
+  //   x: '-40vw',
+  //   rotation: -360,
+  //   duration:5,
+  // });
   gsap.to(".svgBox", { 
     duration: 2,
     x: 300, // use transform shorthand (this is now using SVG units not px, the SVG viewBox is 100 units wide)
