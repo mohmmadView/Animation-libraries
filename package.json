@@ -1,9 +1,14 @@
 {
+  "name": "libaryanimation-webpack",
+  "description": "پروژه ای اشنای خلاصه با لابری های انمیشن جاوا اسکریب",
+  "version": "1.0.0",
+  "main": "./app.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "homepage": "http://Zarpoosh.github.io/Submit-Form",
   "scripts": {
-    "deploy": "gh-pages -d build",
-    "start": "./index.html",
-    "build": "npm install"
+    "build": "webpack"
   },
   "devDependencies": {
     "tailwindcss": "^3.2.7"
@@ -13,7 +18,12 @@
     "@types/prismjs": "^1.26.3",
     "animate.css": "^4.1.1",
     "animejs": "^3.2.1",
+    "css-loader": "^6.9.1",
     "gsap": "^3.12.5",
-    "prismjs": "^1.29.0"
+    "lodash": "^4.17.21",
+    "prismjs": "^1.29.0",
+    "style-loader": "^3.3.4",
+    "webpack": "^5.90.0",
+    "webpack-cli": "^5.1.4"
   }
 }
