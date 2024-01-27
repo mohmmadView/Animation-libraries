@@ -6,6 +6,17 @@ function all() {
   animateGsap()
 }
 function animateGsap(){
+   gsap.registerPlugin(TextPlugin)
+  let elmGsap = document.querySelectorAll(".anmiateGsap");
+
+  let words = gsap.utils.toArray(".anmiateGsap-1 .anmiateGsap-2"),
+  tl = gsap.timeline({delay: 0.5}),
+  timePerCharacter = 0.2;
+
+words.forEach(el => {
+tl.from(el, {text: "", duration: el.innerHTML.length * timePerCharacter, ease: "none"});
+});
+
 // * ======> GSAP <======\\
 let btnGsap_1 = document.querySelector("#btnGsap-1");
 let btnGsap_2 = document.querySelector("#btnGsap-2");
@@ -21,19 +32,7 @@ btnGsap_1.addEventListener("click", ()=>{
     duration:5,
   });
 });
-btnGsap_1.removeEventListener("click", ()=>{
 
-    gsap.to(".box-left", { 
-    x: '0vw',
-    rotation: -360,
-    duration:5,
-  });
-   gsap.to(".box-right", { 
-    x: '0vw',
-    rotation: 360,
-    duration:5,
-  });
-});
 btnGsap_2.addEventListener("click", ()=>{
   
     gsap.to(".box-left", { 
@@ -159,103 +158,7 @@ gsap.to(".violet-bounce", {
   // ////////////////////////////////////////
   let codeAnmieJs_All = [
     `
-  <div class="">
   
-  </div>
-  <div  class="w-3/4 flex justify-center"function gsap(){
-    // * ======> GSAP <======\\
-      gsap.to(".box-left", { 
-        x: '40vw',
-        rotation: 360,
-        duration:5,
-      });
-       gsap.to(".box-right", { 
-        x: '-40vw',
-        rotation: -360,
-        duration:5,
-      });
-      gsap.to(".svgBox", { 
-        duration: 2,
-        x: 300, // use transform shorthand (this is now using SVG units not px, the SVG viewBox is 100 units wide)
-        xPercent: -80,
-        // or target SVG attributes
-        attr: {
-          fill: '#8d3dae',
-          rx: 50, 
-        },
-      });
-    //create an object
-    let test = { myNum: 10, myColor: "red" };
-    gsap.to("test",test, {
-      myNum: 200,
-      myColor: "blue",
-      onUpdate: () => console.log(test.myNum, test.myColor)
-    });
-    
-    
-    const canvas = document.getElementById("canvas");
-    const ctx = canvas.getContext("2d");
-    ctx.fillStyle = "#28a92b";
-    
-    let position = { x: 0, y: 0 };
-    
-    function draw() {
-      // erase the canvas
-      ctx.clearRect(0, 0, 400, 400);
-      // redraw the square at it's new position
-      ctx.fillRect(position.x, position.y, 100, 100);
-    }
-    //animate x and y of point
-    gsap.to(position, { 
-      x: 200, 
-      y: 200, 
-      duration: 4,
-      // unlike DOM elements, canvas needs to be redrawn and cleared on every tick
-      onUpdate: draw 
-    });
-    gsap.to(".test", { 
-      rotation: 360,
-      x: '-100vw',
-      xPercent: 700,
-      // special properties
-      duration: 2, // how long the animation lasts
-      repeat:100, // the number of repeats - this will play 3 times
-      yoyo: true, // this will alternate back and forth on each repeat. Like a yoyo
-    });
-    
-    gsap.to(".red-left", { 
-      rotation: 360,
-      duration: 1,
-      repeat: 1,
-      repeatDelay: 1,
-    });
-    
-    
-    gsap.to(".violet-right", { 
-      rotation: 360,
-      duration: 1,
-      delay: 1 // delay the start of this animation
-    });
-    
-    
-    gsap.to(".red-linear", { 
-      rotation: 360,
-      duration: 2,
-      repeat: -1,
-      repeatDelay: 2,
-      ease: 'none'
-    });
-    
-    
-    gsap.to(".violet-bounce", { 
-      rotation: 360,
-      duration: 2,
-      repeat: -1,
-      repeatDelay: 2,
-      ease: 'bounce.out'
-    });
-    }
-    >
   <div id="innerSourceCodeAnimeJs" class="relative flex p-2   w-full  h-42 z-10 animate__animated animate__zoomInDown bg-slate-200/30 border-8 ring ring-rose-500  border-double">
    <div class="w-2/4 p-2 bg-rose-600/20 text-white h-auto">
       <h2 class="text-white"><<span class="text-yellow-600">div</span> <span class="text-yellow-400"> class=</span>"<span class="text-green-700">function-based-params-demo</span>"> 
@@ -488,7 +391,6 @@ function animateJs(){
   let elmAnimateJs = document.querySelector(".animate_js");
   let elmContainerSvgAnimeJs = document.querySelector("#container-Svg-AnimeJs");
   let containerAnimateJs = document.querySelector("#Code-svgAnimateJs");
-  console.log(elmContainerSvgAnimeJs);
   let offsetAnimateJs = anime.setDashoffset(elmAnimateJs);
   function SvgAnimateJs() {
     elmAnimateJs.setAttribute("stroke-dashoffset", offsetAnimateJs);
@@ -502,14 +404,11 @@ function animateJs(){
       easing: "easeInOutSine",
       autoplay: true,
     });
-
-    console.log("test.win");
   }
   containerAnimateJs.addEventListener("click", () => {
     console.log("containeAnimeJs");
     // elmContainerSvgAnimeJs.classList.add("hidden");
     elmTextAnimeJs.innerHTML = "";
-   
     elmTextAnimeJs.insertAdjacentHTML(
       "beforeend",
       `
@@ -518,7 +417,6 @@ function animateJs(){
             <defs></defs>
          <text class="animate_js  animate__animated" style="fill: rgb(235, 14, 14); font-family: &quot;Distro Extinct&quot;; stroke: rgb(124, 132, 97); stroke-dasharray: 30px; stroke-dashoffset: 3.37319px; stroke-opacity: 0.53; stroke-width: 0.756387px; white-space: pre;" transform="matrix(4.114889, 0, 0, 3.817554, -392.250885, -53.289532)" x="119.835" y="32.323" stroke-dasharray="undefined">AnimeJs</text>
           </svg>
-  
   `,
     );
      location.reload();
@@ -908,38 +806,28 @@ bouncyCircle2.play();
     swirlFrequency: "rand(2,4)",
     swirlSize: "rand(6,14)",
   };
-
   const swirl1 = new mojs.ShapeSwirl({
     ...SWIRL_OPTS,
   });
-
   const swirl2 = new mojs.ShapeSwirl({
     ...SWIRL_OPTS,
     direction: -1,
   });
-
   const swirl3 = new mojs.ShapeSwirl({
     ...SWIRL_OPTS,
   });
-
   const swirl4 = new mojs.ShapeSwirl({
     ...SWIRL_OPTS,
   });
-
   document.querySelector("#mojs9").addEventListener("click", (e) => {
     console.log("mouse");
     const x = e.pageX,
       y = { [e.pageY]: e.pageY - 150 };
     swirl1.tune({ x, y }).generate().replay();
-
     swirl2.tune({ x, y }).generate().replay();
-
     swirl3.tune({ x, y }).generate().replay();
-
     swirl4.tune({ x, y }).generate().replay();
   });
-
- 
   }
  function winScroll(number, element, classId) {
     if (window.scrollY > number) {
@@ -948,3 +836,100 @@ bouncyCircle2.play();
       element.classList.remove(classId);
     }
   }
+  // <div class="">
+  
+  // </div>
+  // <div  class="w-3/4 flex justify-center"function gsap(){
+  //   // * ======> GSAP <======\\
+  //     gsap.to(".box-left", { 
+  //       x: '40vw',
+  //       rotation: 360,
+  //       duration:5,
+  //     });
+  //      gsap.to(".box-right", { 
+  //       x: '-40vw',
+  //       rotation: -360,
+  //       duration:5,
+  //     });
+  //     gsap.to(".svgBox", { 
+  //       duration: 2,
+  //       x: 300, // use transform shorthand (this is now using SVG units not px, the SVG viewBox is 100 units wide)
+  //       xPercent: -80,
+  //       // or target SVG attributes
+  //       attr: {
+  //         fill: '#8d3dae',
+  //         rx: 50, 
+  //       },
+  //     });
+  //   //create an object
+  //   let test = { myNum: 10, myColor: "red" };
+  //   gsap.to("test",test, {
+  //     myNum: 200,
+  //     myColor: "blue",
+  //     onUpdate: () => console.log(test.myNum, test.myColor)
+  //   });
+    
+    
+  //   const canvas = document.getElementById("canvas");
+  //   const ctx = canvas.getContext("2d");
+  //   ctx.fillStyle = "#28a92b";
+    
+  //   let position = { x: 0, y: 0 };
+    
+  //   function draw() {
+  //     // erase the canvas
+  //     ctx.clearRect(0, 0, 400, 400);
+  //     // redraw the square at it's new position
+  //     ctx.fillRect(position.x, position.y, 100, 100);
+  //   }
+  //   //animate x and y of point
+  //   gsap.to(position, { 
+  //     x: 200, 
+  //     y: 200, 
+  //     duration: 4,
+  //     // unlike DOM elements, canvas needs to be redrawn and cleared on every tick
+  //     onUpdate: draw 
+  //   });
+  //   gsap.to(".test", { 
+  //     rotation: 360,
+  //     x: '-100vw',
+  //     xPercent: 700,
+  //     // special properties
+  //     duration: 2, // how long the animation lasts
+  //     repeat:100, // the number of repeats - this will play 3 times
+  //     yoyo: true, // this will alternate back and forth on each repeat. Like a yoyo
+  //   });
+    
+  //   gsap.to(".red-left", { 
+  //     rotation: 360,
+  //     duration: 1,
+  //     repeat: 1,
+  //     repeatDelay: 1,
+  //   });
+    
+    
+  //   gsap.to(".violet-right", { 
+  //     rotation: 360,
+  //     duration: 1,
+  //     delay: 1 // delay the start of this animation
+  //   });
+    
+    
+  //   gsap.to(".red-linear", { 
+  //     rotation: 360,
+  //     duration: 2,
+  //     repeat: -1,
+  //     repeatDelay: 2,
+  //     ease: 'none'
+  //   });
+    
+    
+  //   gsap.to(".violet-bounce", { 
+  //     rotation: 360,
+  //     duration: 2,
+  //     repeat: -1,
+  //     repeatDelay: 2,
+  //     ease: 'bounce.out'
+  //   });
+  //   }
+  //   >

@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <link rel="stylesheet" href="style.css">
+   <link href='//fonts.googleapis.com/css?family=Asap:400,700' rel='stylesheet' type='text/css'>
    <!--TODO ------------------------- TailwindCss ------------------------- -->
    <link rel="stylesheet" href="./dist/output.css">
    <!--?------------------------- TheEnd TailwindCss ---------------------- -->
@@ -15,6 +16,7 @@
     <link rel="stylesheet" href="prismMini.css">
 	<!-- <link rel="stylesheet" href="prism-live.css">  -->
 	<link rel="stylesheet" href="./style.css">
+
     <title>Document</title>
 </head>
  <body class="p-5">
@@ -1108,19 +1110,67 @@ document.querySelector('#mojs9').addEventListener('click', (e)=> {  console.log(
 </div>
 </div>
 
-<button id="btnGsap-1" class=" h-16 p-5 bg-orange-200 ring-2 border ring-orange-300">click Animate-GSAP 1</button>
-<button id="btnGsap-2" class=" h-16 p-5 bg-orange-200 ring-2 border ring-orange-300">click Animate-GSAP 2</button>
-<div class=" flex items-center justify-between h-44 mt-5 bg-zinc-50/15 overflow-hidden">
+
+<!-- <svg class="w-2/6 mx-auto" viewBox="0 0 240 80" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .small {
+      font: italic 13px sans-serif;
+      fill: red;
+    }
+    .heavy {
+      font: bold italic 20px sans-serif;
+      fill: blueviolet;
+    }
+
+    .Rrrrr {
+      font: italic bold 40px sans-serif;
+      fill: greenyellow;
+    }
+  </style>
+
+  <text x="5" y="20" class="self-center  small">Animate</text>
+  <text x="40" y="50" class="self-center heavy">library</text>
+  <text x="65" y="35" class="self-center Rrrrr">GSAP</text>
+</svg> -->
+<div class="flex justify-center">
+
 <div class="block box-left w-32 h-32 rounded-lg bg-green-400"></div>
-<div class="block box-right w-32 h-32 rounded-lg bg-red-400"></div>
-</div>
+<svg viewBox="0 0 240 80" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" class="w-2/6 mx-auto">
+ <style>.small {
+      font: italic 13px sans-serif;
+      fill: red;
+    }
+    .heavy {
+      font: bold italic 20px sans-serif;
+      fill: blueviolet;
+    }
 
-
-<div class="w-full h-64">
-  
-  <svg id="svg" class="w-full h-full" viewBox="0 0 100 100">
-     <rect class="svgBox" fill="#28a92b" x="0" y="35" width="40" height="40" rx="2" />
-  </svg>
+    .Rrrrr {
+      font: italic bold 40px sans-serif;
+      fill: greenyellow;
+    }</style>
+ <defs>
+  <radialGradient id="svg_6" spreadMethod="pad">
+   <stop id="jq_stop_4313" offset="0" stop-color="#000000"/>
+   <stop id="jq_stop_451" offset="1" stop-color="#ffffff"/>
+  </radialGradient>
+  <radialGradient cx="0.5" cy="0.5" id="svg_4" r="0.5" spreadMethod="pad">
+   <stop id="jq_stop_4313" offset="0" stop-color="#000000"/>
+   <stop id="jq_stop_451" offset="1" stop-color="#ffffff"/>
+  </radialGradient>
+  <radialGradient gradientTransform="translate(0,0.3137931034482758) scale(1,0.37241379310344835)" id="svg_8" r="0.79" spreadMethod="pad">
+   <stop id="jq_stop_7272" offset="0" stop-color="#bfbfbf"/>
+   <stop id="jq_stop_8346" offset="1" stop-color="#404040"/>
+  </radialGradient>
+ </defs>
+ <g class="layer">
+  <title>Layer 1</title>
+  <ellipse cx="120.5" cy="39.96" fill="url(#svg_8)" fill-opacity="0.79" id="svg_5" opacity="0.35" rx="118.5" ry="37.5" stroke="url(#svg_4)" stroke-dasharray="2" stroke-linecap="null" stroke-linejoin="round" stroke-width="3"/>
+  <text class="self-center Rrrrr" fill="#ffff00" font-family="Cursive" font-size="4" id="svg_3" opacity="0.95" stroke="url(#svg_6)" stroke-dasharray="null" stroke-linecap="null" stroke-linejoin="round" stroke-width="0" transform="matrix(1, 0, 0, 1, 0, 0)" x="100" y="47.73">GSAP</text>
+  <text class="self-center heavy" id="svg_2" transform="matrix(1.05317, 0, 0, 1.16667, -3.34979, -7.66667)" x="55.4" y="61.57">library</text>
+  <text class="self-center  small" id="svg_1" transform="matrix(1, 0, 0, 1, 0, 0) matrix(1.05417, 0, 0, 1.1866, -2.60617, -0.465693)" x="40.46" y="20.9">Animate</text>
+ </g>
+</svg>
 </div>
 
 <div class=" flex items-center justify-end h-44 mt-5 bg-zinc-50/15 overflow-hidden">
@@ -1166,6 +1216,7 @@ document.querySelector('#mojs9').addEventListener('click', (e)=> {  console.log(
 <script src="./node_modules/animejs/lib/anime.min.js"></script>
 <!--?----------------- TheEnd library -------------------- -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/TextPlugin.min.js"></script>
 <script src="./app.js"></script>
 
 
