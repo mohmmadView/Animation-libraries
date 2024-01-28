@@ -22,12 +22,12 @@ let btnGsap_1 = document.querySelector("#btnGsap-1");
 let btnGsap_2 = document.querySelector("#btnGsap-2");
 btnGsap_1.addEventListener("click", ()=>{
    gsap.to(".box-left", { 
-    x: '40vw',
+    x: '38vw',
     rotation: 360,
     duration:5,
   });
    gsap.to(".box-right", { 
-    x: '-40vw',
+    x: '-38vw',
     rotation: -360,
     duration:5,
   });
