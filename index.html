@@ -1110,45 +1110,43 @@ document.querySelector('#mojs9').addEventListener('click', (e)=> {  console.log(
 </div>
 </div>
 
-
-<div id="container-txt-gsap" class="w-full flex justify-center">
-
-<svg  class="w-full   anmiateGsap-1" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
-  <style>.small {
-       font: italic 23px sans-serif;
-       fill: red;
-     }
-     .heavy {
-       font: bold italic 30px sans-serif;
-       fill: blueviolet;
-     }
+<div class="flex justify-end">
+  
+  <div id="" class="w-3/6 flex">
+  
+   <div class="w-3/5">
+     
+        <svg id="text-gsap" viewBox="0 0 160 70" xmlns="http://www.w3.org/2000/svg">
+          
+          <style>
+            .small {
+              font: italic 13px sans-serif;
+              fill: red;
+            }
+            .heavy {
+              font: 600 25px sans-serif;
+              fill:rgb(229, 245, 7)
+            }
+        
+            .Rrrrr {
+              font: italic bold 35px serif;
+              fill: rgb(0, 255, 13);
+            }
+          </style>
+        
+          <text x="8" y="15" class="small">Animate</text>
+          <text x="20" y="65" class="heavy">library</text>
+          <text x="51" y="45" class="Rrrrr">GASP</text>
+          
+        </svg>
+   </div>
  
-     .Rrrrr {
-       font: italic bold 50px sans-serif;
-       fill: greenyellow;
-     }</style>
-  <defs>
-   <radialGradient id="svg_6" spreadMethod="pad">
-    <stop id="jq_stop_4313" offset="0" stop-color="#000000"/>
-    <stop id="jq_stop_451" offset="1" stop-color="#ffffff"/>
-   </radialGradient>
-   <radialGradient cx="0.5" cy="0.5" id="svg_4" r="0.5" spreadMethod="pad">
-    <stop id="svg_7" offset="0" stop-color="#000000"/>
-    <stop id="svg_9" offset="1" stop-color="#ffffff"/>
-   </radialGradient>
-   <radialGradient cx="0.5" cy="0.5" gradientTransform="translate(0,0.14137931034482754) scale(1,0.7172413793103449)" id="svg_11" r="0.79" spreadMethod="pad">
-    <stop id="jq_stop_7272" offset="0" stop-color="#bfbfbf"/>
-    <stop id="jq_stop_8346" offset="1" stop-color="#404040"/>
-   </radialGradient>
-  </defs>
-  <g class="layer">
-   <title>Layer 1</title>
-   <ellipse class="" cx="920.5" cy="79.96" fill="url(#svg_11)" fill-opacity="0.71" id="svg_5" opacity="0.35" rx="218.5" ry="67.5" stroke="url(#svg_4)" stroke-dasharray="2" stroke-linecap="null" stroke-linejoin="round" stroke-width="3"/>
-   <text id="text-gsap" class=" Rrrrr" fill="#ffff00" font-family="Cursive" font-size="4" id="svg_3" opacity="0.95" stroke="url(#svg_6)" stroke-dasharray="null" stroke-linecap="null" stroke-linejoin="round" stroke-width="0" transform="matrix(1, 0, 0, 1, 0, 0)" x="1594.9" y="84.73">GSAP</text>
-   <text class="anmiateGsap-2 heavy" id="svg_2" transform="matrix(1.05317, 0, 0, 1.16667, -3.34979, -7.66667)" x="780.4" y="110.57">library</text>
-   <text class="anmiateGsap-2  small" id="svg_1" transform="matrix(1, 0, 0, 1, 0, 0) matrix(1.05417, 0, 0, 1.1866, -2.60617, -0.465693)" x="730.46" y="50.9">Animate</text>
-  </g>
- </svg>
+   <div id="container-txt-gsap" class="flex items-center ">
+  
+  
+    
+   </div>
+  </div>
 </div>
 <button class="p-3 bg-orange-300" id="btnGsap-1">Gsap-1</button>
 <button class="p-3 bg-orange-300" id="btnGsap-2">Gsap-2</button>
