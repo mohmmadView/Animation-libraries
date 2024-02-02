@@ -445,7 +445,7 @@ video {
 }
 
 @font-face {
-  font-family: "FashionVictim";
+  font-family:"FashionVictim";
 
   src:
       local("FashionVictim"),
@@ -808,6 +808,10 @@ video {
   margin-left: 1.5rem;
 }
 
+.mr-32 {
+  margin-right: 8rem;
+}
+
 .mt-12 {
   margin-top: 3rem;
 }
@@ -951,6 +955,10 @@ video {
   height: 0.25rem;
 }
 
+.h-1\/2 {
+  height: 50%;
+}
+
 .h-16 {
   height: 4rem;
 }
@@ -1047,8 +1055,20 @@ video {
   width: 5rem;
 }
 
+.w-28 {
+  width: 7rem;
+}
+
 .w-3\/4 {
   width: 75%;
+}
+
+.w-3\/5 {
+  width: 60%;
+}
+
+.w-3\/6 {
+  width: 50%;
 }
 
 .w-32 {
@@ -1069,6 +1089,10 @@ video {
 
 .w-5\/6 {
   width: 83.333333%;
+}
+
+.w-60 {
+  width: 15rem;
 }
 
 .w-8 {
@@ -1095,16 +1119,12 @@ video {
   width: 100%;
 }
 
-.w-3 {
-  width: 0.75rem;
+.w-64 {
+  width: 16rem;
 }
 
-.w-3\/6 {
-  width: 50%;
-}
-
-.w-3\/5 {
-  width: 60%;
+.w-2\/6 {
+  width: 33.333333%;
 }
 
 .flex-shrink {
@@ -2144,6 +2164,11 @@ video {
   background-color: rgb(96 165 250 / var(--tw-bg-opacity));
 }
 
+.bg-blue-600 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(37 99 235 / var(--tw-bg-opacity));
+}
+
 .bg-blue-600\/20 {
   background-color: rgb(37 99 235 / 0.2);
 }
@@ -2158,13 +2183,13 @@ video {
   background-color: rgb(74 222 128 / var(--tw-bg-opacity));
 }
 
-.bg-green-600\/10 {
-  background-color: rgb(22 163 74 / 0.1);
+.bg-green-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(34 197 94 / var(--tw-bg-opacity));
 }
 
-.bg-lime-600 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(101 163 13 / var(--tw-bg-opacity));
+.bg-green-600\/10 {
+  background-color: rgb(22 163 74 / 0.1);
 }
 
 .bg-orange-300 {
@@ -2175,6 +2200,16 @@ video {
 .bg-orange-400 {
   --tw-bg-opacity: 1;
   background-color: rgb(251 146 60 / var(--tw-bg-opacity));
+}
+
+.bg-orange-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(249 115 22 / var(--tw-bg-opacity));
+}
+
+.bg-purple-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(168 85 247 / var(--tw-bg-opacity));
 }
 
 .bg-red-400\/5 {
@@ -2202,6 +2237,11 @@ video {
 
 .bg-rose-600\/20 {
   background-color: rgb(225 29 72 / 0.2);
+}
+
+.bg-slate-200 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(226 232 240 / var(--tw-bg-opacity));
 }
 
 .bg-slate-200\/30 {
@@ -2774,6 +2814,10 @@ video {
   -moz-osx-font-smoothing: auto;
 }
 
+.opacity-0 {
+  opacity: 0;
+}
+
 .bg-blend-normal {
   background-blend-mode: normal;
 }
@@ -3011,11 +3055,6 @@ video {
   --tw-ring-color: rgb(247 254 231 / var(--tw-ring-opacity));
 }
 
-.ring-lime-950 {
-  --tw-ring-opacity: 1;
-  --tw-ring-color: rgb(26 46 5 / var(--tw-ring-opacity));
-}
-
 .ring-red-950 {
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(69 10 10 / var(--tw-ring-opacity));
@@ -3029,11 +3068,6 @@ video {
 .ring-violet-950 {
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(46 16 101 / var(--tw-ring-opacity));
-}
-
-.ring-yellow-950 {
-  --tw-ring-opacity: 1;
-  --tw-ring-color: rgb(66 32 6 / var(--tw-ring-opacity));
 }
 
 .blur {

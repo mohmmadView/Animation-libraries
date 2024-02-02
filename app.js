@@ -137,6 +137,60 @@ gsap.to(".violet-bounce", {
   ease: 'bounce.out'
 });
 }
+gsap.to(".box", {
+  duration: 1,
+  rotation: 360,
+  opacity: 1, 
+  delay: 0.5, 
+  stagger: 0.2,
+  ease: "sine.out", 
+  force3D: true
+});
+
+document.querySelectorAll(".box").forEach(function(box) {
+  box.addEventListener("click", function() {
+    gsap.to(".box", {
+      duration: 0.5, 
+      opacity: 0, 
+      y: -100, 
+      stagger: 0.1,
+      ease: "back.in"
+    });
+  });
+});
+let tl = gsap.timeline({repeat: 2, repeatDelay: 1}); 
+tl.to(".racket", {
+  duration: 1,
+  rotation: 90,
+});
+tl.to(".racket",{
+  duration:1,
+  x: "80vw",
+  ease:"expo"
+})
+tl.to(".racket",{
+  duration:1,
+  ease:"expo",
+})
+
+
+//register the plugin (just once)
+gsap.registerPlugin(MotionPathPlugin);
+
+gsap.set(".astronaut", {scale: 0.5, autoAlpha: 1});
+
+gsap.to(".astronaut", {
+  duration: 5, 
+  ease: "power1.inOut",
+  immediateRender: true,
+  motionPath: {
+    path: "#path",
+    align: "#path",
+    alignOrigin: [0.5, 0.5],
+    autoRotate: 90
+  }
+});
+
 
 let svgminiBus = document.querySelector('#container-txt-gsap');
 svgminiBus.insertAdjacentHTML('beforeend',svg_miniBus()); 
