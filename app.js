@@ -140,42 +140,38 @@ gsap.to(".violet-bounce", {
 
 let svgminiBus = document.querySelector('#container-txt-gsap');
 svgminiBus.insertAdjacentHTML('beforeend',svg_miniBus()); 
-window.addEventListener('scroll', function(e) {
+window.addEventListener('scroll',gasp_scroll )
+function gasp_scroll(e) {
   
-console.log(window.scrollY );
-  if (window.scrollY > 3662) {
-    gsap.to("#miniBus", {
-      x: -280,
-      delay: 1,
-      duration: 3,
-      yoyo: true,
-      repeat: 1
-    
-    })
-    gsap.to("#text-gsap", {
-    x: -280,
-      delay: 1,
-    duration: 3
-    })
-  
-  } else {
+  console.log(window.scrollY );
+    if (window.scrollY > 3662) {
       gsap.to("#miniBus", {
-      x: 0,
-      delay: 1,
-      duration: 3,
-      yoyo: true,
-      repeat: 1
+        x: -280,
+        duration: 3,
+        yoyo: true,
+        repeat: 1
+      
+      })
+      gsap.to("#text-gsap", {
+      x: -280,
+      duration: 3
+      })
     
-    })
-    gsap.to("#text-gsap", {
-    x: -0,
-      delay: 1,
-    duration: 3
-    })
-  
+    } else {
+        gsap.to("#miniBus", {
+        x: 0,
+        duration: 3,
+        repeat: 1
+      
+      })
+      gsap.to("#text-gsap", {
+      x: -0,
+      duration: 3
+      })
+    
+    }
+    
   }
-})
-
 // const cube = new Mesh(geometry, material)
 // scene.add(cube)
 

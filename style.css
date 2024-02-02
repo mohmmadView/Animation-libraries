@@ -9,7 +9,7 @@ html {
 }
 @layer base {
   @font-face {
-    font-family: "FashionVictim";
+    font-family:"FashionVictim";
     src:
       local("FashionVictim"),
       url("FashionVictim.woff") format("woff") tech(color-COLRv1),
