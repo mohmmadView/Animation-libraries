@@ -208,7 +208,7 @@ pre[class*="language-"] {
 
 .container-gsap {
   perspective: 2000px;
-  width: 300px;
+  width: 400px;
   height: 400px;  
   left:50%;
   top:50%;
