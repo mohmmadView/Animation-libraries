@@ -840,6 +840,10 @@ video {
   margin-top: 2rem;
 }
 
+.ml-auto {
+  margin-left: auto;
+}
+
 .box-border {
   box-sizing: border-box;
 }
@@ -1035,6 +1039,14 @@ video {
   height: 100%;
 }
 
+.h-1\/5 {
+  height: 20%;
+}
+
+.h-2\/5 {
+  height: 40%;
+}
+
 .w-1\/5 {
   width: 20%;
 }
@@ -1125,6 +1137,10 @@ video {
 
 .w-2\/6 {
   width: 33.333333%;
+}
+
+.w-screen {
+  width: 100vw;
 }
 
 .flex-shrink {
@@ -1341,6 +1357,10 @@ video {
 
 .list-outside {
   list-style-position: outside;
+}
+
+.list-none {
+  list-style-type: none;
 }
 
 .appearance-none {
@@ -2116,6 +2136,10 @@ video {
   border-top-width: 1px;
 }
 
+.border-b-2 {
+  border-bottom-width: 2px;
+}
+
 .border-solid {
   border-style: solid;
 }
@@ -2481,6 +2505,10 @@ video {
 .py-10 {
   padding-top: 2.5rem;
   padding-bottom: 2.5rem;
+}
+
+.pl-4 {
+  padding-left: 1rem;
 }
 
 .text-left {
@@ -3092,6 +3120,11 @@ video {
 
 .invert {
   --tw-invert: invert(100%);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
+.invert-0 {
+  --tw-invert: invert(0);
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
