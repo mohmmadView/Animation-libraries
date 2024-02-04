@@ -1,4 +1,3 @@
-
 all();
 function all() {
   animateCss()
@@ -251,8 +250,8 @@ gsap.timeline()
       $('.img').on('mouseenter', (e)=>{
         let current = e.currentTarget;
         let target  =e.target;
-        gsap.to('.img', {opacity:(i,t)=>(t==current)? 1:1, ease:'power3',scale:0.7,
-        transformOrigin: '50% 50% 1150px',duration:0.5,
+        gsap.to('.img', {opacity:(i,t)=>(t==current)? 1:1, ease:'power1',
+        scale:0.7,transformOrigin: '50% 50% 1150px',
         
         
         // scaleY:(i,t)=>(t==current)? 1:1.5
@@ -273,8 +272,8 @@ gsap.timeline()
         });
       })
       $('.img').on('mouseleave', (e)=>{
-        gsap.to('.img', {opacity:1, ease:'power2.inOut',
-      scaleX:1,scaleY:1,  transformOrigin: '50% 50% 950px',duration:0.5})
+        gsap.to('.img', {opacity:1, ease:'power1.inOut',
+      scaleX:1,scaleY:1,  transformOrigin: '50% 50% 950px'})
       gsap.to(".box-left", { 
         x: '0%',
         rotation: -360,
@@ -285,28 +284,49 @@ gsap.timeline()
         rotation: 360,
         duration:3,
       });
+      createElmcode.remove();
+      onShow=false;
       })
       $('.img').on('click',(e)=>{
-let slider = document.querySelectorAll(".img");
-
-    console.log(e.target);
         // console.log(e.target.style.transform="translate3d(0px, 0px, 1350px)")
-
       })
     }, '-=0.5')
-let elmShow = document.querySelector('#show');
-elmShow.addEventListener('click',(e)=>{
-  console.log(e.target.parentNode);
-  let onShow = false;
-  let parent = e.target.parentNode;
-  let createElmcode = document.createElement('code');
-     parent.insertAdjacentHTML('beforeend',"<pre  class='w-2/4 h-2/4 bg-amber-400  m-0 p-0 '><code class='language-js'></code></pre>");
-
+    let slider = document.querySelectorAll(".img");
+    let sliderArr = Array.from(slider);
+    let onShow = false;
+     let createElmcode = document.createElement('code');
+    for(let i = 0; i < sliderArr.length; i++){
+      const elementSlide = sliderArr[i];
+      elementSlide.insertAdjacentHTML('beforeend', `<button  class="show p-3 z-20 bg-red-400">show</button>`)
+   let elmShow = document.querySelectorAll('.show');
+   
+  elmShow[i].addEventListener('click',(e)=>{
+      let parent = e.target.parentNode;
+    //  parent.insertAdjacentHTML('beforeend',"<pre  class='w-2/4 h-2/4 bg-amber-400  m-0 p-0 '><code class='language-js'></code></pre>");
+ parent.appendChild(createElmcode)
   if(!onShow){
+    createElmcode.classList.add('flex',"justify-center","w-full","h-full");
+  createElmcode.innerHTML=`<pre  class='w-5/6 h-5/6 bg-amber-400  m-0 p-0 '><code class='language-js'>let const =document.querySelector('.img')
+console.log(const);
+Source Code
+</code></pre>`
+  onShow=true
   }else(
-    onShow=true
+    createElmcode.remove(),
+    onShow=false
   )
-})
+    console.log(elementSlide);
+  })
+ 
+ 
+// elmShow.addEventListener('click',(e)=>{
+//   console.log(e.target.parentNode);
+ 
+
+// })
+      console.log(elementSlide);
+    }
+
 $(window).on('mousedown touchstart', dragStart);
 $(window).on('mouseup touchend', dragEnd);
      
@@ -1043,10 +1063,8 @@ bouncyCircle2.play();
     }
   }
   function svg_miniBus() {
-
     return(
  ` 
- 
 <svg id="miniBus" viewBox="0 0 915.7 402.85" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="w-36 h-20 " version="1.1">
  <defs id="defs6030">
   <linearGradient id="linearGradient4036">
@@ -1216,10 +1234,7 @@ bouncyCircle2.play();
   </g>
  </g>
 </svg>
-
-`
-    )
-  }
+`)}
   // <div class="">
   
   // </div>
