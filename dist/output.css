@@ -791,6 +791,10 @@ video {
   margin: 0.5rem;
 }
 
+.m-auto {
+  margin: auto;
+}
+
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -1161,6 +1165,22 @@ video {
 
 .w-screen {
   width: 100vw;
+}
+
+.w-1 {
+  width: 0.25rem;
+}
+
+.w-11\/12 {
+  width: 91.666667%;
+}
+
+.w-10\/12 {
+  width: 83.333333%;
+}
+
+.w-12 {
+  width: 3rem;
 }
 
 .flex-shrink {
@@ -3489,7 +3509,7 @@ pre[class*="language-"] {
 .container-gsap {
   perspective: 2000px;
   width: 600px;
-  height: 600px;
+  height: 500px;
   left:50%;
   top:50%;
   transform:translate(-50%,-50%);

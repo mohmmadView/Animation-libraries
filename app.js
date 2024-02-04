@@ -233,8 +233,8 @@ gsap.timeline()
     .set('.ring', { rotationY:180, cursor:'grab' }) //set initial rotationY so the parallax jump happens off screen
     .set('.img',  { // apply transform rotations to each image
       rotateY: (i)=> i*-36,
-      transformOrigin: '50% 50% 950px',
-      z: -750,
+      transformOrigin: '50% 50% 1050px',
+      z: -650,
       backgroundImage:(i)=>'url(https://picsum.photos/id/'+(i+32)+'/600/400/)',
       backgroundPosition:(i)=>getBgPos(i),
       backfaceVisibility:'hidden'
@@ -250,9 +250,8 @@ gsap.timeline()
       $('.img').on('mouseenter', (e)=>{
         let current = e.currentTarget;
         let target  =e.target;
-        gsap.to('.img', {opacity:(i,t)=>(t==current)? 1:1, ease:'power1',
-        scale:0.7,transformOrigin: '50% 50% 1150px',
-        
+        gsap.to('.img', {opacity:(i,t)=>(t==current)? 1:0.5, ease:'power1',
+        scale:0.7,
         
         // scaleY:(i,t)=>(t==current)? 1:1.5
        })
@@ -273,7 +272,7 @@ gsap.timeline()
       })
       $('.img').on('mouseleave', (e)=>{
         gsap.to('.img', {opacity:1, ease:'power1.inOut',
-      scaleX:1,scaleY:1,  transformOrigin: '50% 50% 950px'})
+      scaleX:1,scaleY:1})
       gsap.to(".box-left", { 
         x: '0%',
         rotation: -360,
@@ -337,8 +336,12 @@ function dragStart(e){
 
   $(window).on('mousemove touchmove', drag);
 }
-
-
+/**
+ * Function for handling drag events.
+ *
+ * @param {object} e - The event object containing drag information
+ * @return {void} This function does not return anything
+ */
 function drag(e){
   if (e.touches) e.clientX = e.touches[0].clientX;    
 
@@ -349,21 +352,26 @@ function drag(e){
   // gsap.to('#text-gsap-2', { rotation: '-=' +( (Math.round(e.clientX)-xPos)%360 ),});
   xPos = Math.round(e.clientX);
 }
-
-
+/**
+ * Function to handle the end of a drag event.
+ *
+ * @param {Event} e - the drag event object
+ * @return {void} 
+ */
 function dragEnd(e){
   $(window).off('mousemove touchmove', drag);
   gsap.set('.ring', {cursor:'grab'});
 }
-
-
+/**
+ * Returns the background-position string to create parallax movement in each image.
+ *
+ * @param {number} i - the parameter for parallax movement calculation
+ * @return {string} the background-position string
+ */
 function getBgPos(i){ //returns the background-position string to create parallax movement in each image
   return ( 100-gsap.utils.wrap(0,360,gsap.getProperty('.ring', 'rotationY')-180-i*36)/360*500 )+'px 0px';
 }
-  // gsap.to(".Gallery-animate",{
-  //   // x:"20vw",
-  //   // duration:2
-  // })
+
 // const cube = new Mesh(geometry, material)
 // scene.add(cube)
 
