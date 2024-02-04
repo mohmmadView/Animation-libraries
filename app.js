@@ -1,3 +1,4 @@
+
 all();
 function all() {
   animateCss()
@@ -229,7 +230,6 @@ function gasp_scroll(e) {
   //* ==========gsap-gallery=============\\
   //? ==================================\\
   let xPos = 0;
-
 gsap.timeline()
     .set('.ring', { rotationY:180, cursor:'grab' }) //set initial rotationY so the parallax jump happens off screen
     .set('.img',  { // apply transform rotations to each image
@@ -250,13 +250,49 @@ gsap.timeline()
     .add(()=>{
       $('.img').on('mouseenter', (e)=>{
         let current = e.currentTarget;
-        gsap.to('.img', {opacity:(i,t)=>(t==current)? 1:0.5, ease:'power3'})
+        let target  =e.target;
+        gsap.to('.img', {opacity:(i,t)=>(t==current)? 1:1, ease:'power3',scale:0.7,
+        transformOrigin: '50% 50% 1150px',duration:0.5,
+        
+        
+        // scaleY:(i,t)=>(t==current)? 1:1.5
+       })
+        gsap.to(e.target,{scaleX:1.5,  scaleY:1.5
+          // transformOrigin: '100% 50% 950px',
+          // transform:"translate3d(0px, 0px, -1850px) rotateY(180deg)",
+        })
+        gsap.to(".box-left", { 
+          x: '85%',
+          rotation: 360,
+          duration:3,
+        });
+         gsap.to(".box-right", { 
+          x: '-85%',
+          rotation: -360,
+          duration:3,
+        });
       })
       $('.img').on('mouseleave', (e)=>{
-        gsap.to('.img', {opacity:1, ease:'power2.inOut'})
+        gsap.to('.img', {opacity:1, ease:'power2.inOut',
+      scaleX:1,scaleY:1,  transformOrigin: '50% 50% 950px',duration:0.5})
+      gsap.to(".box-left", { 
+        x: '0%',
+        rotation: -360,
+        duration:3,
+      });
+       gsap.to(".box-right", { 
+        x: '-0%',
+        rotation: 360,
+        duration:3,
+      });
       })
       $('.img').on('click',(e)=>{
-        console.log(e.target)
+let slider = document.querySelectorAll(".img");
+document.write(`${e.target}`)
+clip
+    console.log(e.target);
+        // console.log(e.target.style.transform="translate3d(0px, 0px, 1350px)")
+
       })
     }, '-=0.5')
 
