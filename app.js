@@ -288,22 +288,33 @@ gsap.timeline()
       })
       $('.img').on('click',(e)=>{
 let slider = document.querySelectorAll(".img");
-document.write(`${e.target}`)
-clip
+
     console.log(e.target);
         // console.log(e.target.style.transform="translate3d(0px, 0px, 1350px)")
 
       })
     }, '-=0.5')
+let elmShow = document.querySelector('#show');
+elmShow.addEventListener('click',(e)=>{
+  console.log(e.target.parentNode);
+  let onShow = false;
+  let parent = e.target.parentNode;
+  let createElmcode = document.createElement('code');
+     parent.insertAdjacentHTML('beforeend',"<pre  class='w-2/4 h-2/4 bg-amber-400  m-0 p-0 '><code class='language-js'></code></pre>");
 
+  if(!onShow){
+  }else(
+    onShow=true
+  )
+})
 $(window).on('mousedown touchstart', dragStart);
 $(window).on('mouseup touchend', dragEnd);
-      
-
+     
 function dragStart(e){ 
   if (e.touches) e.clientX = e.touches[0].clientX;
   xPos = Math.round(e.clientX);
   gsap.set('.ring', {cursor:'grabbing'})
+
   $(window).on('mousemove touchmove', drag);
 }
 
@@ -315,7 +326,7 @@ function drag(e){
     rotationY: '-=' +( (Math.round(e.clientX)-xPos)%360 ),
     onUpdate:()=>{ gsap.set('.img', { backgroundPosition:(i)=>getBgPos(i) }) }
   });
-  
+  // gsap.to('#text-gsap-2', { rotation: '-=' +( (Math.round(e.clientX)-xPos)%360 ),});
   xPos = Math.round(e.clientX);
 }
 
