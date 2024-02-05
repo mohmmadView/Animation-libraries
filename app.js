@@ -1,379 +1,375 @@
 all();
 function all() {
-  animateCss()
-  animateJs()
-  moJs()
-  animateGsap()
+  animateCss();
+  animateJs();
+  moJs();
+  animateGsap();
 }
-function animateGsap(){
-   gsap.registerPlugin(TextPlugin)
+function animateGsap() {
+  gsap.registerPlugin(TextPlugin);
   let elmGsap = document.querySelectorAll(".anmiateGsap");
 
   let words = gsap.utils.toArray(".anmiateGsap-1 .anmiateGsap-2"),
-  tl = gsap.timeline({delay: 0.5}),
-  timePerCharacter = 0.2;
+    tl = gsap.timeline({ delay: 0.5 }),
+    timePerCharacter = 0.2;
 
-words.forEach(el => {
-tl.from(el, {text: "", duration: el.innerHTML.length * timePerCharacter, ease: "none"});
-});
+  words.forEach((el) => {
+    tl.from(el, {
+      text: "",
+      duration: el.innerHTML.length * timePerCharacter,
+      ease: "none",
+    });
+  });
 
-// * ======> GSAP <======\\
-let btnGsap_1 = document.querySelector("#btnGsap-1");
-let btnGsap_2 = document.querySelector("#btnGsap-2");
-btnGsap_1.addEventListener("click", ()=>{
-   gsap.to(".box-left", { 
-    x: '38vw',
-    rotation: 360,
-    duration:5,
+  // * ======> GSAP <======\\
+  let btnGsap_1 = document.querySelector("#btnGsap-1");
+  let btnGsap_2 = document.querySelector("#btnGsap-2");
+  btnGsap_1.addEventListener("click", () => {
+    gsap.to(".box-left", {
+      x: "38vw",
+      rotation: 360,
+      duration: 5,
+    });
+    gsap.to(".box-right", {
+      x: "-38vw",
+      rotation: -360,
+      duration: 5,
+    });
   });
-   gsap.to(".box-right", { 
-    x: '-38vw',
-    rotation: -360,
-    duration:5,
-  });
-});
 
-btnGsap_2.addEventListener("click", ()=>{
-  
-    gsap.to(".box-left", { 
-    x: '0vw',
-    rotation: -360,
-    duration:5,
+  btnGsap_2.addEventListener("click", () => {
+    gsap.to(".box-left", {
+      x: "0vw",
+      rotation: -360,
+      duration: 5,
+    });
+    gsap.to(".box-right", {
+      x: "0vw",
+      rotation: 360,
+      duration: 5,
+    });
   });
-   gsap.to(".box-right", { 
-    x: '0vw',
-    rotation: 360,
-    duration:5,
-  });
-})
-  // gsap.to(".box-left", { 
+  // gsap.to(".box-left", {
   //   x: '40vw',
   //   rotation: 360,
   //   duration:5,
   // });
-  //  gsap.to(".box-right", { 
+  //  gsap.to(".box-right", {
   //   x: '-40vw',
   //   rotation: -360,
   //   duration:5,
   // });
-  gsap.to(".svgBox", { 
+  gsap.to(".svgBox", {
     duration: 2,
     x: 300, // use transform shorthand (this is now using SVG units not px, the SVG viewBox is 100 units wide)
     xPercent: -80,
     // or target SVG attributes
     attr: {
-      fill: '#8d3dae',
-      rx: 50, 
+      fill: "#8d3dae",
+      rx: 50,
     },
   });
-//create an object
-let test = { myNum: 10, myColor: "red" };
-gsap.to("test",test, {
-  myNum: 200,
-  myColor: "blue",
-  onUpdate: () => console.log(test.myNum, test.myColor)
-});
+  //create an object
+  let test = { myNum: 10, myColor: "red" };
+  gsap.to("test", test, {
+    myNum: 200,
+    myColor: "blue",
+    onUpdate: () => console.log(test.myNum, test.myColor),
+  });
 
+  const canvas = document.getElementById("canvas");
+  const ctx = canvas.getContext("2d");
+  ctx.fillStyle = "#28a92b";
 
-const canvas = document.getElementById("canvas");
-const ctx = canvas.getContext("2d");
-ctx.fillStyle = "#28a92b";
+  let position = { x: 0, y: 0 };
 
-let position = { x: 0, y: 0 };
+  function draw() {
+    // erase the canvas
+    ctx.clearRect(0, 0, 400, 400);
+    // redraw the square at it's new position
+    ctx.fillRect(position.x, position.y, 100, 100);
+  }
+  //animate x and y of point
+  gsap.to(position, {
+    x: 200,
+    y: 200,
+    duration: 4,
+    // unlike DOM elements, canvas needs to be redrawn and cleared on every tick
+    onUpdate: draw,
+  });
+  gsap.to(".test", {
+    rotation: 360,
+    x: "-100vw",
+    xPercent: 700,
+    // special properties
+    duration: 2, // how long the animation lasts
+    repeat: 100, // the number of repeats - this will play 3 times
+    yoyo: true, // this will alternate back and forth on each repeat. Like a yoyo
+  });
 
-function draw() {
-  // erase the canvas
-  ctx.clearRect(0, 0, 400, 400);
-  // redraw the square at it's new position
-  ctx.fillRect(position.x, position.y, 100, 100);
-}
-//animate x and y of point
-gsap.to(position, { 
-  x: 200, 
-  y: 200, 
-  duration: 4,
-  // unlike DOM elements, canvas needs to be redrawn and cleared on every tick
-  onUpdate: draw 
-});
-gsap.to(".test", { 
-  rotation: 360,
-  x: '-100vw',
-  xPercent: 700,
-  // special properties
-  duration: 2, // how long the animation lasts
-  repeat:100, // the number of repeats - this will play 3 times
-  yoyo: true, // this will alternate back and forth on each repeat. Like a yoyo
-});
+  gsap.to(".red-left", {
+    rotation: 360,
+    duration: 1,
+    repeat: 1,
+    repeatDelay: 1,
+  });
 
-gsap.to(".red-left", { 
-  rotation: 360,
-  duration: 1,
-  repeat: 1,
-  repeatDelay: 1,
-});
+  gsap.to(".violet-right", {
+    rotation: 360,
+    duration: 1,
+    delay: 1, // delay the start of this animation
+  });
 
+  gsap.to(".red-linear", {
+    rotation: 360,
+    duration: 2,
+    repeat: -1,
+    repeatDelay: 2,
+    ease: "none",
+  });
 
-gsap.to(".violet-right", { 
-  rotation: 360,
-  duration: 1,
-  delay: 1 // delay the start of this animation
-});
-
-
-gsap.to(".red-linear", { 
-  rotation: 360,
-  duration: 2,
-  repeat: -1,
-  repeatDelay: 2,
-  ease: 'none'
-});
-
-
-gsap.to(".violet-bounce", { 
-  rotation: 360,
-  duration: 2,
-  repeat: -1,
-  repeatDelay: 2,
-  ease: 'bounce.out'
-});
+  gsap.to(".violet-bounce", {
+    rotation: 360,
+    duration: 2,
+    repeat: -1,
+    repeatDelay: 2,
+    ease: "bounce.out",
+  });
 }
 gsap.to(".box", {
   duration: 1,
   rotation: 360,
-  opacity: 1, 
-  delay: 0.5, 
+  opacity: 1,
+  delay: 0.5,
   stagger: 0.2,
-  ease: "sine.out", 
-  force3D: true
+  ease: "sine.out",
+  force3D: true,
 });
 
-document.querySelectorAll(".box").forEach(function(box) {
-  box.addEventListener("click", function() {
+document.querySelectorAll(".box").forEach(function (box) {
+  box.addEventListener("click", function () {
     gsap.to(".box", {
-      duration: 0.5, 
-      opacity: 0, 
-      y: -100, 
+      duration: 0.5,
+      opacity: 0,
+      y: -100,
       stagger: 0.1,
-      ease: "back.in"
+      ease: "back.in",
     });
   });
 });
-let tl = gsap.timeline({repeat: 2, repeatDelay: 1}); 
+let tl = gsap.timeline({ repeat: 2, repeatDelay: 1 });
 tl.to(".racket", {
   duration: 1,
   rotation: 90,
 });
-tl.to(".racket",{
-  duration:1,
+tl.to(".racket", {
+  duration: 1,
   x: "80vw",
-  ease:"expo"
-})
-tl.to(".racket",{
-  duration:1,
-  ease:"expo",
-})
-
+  ease: "expo",
+});
+tl.to(".racket", {
+  duration: 1,
+  ease: "expo",
+});
 
 //register the plugin (just once)
 gsap.registerPlugin(MotionPathPlugin);
 
-gsap.set(".astronaut", {scale: 0.5, autoAlpha: 1});
+gsap.set(".astronaut", { scale: 0.5, autoAlpha: 1 });
 
 gsap.to(".astronaut", {
-  duration: 5, 
+  duration: 5,
   ease: "power1.inOut",
   immediateRender: true,
   motionPath: {
     path: "#path",
     align: "#path",
     alignOrigin: [0.5, 0.5],
-    autoRotate: 90
-  }
+    autoRotate: 90,
+  },
 });
 
-
-let svgminiBus = document.querySelector('#container-txt-gsap');
-svgminiBus.insertAdjacentHTML('beforeend',svg_miniBus()); 
-window.addEventListener('scroll',gasp_scroll )
+let svgminiBus = document.querySelector("#container-txt-gsap");
+svgminiBus.insertAdjacentHTML("beforeend", svg_miniBus());
+window.addEventListener("scroll", gasp_scroll);
 function gasp_scroll(e) {
-  
-  console.log(window.scrollY );
-    if (window.scrollY > 3662) {
-      gsap.to("#miniBus", {
-        x: -280,
-        duration: 3,
-        yoyo: true,
-        repeat: 1
-      
-      })
-      gsap.to("#text-gsap", {
+  console.log(window.scrollY);
+  if (window.scrollY > 3662) {
+    gsap.to("#miniBus", {
       x: -280,
-      duration: 3
-      })
-    
-    } else {
-        gsap.to("#miniBus", {
-        x: 0,
-        duration: 3,
-        repeat: 1
-      
-      })
-      gsap.to("#text-gsap", {
+      duration: 3,
+      yoyo: true,
+      repeat: 1,
+    });
+    gsap.to("#text-gsap", {
+      x: -280,
+      duration: 3,
+    });
+  } else {
+    gsap.to("#miniBus", {
+      x: 0,
+      duration: 3,
+      repeat: 1,
+    });
+    gsap.to("#text-gsap", {
       x: -0,
-      duration: 3
-      })
-    
-    }
+      duration: 3,
+    });
   }
-  //? ==================================\\
-  //* ==========gsap-gallery=============\\
-  //? ==================================\\
-   let slider = document.querySelectorAll(".img");
-    let sliderArr = Array.from(slider);
-    let onShow = false;
-     let createElmcode = document.createElement('code');
-  const colors = [
-    "#000000", // سیاه
-    "#ffffff", // سفید
-    "#ff0000", // قرمز
-    "#00ff00", // سبز
-    "#0000ff", // آبی
-    "#ffff00", // زرد
-    "#ff00ff", // بنفش
-    "#00ffff", // فیروزه‌ای
-    "#808080", // خاکستری
-    "#c0c0c0", // نقره‌ای
-    "#f0f0f0", // سفید دودی
-    "#d3d3d3", // خاکستری روشن
-    "#a9a9a9", // خاکستری تیره
-    "#ff7f00", // نارنجی
-    "#00ff7f", // سبز روشن
-    "#7f00ff", // بنفش روشن
-    "#ff7fff", // صورتی
-    "#7fff00", // زرد لیمویی
-    "#7fffff", // آبی آسمانی
-    "#f000ff", // سرخابی
-    "#00f0ff", // آبی لاجوردی
-    "#ffff7f", // زرد کمرنگ
-    "#d2b48c", // قهوه‌ای
-    "#ffa500", // نارنجی تیره
-    "#008000", // سبز تیره
-    "#008080", // آبی تیره
-    "#800000", // قهوه‌ای سوخته
-    "#800080", // بنفش تیره
-    "#ffa07a", // رنگ پوست
-    "#ff4500", // نارنجی سوخته
-    "#00ff80", // سبزآبی
-    "#7f0080", // بنفش مایل به قرمز
-    "#7f8000", // قهوه‌ای مایل به زرد
-    "#7f8080", // خاکستری مایل به قهوه‌ای
-  ];
-  
-  let xPos = 0;
-gsap.timeline()
-    .set('.ringGsap', { rotationY:180, cursor:'grab' }) //set initial rotationY so the parallax jump happens off screen
-    .set('.img',  { // apply transform rotations to each image
-      rotateY: (i)=> i*-36,
-      transformOrigin: '50% 50% 1050',
-      z: -1050,
-     
-      backgroundColor:(i)=>colors[i],
-      backgroundPosition:(i)=>getBgPos(i),
-      backfaceVisibility:'hidden'
-    })    
-    .from('.img', {
-      duration:1.5,
-      y:200,
-      opacity:0,
-      stagger:0.1,
-      ease:'expo'
-    })
-    .add(()=>{
-      $('.img').on('mouseenter', (e)=>{
-        let current = e.currentTarget;
-        let target  =e.target;
-        gsap.to('.img', {opacity:(i,t)=>(t==current)? 1:0.5, ease:'power1',
-        scale:0.8,
-        
+}
+//? ==================================\\
+//* ==========gsap-gallery=============\\
+//? ==================================\\
+let slider = document.querySelectorAll(".img");
+let sliderArr = Array.from(slider);
+let onShow = false;
+let createElmcode = document.createElement("code");
+const colors = [
+  "#000000", // سیاه
+  "#ffffff", // سفید
+  "#ff0000", // قرمز
+  "#00ff00", // سبز
+  "#0000ff", // آبی
+  "#ffff00", // زرد
+  "#ff00ff", // بنفش
+  "#00ffff", // فیروزه‌ای
+  "#808080", // خاکستری
+  "#c0c0c0", // نقره‌ای
+  "#f0f0f0", // سفید دودی
+  "#d3d3d3", // خاکستری روشن
+  "#a9a9a9", // خاکستری تیره
+  "#ff7f00", // نارنجی
+  "#00ff7f", // سبز روشن
+  "#7f00ff", // بنفش روشن
+  "#ff7fff", // صورتی
+  "#7fff00", // زرد لیمویی
+  "#7fffff", // آبی آسمانی
+  "#f000ff", // سرخابی
+  "#00f0ff", // آبی لاجوردی
+  "#ffff7f", // زرد کمرنگ
+  "#d2b48c", // قهوه‌ای
+  "#ffa500", // نارنجی تیره
+  "#008000", // سبز تیره
+  "#008080", // آبی تیره
+  "#800000", // قهوه‌ای سوخته
+  "#800080", // بنفش تیره
+  "#ffa07a", // رنگ پوست
+  "#ff4500", // نارنجی سوخته
+  "#00ff80", // سبزآبی
+  "#7f0080", // بنفش مایل به قرمز
+  "#7f8000", // قهوه‌ای مایل به زرد
+  "#7f8080", // خاکستری مایل به قهوه‌ای
+];
+
+let xPos = 0;
+gsap
+  .timeline()
+  .set(".ringGsap", { rotationY: 180, cursor: "grab" }) //set initial rotationY so the parallax jump happens off screen
+  .set(".img", {
+    // apply transform rotations to each image
+    rotateY: (i) => i * -36,
+    transformOrigin: "50% 50% 1050",
+    z: -1050,
+
+    backgroundColor: (i) => colors[i],
+    backgroundPosition: (i) => getBgPos(i),
+    backfaceVisibility: "hidden",
+  })
+  .from(".img", {
+    duration: 1.5,
+    y: 200,
+    opacity: 0,
+    stagger: 0.1,
+    ease: "expo",
+   
+  })
+  .add(() => {
+    $(".img").on("mouseenter", (e) => {
+      let current = e.currentTarget;
+      let target = e.target;
+      gsap.to(".img", {
+        opacity: (i, t) => (t == current ? 1 : 0.5),
+        ease: "power1",scale: 0.8
+       
+
         // scaleY:(i,t)=>(t==current)? 1:1.5
-       })
-        gsap.to(e.target,{scale:1.3
-          // transformOrigin: '100% 50% 950px',
-          // transform:"translate3d(0px, 0px, -1850px) rotateY(180deg)",
-        })
-        // gsap.to(".box-left", { 
-        //   x: '85%',
-        //   rotation: 360,
-        //   duration:3,
-        // });
-        //  gsap.to(".box-right", { 
-        //   x: '-85%',
-        //   rotation: -360,
-        //   duration:3,
-        // });
-      })
-      $('.img').on('mouseleave', (e)=>{
-        gsap.to('.img', {opacity:1, ease:'power1.inOut'})
-      gsap.to(e.target, {scale:1})
-      // gsap.to(".box-left", { 
+      });
+      gsap.to(e.target, {
+        scale: 1.3,
+        // transformOrigin: '100% 50% 950px',
+        // transform:"translate3d(0px, 0px, -1850px) rotateY(180deg)",
+      });
+      // gsap.to(".box-left", {
+      //   x: '85%',
+      //   rotation: 360,
+      //   duration:3,
+      // });
+      //  gsap.to(".box-right", {
+      //   x: '-85%',
+      //   rotation: -360,
+      //   duration:3,
+      // });
+    });
+    $(".img").on("mouseleave", (e) => {
+      gsap.to(".img", { opacity: 1, ease: "power1.inOut" });
+      gsap.to(e.target, { scale: 0.8 });
+      // gsap.to(".box-left", {
       //   x: '0%',
       //   rotation: -360,
       //   duration:3,
       // });
-      //  gsap.to(".box-right", { 
+      //  gsap.to(".box-right", {
       //   x: '-0%',
       //   rotation: 360,
       //   duration:3,
       // });
       createElmcode.remove();
-      onShow=false;
-      })
-      $('.img').on('click',(e)=>{
-        // console.log(e.target.style.transform="translate3d(0px, 0px, 1350px)")
-      })
-    }, '-=0.5')
-   
-    for(let i = 0; i < sliderArr.length; i++){
-      const elementSlide = sliderArr[i];
-      elementSlide.insertAdjacentHTML('beforeend', `<button  class="show p-3 z-20 bg-red-400">show</button>`)
-   let elmShow = document.querySelectorAll('.show');
-   
-  elmShow[i].addEventListener('click',(e)=>{
-      let parent = e.target.parentNode;
+      onShow = false;
+    });
+    $(".img").on("click", (e) => {
+      // console.log(e.target.style.transform="translate3d(0px, 0px, 1350px)")
+    });
+  }, "-=0.5");
+
+for (let i = 0; i < sliderArr.length; i++) {
+  const elementSlide = sliderArr[i];
+  elementSlide.insertAdjacentHTML(
+    "beforeend",
+    `<button  class="show p-3 z-20 bg-red-400">show</button>`,
+  );
+  let elmShow = document.querySelectorAll(".show");
+
+  elmShow[i].addEventListener("click", (e) => {
+    let parent = e.target.parentNode;
     //  parent.insertAdjacentHTML('beforeend',"<pre  class='w-2/4 h-2/4 bg-amber-400  m-0 p-0 '><code class='language-js'></code></pre>");
- parent.appendChild(createElmcode)
-  if(!onShow){
-    createElmcode.classList.add('flex',"justify-center","w-full","h-full");
-  createElmcode.innerHTML=`<pre  class='w-5/6 h-5/6 bg-amber-400  m-0 p-0 '><code class='language-js'>let const =document.querySelector('.img')
+    parent.appendChild(createElmcode);
+    if (!onShow) {
+      createElmcode.classList.add("flex", "justify-center", "w-full", "h-full");
+      createElmcode.innerHTML = `<pre  class='w-5/6 h-5/6 bg-amber-400  m-0 p-0 '><code class='language-js'>let const =document.querySelector('.img')
 console.log(const);
 Source Code
-</code></pre>`
-  onShow=true
-  }else(
-    createElmcode.remove(),
-    onShow=false
-  )
+</code></pre>`;
+      onShow = true;
+    } else createElmcode.remove(), (onShow = false);
     console.log(elementSlide);
-  })
- 
- 
-// elmShow.addEventListener('click',(e)=>{
-//   console.log(e.target.parentNode);
- 
+  });
 
-// })
-      console.log(elementSlide);
-    }
+  // elmShow.addEventListener('click',(e)=>{
+  //   console.log(e.target.parentNode);
 
-$(window).on('mousedown touchstart', dragStart);
-$(window).on('mouseup touchend', dragEnd);
-     
-function dragStart(e){ 
+  // })
+  console.log(elementSlide);
+}
+
+$(window).on("mousedown touchstart", dragStart);
+$(window).on("mouseup touchend", dragEnd);
+
+function dragStart(e) {
   if (e.touches) e.clientX = e.touches[0].clientX;
   xPos = Math.round(e.clientX);
-  gsap.set('.ringGsap', {cursor:'grabbing'})
+  gsap.set(".ringGsap", { cursor: "grabbing" });
 
-  $(window).on('mousemove touchmove', drag);
+  $(window).on("mousemove touchmove", drag);
 }
 /**
  * Function for handling drag events.
@@ -381,12 +377,14 @@ function dragStart(e){
  * @param {object} e - The event object containing drag information
  * @return {void} This function does not return anything
  */
-function drag(e){
-  if (e.touches) e.clientX = e.touches[0].clientX;    
+function drag(e) {
+  if (e.touches) e.clientX = e.touches[0].clientX;
 
-  gsap.to('.ringGsap', {
-    rotationY: '-=' +( (Math.round(e.clientX)-xPos)%360 ),
-    onUpdate:()=>{ gsap.set('.img', { backgroundPosition:(i)=>getBgPos(i) }) }
+  gsap.to(".ringGsap", {
+    rotationY: "-=" + ((Math.round(e.clientX) - xPos) % 360),
+    onUpdate: () => {
+      gsap.set(".img", { backgroundPosition: (i) => getBgPos(i) });
+    },
   });
   // gsap.to('#text-gsap-2', { rotation: '-=' +( (Math.round(e.clientX)-xPos)%360 ),});
   xPos = Math.round(e.clientX);
@@ -395,11 +393,11 @@ function drag(e){
  * Function to handle the end of a drag event.
  *
  * @param {Event} e - the drag event object
- * @return {void} 
+ * @return {void}
  */
-function dragEnd(e){
-  $(window).off('mousemove touchmove', drag);
-  gsap.set('.ringGsap', {cursor:'grab'});
+function dragEnd(e) {
+  $(window).off("mousemove touchmove", drag);
+  gsap.set(".ringGsap", { cursor: "grab" });
 }
 /**
  * Returns the background-position string to create parallax movement in each image.
@@ -407,8 +405,19 @@ function dragEnd(e){
  * @param {number} i - the parameter for parallax movement calculation
  * @return {string} the background-position string
  */
-function getBgPos(i){ //returns the background-position string to create parallax movement in each image
-  return ( 100-gsap.utils.wrap(0,360,gsap.getProperty('.ringGsap', 'rotationY')-180-i*36)/360*500 )+'px 0px';
+function getBgPos(i) {
+  //returns the background-position string to create parallax movement in each image
+  return (
+    100 -
+    (gsap.utils.wrap(
+      0,
+      360,
+      gsap.getProperty(".ringGsap", "rotationY") - 180 - i * 36,
+    ) /
+      360) *
+      500 +
+    "px 0px"
+  );
 }
 
 // const cube = new Mesh(geometry, material)
@@ -425,12 +434,11 @@ function getBgPos(i){ //returns the background-position string to create paralla
 //   },
 // })
 
-
-  // ////////////////////////////////////////
-  //? =========> Code AnimeJs ALL <========\\
-  // ////////////////////////////////////////
-  let codeAnmieJs_All = [
-    `
+// ////////////////////////////////////////
+//? =========> Code AnimeJs ALL <========\\
+// ////////////////////////////////////////
+let codeAnmieJs_All = [
+  `
   
   <div id="innerSourceCodeAnimeJs" class="relative flex p-2   w-full  h-42 z-10 animate__animated animate__zoomInDown bg-slate-200/30 border-8 ring ring-rose-500  border-double">
    <div class="w-2/4 p-2 bg-rose-600/20 text-white h-auto">
@@ -457,7 +465,7 @@ function getBgPos(i){ //returns the background-position string to create paralla
 });>
  </div>
 `,
-    `<div class="w-3/4 flex justify-center">
+  `<div class="w-3/4 flex justify-center">
   <div id="innerSourceCodeAnimeJs" class="relative flex p-2   w-full h-42 z-10 animate__animated animate__zoomInDown  border-8 ring ring-rose-500  border-double">
    <div class="w-2/4 p-2 bg-blue-600/20 text-2xl text-white">
       <h2 class="text-white"><<span class="text-yellow-600">div</span> <span class="text-yellow-400"> class=</span>"<span class="text-green-700">function-based-params-demo</span>"> 
@@ -482,7 +490,7 @@ function getBgPos(i){ //returns the background-position string to create paralla
     </div>
  </div>`,
 
-    `
+  `
      <div class="w-3/4 flex justify-center">
   <div id="innerSourceCodeAnimeJs" class="relative flex p-2   w-full h-42 z-10 animate__animated animate__zoomInDown bg-slate-200/30 border-8 ring ring-rose-500  border-double">
    <div class="w-2/4 p-2 bg-yellow-700/10 text-white  h-auto">
@@ -503,7 +511,7 @@ function getBgPos(i){ //returns the background-position string to create paralla
     </div>
  </div>
      `,
-    `
+  `
       <div class="div w-3/4   flex absolute justify-center">
   <div id="innerSourceCodeAnimeJs" class="relative flex p-2   w-full h-5/6 z-10 animate__animated animate__zoomInDown bg-slate-200/30 border-8 ring ring-rose-500  border-double">
    <div class="w-2/4 p-2 bg-green-600/10 text-white text-2xl">
@@ -531,8 +539,8 @@ function getBgPos(i){ //returns the background-position string to create paralla
  </div>
       
       `,
-    //4
-    `
+  //4
+  `
       <div class="div w-3/4   flex absolute justify-center">
   <div id="innerSourceCodeAnimeJs" class="relative flex p-2   w-full h-42 z-10 animate__animated animate__zoomInDown bg-slate-200/30 border-8 ring ring-rose-500  border-double">
    <div class="w-2/4 p-2 bg-rose-600/20 text-white h-auto">
@@ -560,9 +568,9 @@ function getBgPos(i){ //returns the background-position string to create paralla
  </div>
       
       `,
-  ];
+];
 
- function animateCss(){
+function animateCss() {
   //TODO -------------------------------------------------------------------------- */
   //?  --------------------------------- moveBorder ------------------------------- */
   //TODO -------------------------------------------------------------------------- */
@@ -657,8 +665,8 @@ function getBgPos(i){ //returns the background-position string to create paralla
     }, time);
   }
 }
-function animateJs(){
-   //! -------------------------------------------------------------------------- */
+function animateJs() {
+  //! -------------------------------------------------------------------------- */
   //* ----------------------------- StartAnimate.js ----------------------------- */
   //! -------------------------------------------------------------------------- */
   let elmAnimateJs = document.querySelector(".animate_js");
@@ -692,7 +700,7 @@ function animateJs(){
           </svg>
   `,
     );
-     location.reload();
+    location.reload();
     // sourceCodeAnimJs.remove();
   });
   SvgAnimateJs();
@@ -910,11 +918,9 @@ function animateJs(){
       easing: "easeOutExpo",
       delay: 1000,
     });
-
-
 }
-function moJs(){
-   //!====>move moJs <=====\\
+function moJs() {
+  //!====>move moJs <=====\\
   let scr = window.scrollY;
   let ElmMoveJs = document.querySelector("#moveMoJs");
   window.addEventListener("scroll", () => {
@@ -969,7 +975,6 @@ function moJs(){
     stroke: "blue",
     isShowStart: true,
   });
-
 
   new mojs.Shape({
     parent: "#cross",
@@ -1101,17 +1106,16 @@ bouncyCircle2.play();
     swirl3.tune({ x, y }).generate().replay();
     swirl4.tune({ x, y }).generate().replay();
   });
+}
+function winScroll(number, element, classId) {
+  if (window.scrollY > number) {
+    element.classList.add(classId);
+  } else {
+    element.classList.remove(classId);
   }
- function winScroll(number, element, classId) {
-    if (window.scrollY > number) {
-      element.classList.add(classId);
-    } else {
-      element.classList.remove(classId);
-    }
-  }
-  function svg_miniBus() {
-    return(
- ` 
+}
+function svg_miniBus() {
+  return ` 
 <svg id="miniBus" viewBox="0 0 915.7 402.85" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="w-36 h-20 " version="1.1">
  <defs id="defs6030">
   <linearGradient id="linearGradient4036">
@@ -1281,101 +1285,98 @@ bouncyCircle2.play();
   </g>
  </g>
 </svg>
-`)}
-  // <div class="">
-  
-  // </div>
-  // <div  class="w-3/4 flex justify-center"function gsap(){
-  //   // * ======> GSAP <======\\
-  //     gsap.to(".box-left", { 
-  //       x: '40vw',
-  //       rotation: 360,
-  //       duration:5,
-  //     });
-  //      gsap.to(".box-right", { 
-  //       x: '-40vw',
-  //       rotation: -360,
-  //       duration:5,
-  //     });
-  //     gsap.to(".svgBox", { 
-  //       duration: 2,
-  //       x: 300, // use transform shorthand (this is now using SVG units not px, the SVG viewBox is 100 units wide)
-  //       xPercent: -80,
-  //       // or target SVG attributes
-  //       attr: {
-  //         fill: '#8d3dae',
-  //         rx: 50, 
-  //       },
-  //     });
-  //   //create an object
-  //   let test = { myNum: 10, myColor: "red" };
-  //   gsap.to("test",test, {
-  //     myNum: 200,
-  //     myColor: "blue",
-  //     onUpdate: () => console.log(test.myNum, test.myColor)
-  //   });
-    
-    
-  //   const canvas = document.getElementById("canvas");
-  //   const ctx = canvas.getContext("2d");
-  //   ctx.fillStyle = "#28a92b";
-    
-  //   let position = { x: 0, y: 0 };
-    
-  //   function draw() {
-  //     // erase the canvas
-  //     ctx.clearRect(0, 0, 400, 400);
-  //     // redraw the square at it's new position
-  //     ctx.fillRect(position.x, position.y, 100, 100);
-  //   }
-  //   //animate x and y of point
-  //   gsap.to(position, { 
-  //     x: 200, 
-  //     y: 200, 
-  //     duration: 4,
-  //     // unlike DOM elements, canvas needs to be redrawn and cleared on every tick
-  //     onUpdate: draw 
-  //   });
-  //   gsap.to(".test", { 
-  //     rotation: 360,
-  //     x: '-100vw',
-  //     xPercent: 700,
-  //     // special properties
-  //     duration: 2, // how long the animation lasts
-  //     repeat:100, // the number of repeats - this will play 3 times
-  //     yoyo: true, // this will alternate back and forth on each repeat. Like a yoyo
-  //   });
-    
-  //   gsap.to(".red-left", { 
-  //     rotation: 360,
-  //     duration: 1,
-  //     repeat: 1,
-  //     repeatDelay: 1,
-  //   });
-    
-    
-  //   gsap.to(".violet-right", { 
-  //     rotation: 360,
-  //     duration: 1,
-  //     delay: 1 // delay the start of this animation
-  //   });
-    
-    
-  //   gsap.to(".red-linear", { 
-  //     rotation: 360,
-  //     duration: 2,
-  //     repeat: -1,
-  //     repeatDelay: 2,
-  //     ease: 'none'
-  //   });
-    
-    
-  //   gsap.to(".violet-bounce", { 
-  //     rotation: 360,
-  //     duration: 2,
-  //     repeat: -1,
-  //     repeatDelay: 2,
-  //     ease: 'bounce.out'
-  //   });
-  //   }
-  //   >
+`;
+}
+// <div class="">
+
+// </div>
+// <div  class="w-3/4 flex justify-center"function gsap(){
+//   // * ======> GSAP <======\\
+//     gsap.to(".box-left", {
+//       x: '40vw',
+//       rotation: 360,
+//       duration:5,
+//     });
+//      gsap.to(".box-right", {
+//       x: '-40vw',
+//       rotation: -360,
+//       duration:5,
+//     });
+//     gsap.to(".svgBox", {
+//       duration: 2,
+//       x: 300, // use transform shorthand (this is now using SVG units not px, the SVG viewBox is 100 units wide)
+//       xPercent: -80,
+//       // or target SVG attributes
+//       attr: {
+//         fill: '#8d3dae',
+//         rx: 50,
+//       },
+//     });
+//   //create an object
+//   let test = { myNum: 10, myColor: "red" };
+//   gsap.to("test",test, {
+//     myNum: 200,
+//     myColor: "blue",
+//     onUpdate: () => console.log(test.myNum, test.myColor)
+//   });
+
+//   const canvas = document.getElementById("canvas");
+//   const ctx = canvas.getContext("2d");
+//   ctx.fillStyle = "#28a92b";
+
+//   let position = { x: 0, y: 0 };
+
+//   function draw() {
+//     // erase the canvas
+//     ctx.clearRect(0, 0, 400, 400);
+//     // redraw the square at it's new position
+//     ctx.fillRect(position.x, position.y, 100, 100);
+//   }
+//   //animate x and y of point
+//   gsap.to(position, {
+//     x: 200,
+//     y: 200,
+//     duration: 4,
+//     // unlike DOM elements, canvas needs to be redrawn and cleared on every tick
+//     onUpdate: draw
+//   });
+//   gsap.to(".test", {
+//     rotation: 360,
+//     x: '-100vw',
+//     xPercent: 700,
+//     // special properties
+//     duration: 2, // how long the animation lasts
+//     repeat:100, // the number of repeats - this will play 3 times
+//     yoyo: true, // this will alternate back and forth on each repeat. Like a yoyo
+//   });
+
+//   gsap.to(".red-left", {
+//     rotation: 360,
+//     duration: 1,
+//     repeat: 1,
+//     repeatDelay: 1,
+//   });
+
+//   gsap.to(".violet-right", {
+//     rotation: 360,
+//     duration: 1,
+//     delay: 1 // delay the start of this animation
+//   });
+
+//   gsap.to(".red-linear", {
+//     rotation: 360,
+//     duration: 2,
+//     repeat: -1,
+//     repeatDelay: 2,
+//     ease: 'none'
+//   });
+
+//   gsap.to(".violet-bounce", {
+//     rotation: 360,
+//     duration: 2,
+//     repeat: -1,
+//     repeatDelay: 2,
+//     ease: 'bounce.out'
+//   });
+//   }
+//   >
