@@ -228,14 +228,56 @@ function gasp_scroll(e) {
   //? ==================================\\
   //* ==========gsap-gallery=============\\
   //? ==================================\\
+   let slider = document.querySelectorAll(".img");
+    let sliderArr = Array.from(slider);
+    let onShow = false;
+     let createElmcode = document.createElement('code');
+  const colors = [
+    "#000000", // سیاه
+    "#ffffff", // سفید
+    "#ff0000", // قرمز
+    "#00ff00", // سبز
+    "#0000ff", // آبی
+    "#ffff00", // زرد
+    "#ff00ff", // بنفش
+    "#00ffff", // فیروزه‌ای
+    "#808080", // خاکستری
+    "#c0c0c0", // نقره‌ای
+    "#f0f0f0", // سفید دودی
+    "#d3d3d3", // خاکستری روشن
+    "#a9a9a9", // خاکستری تیره
+    "#ff7f00", // نارنجی
+    "#00ff7f", // سبز روشن
+    "#7f00ff", // بنفش روشن
+    "#ff7fff", // صورتی
+    "#7fff00", // زرد لیمویی
+    "#7fffff", // آبی آسمانی
+    "#f000ff", // سرخابی
+    "#00f0ff", // آبی لاجوردی
+    "#ffff7f", // زرد کمرنگ
+    "#d2b48c", // قهوه‌ای
+    "#ffa500", // نارنجی تیره
+    "#008000", // سبز تیره
+    "#008080", // آبی تیره
+    "#800000", // قهوه‌ای سوخته
+    "#800080", // بنفش تیره
+    "#ffa07a", // رنگ پوست
+    "#ff4500", // نارنجی سوخته
+    "#00ff80", // سبزآبی
+    "#7f0080", // بنفش مایل به قرمز
+    "#7f8000", // قهوه‌ای مایل به زرد
+    "#7f8080", // خاکستری مایل به قهوه‌ای
+  ];
+  
   let xPos = 0;
 gsap.timeline()
-    .set('.ring', { rotationY:180, cursor:'grab' }) //set initial rotationY so the parallax jump happens off screen
+    .set('.ringGsap', { rotationY:180, cursor:'grab' }) //set initial rotationY so the parallax jump happens off screen
     .set('.img',  { // apply transform rotations to each image
       rotateY: (i)=> i*-36,
-      transformOrigin: '50% 50% 1050px',
-      z: -650,
-      backgroundImage:(i)=>'url(https://picsum.photos/id/'+(i+32)+'/600/400/)',
+      transformOrigin: '50% 50% 1050',
+      z: -1050,
+     
+      backgroundColor:(i)=>colors[i],
       backgroundPosition:(i)=>getBgPos(i),
       backfaceVisibility:'hidden'
     })    
@@ -251,38 +293,38 @@ gsap.timeline()
         let current = e.currentTarget;
         let target  =e.target;
         gsap.to('.img', {opacity:(i,t)=>(t==current)? 1:0.5, ease:'power1',
-        scale:0.7,
+        scale:0.8,
         
         // scaleY:(i,t)=>(t==current)? 1:1.5
        })
-        gsap.to(e.target,{scaleX:1.5,  scaleY:1.5
+        gsap.to(e.target,{scale:1.3
           // transformOrigin: '100% 50% 950px',
           // transform:"translate3d(0px, 0px, -1850px) rotateY(180deg)",
         })
-        gsap.to(".box-left", { 
-          x: '85%',
-          rotation: 360,
-          duration:3,
-        });
-         gsap.to(".box-right", { 
-          x: '-85%',
-          rotation: -360,
-          duration:3,
-        });
+        // gsap.to(".box-left", { 
+        //   x: '85%',
+        //   rotation: 360,
+        //   duration:3,
+        // });
+        //  gsap.to(".box-right", { 
+        //   x: '-85%',
+        //   rotation: -360,
+        //   duration:3,
+        // });
       })
       $('.img').on('mouseleave', (e)=>{
-        gsap.to('.img', {opacity:1, ease:'power1.inOut',
-      scaleX:1,scaleY:1})
-      gsap.to(".box-left", { 
-        x: '0%',
-        rotation: -360,
-        duration:3,
-      });
-       gsap.to(".box-right", { 
-        x: '-0%',
-        rotation: 360,
-        duration:3,
-      });
+        gsap.to('.img', {opacity:1, ease:'power1.inOut'})
+      gsap.to(e.target, {scale:1})
+      // gsap.to(".box-left", { 
+      //   x: '0%',
+      //   rotation: -360,
+      //   duration:3,
+      // });
+      //  gsap.to(".box-right", { 
+      //   x: '-0%',
+      //   rotation: 360,
+      //   duration:3,
+      // });
       createElmcode.remove();
       onShow=false;
       })
@@ -290,10 +332,7 @@ gsap.timeline()
         // console.log(e.target.style.transform="translate3d(0px, 0px, 1350px)")
       })
     }, '-=0.5')
-    let slider = document.querySelectorAll(".img");
-    let sliderArr = Array.from(slider);
-    let onShow = false;
-     let createElmcode = document.createElement('code');
+   
     for(let i = 0; i < sliderArr.length; i++){
       const elementSlide = sliderArr[i];
       elementSlide.insertAdjacentHTML('beforeend', `<button  class="show p-3 z-20 bg-red-400">show</button>`)
@@ -332,7 +371,7 @@ $(window).on('mouseup touchend', dragEnd);
 function dragStart(e){ 
   if (e.touches) e.clientX = e.touches[0].clientX;
   xPos = Math.round(e.clientX);
-  gsap.set('.ring', {cursor:'grabbing'})
+  gsap.set('.ringGsap', {cursor:'grabbing'})
 
   $(window).on('mousemove touchmove', drag);
 }
@@ -345,7 +384,7 @@ function dragStart(e){
 function drag(e){
   if (e.touches) e.clientX = e.touches[0].clientX;    
 
-  gsap.to('.ring', {
+  gsap.to('.ringGsap', {
     rotationY: '-=' +( (Math.round(e.clientX)-xPos)%360 ),
     onUpdate:()=>{ gsap.set('.img', { backgroundPosition:(i)=>getBgPos(i) }) }
   });
@@ -360,7 +399,7 @@ function drag(e){
  */
 function dragEnd(e){
   $(window).off('mousemove touchmove', drag);
-  gsap.set('.ring', {cursor:'grab'});
+  gsap.set('.ringGsap', {cursor:'grab'});
 }
 /**
  * Returns the background-position string to create parallax movement in each image.
@@ -369,7 +408,7 @@ function dragEnd(e){
  * @return {string} the background-position string
  */
 function getBgPos(i){ //returns the background-position string to create parallax movement in each image
-  return ( 100-gsap.utils.wrap(0,360,gsap.getProperty('.ring', 'rotationY')-180-i*36)/360*500 )+'px 0px';
+  return ( 100-gsap.utils.wrap(0,360,gsap.getProperty('.ringGsap', 'rotationY')-180-i*36)/360*500 )+'px 0px';
 }
 
 // const cube = new Mesh(geometry, material)

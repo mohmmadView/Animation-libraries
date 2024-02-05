@@ -719,6 +719,42 @@ video {
   top: 2.5rem;
 }
 
+.end-0 {
+  inset-inline-end: 0px;
+}
+
+.end-10 {
+  inset-inline-end: 2.5rem;
+}
+
+.left-11 {
+  left: 2.75rem;
+}
+
+.left-1 {
+  left: 0.25rem;
+}
+
+.-left-full {
+  left: -100%;
+}
+
+.left-full {
+  left: 100%;
+}
+
+.right-full {
+  right: 100%;
+}
+
+.right-0 {
+  right: 0px;
+}
+
+.left-0 {
+  left: 0px;
+}
+
 .isolate {
   isolation: isolate;
 }
@@ -789,10 +825,6 @@ video {
 
 .m-2 {
   margin: 0.5rem;
-}
-
-.m-auto {
-  margin: auto;
 }
 
 .mx-auto {
@@ -999,12 +1031,12 @@ video {
   height: 5rem;
 }
 
-.h-28 {
-  height: 7rem;
+.h-24 {
+  height: 6rem;
 }
 
-.h-3\/4 {
-  height: 75%;
+.h-28 {
+  height: 7rem;
 }
 
 .h-32 {
@@ -1083,6 +1115,10 @@ video {
   width: 2.5rem;
 }
 
+.w-11\/12 {
+  width: 91.666667%;
+}
+
 .w-2\/3 {
   width: 66.666667%;
 }
@@ -1097,6 +1133,10 @@ video {
 
 .w-20 {
   width: 5rem;
+}
+
+.w-24 {
+  width: 6rem;
 }
 
 .w-28 {
@@ -1165,22 +1205,6 @@ video {
 
 .w-screen {
   width: 100vw;
-}
-
-.w-1 {
-  width: 0.25rem;
-}
-
-.w-11\/12 {
-  width: 91.666667%;
-}
-
-.w-10\/12 {
-  width: 83.333333%;
-}
-
-.w-12 {
-  width: 3rem;
 }
 
 .flex-shrink {
@@ -2228,11 +2252,6 @@ video {
   background-color: rgb(0 0 0 / 0.2);
 }
 
-.bg-blue-300 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(147 197 253 / var(--tw-bg-opacity));
-}
-
 .bg-blue-400 {
   --tw-bg-opacity: 1;
   background-color: rgb(96 165 250 / var(--tw-bg-opacity));
@@ -2286,11 +2305,6 @@ video {
   background-color: rgb(168 85 247 / var(--tw-bg-opacity));
 }
 
-.bg-purple-600 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(147 51 234 / var(--tw-bg-opacity));
-}
-
 .bg-red-400 {
   --tw-bg-opacity: 1;
   background-color: rgb(248 113 113 / var(--tw-bg-opacity));
@@ -2307,11 +2321,6 @@ video {
 .bg-red-600 {
   --tw-bg-opacity: 1;
   background-color: rgb(220 38 38 / var(--tw-bg-opacity));
-}
-
-.bg-red-900 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(127 29 29 / var(--tw-bg-opacity));
 }
 
 .bg-rose-500 {
@@ -3488,7 +3497,7 @@ pre[class*="language-"] {
   cursor: help;
 }
 
-.stage, .ring, .img {
+.stage, .ringGsap, .img {
   width:100%;
   height: 100%;
   transform-style: preserve-3d;
@@ -3502,14 +3511,18 @@ pre[class*="language-"] {
   /* background:#000;   */
 }
 
-/* div, svg {
+.stage  > div {
   position: absolute;
-} */
+}
+
+.stage > svg {
+  position: absolute;
+}
 
 .container-gsap {
   perspective: 2000px;
   width: 600px;
-  height: 500px;
+  height: 400px;
   left:50%;
   top:50%;
   transform:translate(-50%,-50%);

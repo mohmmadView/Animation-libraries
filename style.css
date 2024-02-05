@@ -190,7 +190,7 @@ pre[class*="language-"] {
 .token.entity {
   cursor: help;
 }
-.stage, .ring, .img {
+.stage, .ringGsap, .img {
   width:100%;
   height: 100%;
   transform-style: preserve-3d;
@@ -202,14 +202,16 @@ pre[class*="language-"] {
   /* background:#000;   */
 }
 
-/* div, svg {
+.stage  > div {
   position: absolute;
-} */
-
+}
+.stage > svg {
+  position: absolute;
+}
 .container-gsap {
   perspective: 2000px;
   width: 600px;
-  height: 500px;  
+  height: 400px;  
   left:50%;
   top:50%;
   transform:translate(-50%,-50%);
