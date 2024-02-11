@@ -3254,6 +3254,14 @@ video {
   hash: base64;
 }
 
+.\[vite\:css\] {
+  vite: css;
+}
+
+.\[vite\:html\] {
+  vite: html;
+}
+
 body,
 html {
   background-color: #1a1a1a;
