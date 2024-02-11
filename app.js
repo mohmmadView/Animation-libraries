@@ -49,16 +49,7 @@ function animateGsap() {
       duration: 5,
     });
   });
-  // gsap.to(".box-left", {
-  //   x: '40vw',
-  //   rotation: 360,
-  //   duration:5,
-  // });
-  //  gsap.to(".box-right", {
-  //   x: '-40vw',
-  //   rotation: -360,
-  //   duration:5,
-  // });
+  
   gsap.to(".svgBox", {
     duration: 2,
     x: 300, // use transform shorthand (this is now using SVG units not px, the SVG viewBox is 100 units wide)
@@ -79,20 +70,20 @@ function animateGsap() {
 
   const canvas = document.getElementById("canvas");
   const ctx = canvas.getContext("2d");
-  ctx.fillStyle = "#28a92b";
+  ctx.fillStyle = "#1A1A1A";
 
   let position = { x: 0, y: 0 };
 
   function draw() {
     // erase the canvas
-    ctx.clearRect(0, 0, 400, 400);
+    ctx.clearRect(0, 0, 320, 320);
     // redraw the square at it's new position
-    ctx.fillRect(position.x, position.y, 100, 100);
+    ctx.fillRect(position.x, position.y, 100, 50);
   }
   //animate x and y of point
   gsap.to(position, {
-    x: 200,
-    y: 200,
+    x: 120,
+    y: 120,
     duration: 4,
     // unlike DOM elements, canvas needs to be redrawn and cleared on every tick
     onUpdate: draw,
@@ -225,8 +216,8 @@ let sliderArr = Array.from(slider);
 let onShow = false;
 let createElmcode = document.createElement("code");
 const colors = [
-  "#000000", // سیاه
-  "#ffffff", // سفید
+  "#ffffff", // سیاه
+  "#000000", // سفید
   "#ff0000", // قرمز
   "#00ff00", // سبز
   "#0000ff", // آبی
@@ -291,7 +282,6 @@ gsap
       gsap.to(".img", {
         opacity: (i, t) => (t == current ? 1 : 0.5),
         ease: "power1",scale: 0.8
-   
       });
       gsap.to(e.target, { scale: 1.3, });
       gsap.to(".basket-left", { x:"200" ,rotation:-360 ,duration:1.5  });
@@ -303,6 +293,7 @@ gsap
       gsap.to(".basket-left", { x:"-0" ,rotation:360 ,duration:1.5  });
       gsap.to(".basket-right", { x:"0" ,rotation:-360 ,duration:1.5  });
       gsap.to(".img > button", { opacity: 0 });
+    
       createElmcode.remove();
       onShow = false;
     });
@@ -324,7 +315,9 @@ Source Code
      console.log(e.target);
     });
   }, "-=0.5");
+ 
 
+//gsap.globalTimeline.timeScale(0.25)
 // for (let i = 0; i < sliderArr.length; i++) {
 //   const elementSlide = sliderArr[i];
   // elementSlide.insertAdjacentHTML(
