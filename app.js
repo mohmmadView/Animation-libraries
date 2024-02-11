@@ -267,7 +267,7 @@ gsap
   .set(".ringGsap", { rotationY: 180, cursor: "grab" }) //set initial rotationY so the parallax jump happens off screen
   .set(".img", {
     // apply transform rotations to each image
-    rotateY: (i) => i * -36,
+    rotateY:(i)=>i*-36,
     transformOrigin: "50% 50% 1050",
     z: -1050,
 
@@ -283,66 +283,35 @@ gsap
     ease: "expo",
    
   })
-  .add(() => {
+  .add((e,i) => {
     $(".img").on("mouseenter", (e) => {
       let current = e.currentTarget;
       let target = e.target;
+       gsap.to(".img > button", { opacity: 1 });
       gsap.to(".img", {
         opacity: (i, t) => (t == current ? 1 : 0.5),
         ease: "power1",scale: 0.8
-       
-
-        // scaleY:(i,t)=>(t==current)? 1:1.5
+   
       });
-      gsap.to(e.target, {
-        scale: 1.3,
-        // transformOrigin: '100% 50% 950px',
-        // transform:"translate3d(0px, 0px, -1850px) rotateY(180deg)",
-      });
-      // gsap.to(".box-left", {
-      //   x: '85%',
-      //   rotation: 360,
-      //   duration:3,
-      // });
-      //  gsap.to(".box-right", {
-      //   x: '-85%',
-      //   rotation: -360,
-      //   duration:3,
-      // });
+      gsap.to(e.target, { scale: 1.3, });
+      gsap.to(".basket-left", { x:"200" ,rotation:-360 ,duration:1.5  });
+      gsap.to(".basket-right", { x:"-200" ,rotation: 360 ,duration:1.5  });
     });
     $(".img").on("mouseleave", (e) => {
       gsap.to(".img", { opacity: 1, ease: "power1.inOut" });
       gsap.to(e.target, { scale: 0.8 });
-      // gsap.to(".box-left", {
-      //   x: '0%',
-      //   rotation: -360,
-      //   duration:3,
-      // });
-      //  gsap.to(".box-right", {
-      //   x: '-0%',
-      //   rotation: 360,
-      //   duration:3,
-      // });
+      gsap.to(".basket-left", { x:"-0" ,rotation:360 ,duration:1.5  });
+      gsap.to(".basket-right", { x:"0" ,rotation:-360 ,duration:1.5  });
+      gsap.to(".img > button", { opacity: 0 });
       createElmcode.remove();
       onShow = false;
     });
     $(".img").on("click", (e) => {
-      // console.log(e.target.style.transform="translate3d(0px, 0px, 1350px)")
-    });
-  }, "-=0.5");
-
-for (let i = 0; i < sliderArr.length; i++) {
-  const elementSlide = sliderArr[i];
-  elementSlide.insertAdjacentHTML(
-    "beforeend",
-    `<button  class="show p-3 z-20 bg-red-400">show</button>`,
-  );
-  let elmShow = document.querySelectorAll(".show");
-
-  elmShow[i].addEventListener("click", (e) => {
-    let parent = e.target.parentNode;
+       let parent = e.target.parentNode;
     //  parent.insertAdjacentHTML('beforeend',"<pre  class='w-2/4 h-2/4 bg-amber-400  m-0 p-0 '><code class='language-js'></code></pre>");
     parent.appendChild(createElmcode);
+
+    
     if (!onShow) {
       createElmcode.classList.add("flex", "justify-center", "w-full", "h-full");
       createElmcode.innerHTML = `<pre  class='w-5/6 h-5/6 bg-amber-400  m-0 p-0 '><code class='language-js'>let const =document.querySelector('.img')
@@ -350,16 +319,29 @@ console.log(const);
 Source Code
 </code></pre>`;
       onShow = true;
-    } else createElmcode.remove(), (onShow = false);
-    console.log(elementSlide);
-  });
+    } else{ createElmcode.remove(), (onShow = false);
+}
+     console.log(e.target);
+    });
+  }, "-=0.5");
+
+// for (let i = 0; i < sliderArr.length; i++) {
+//   const elementSlide = sliderArr[i];
+  // elementSlide.insertAdjacentHTML(
+  //   "beforeend",
+  //   `<button  class="show p-3  bg-red-400">show</button>`,
+  // );
+
+
+  // elmShow[i].addEventListener("click", (e) => {
+   
+  // });
 
   // elmShow.addEventListener('click',(e)=>{
   //   console.log(e.target.parentNode);
 
   // })
-  console.log(elementSlide);
-}
+// }
 
 $(window).on("mousedown touchstart", dragStart);
 $(window).on("mouseup touchend", dragEnd);

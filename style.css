@@ -203,7 +203,9 @@ pre[class*="language-"] {
   overflow: hidden;
   /* background:#000;   */
 }
-
+.img > button{
+  position: absolute;
+}
 .stage > div {
   position: absolute;
 }
@@ -217,4 +219,12 @@ pre[class*="language-"] {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+}
+.basket-left{
+  left: 0;
+  top: 35%;
+}
+.basket-right{
+  right: 0;
+  top: 35%; 
 }
