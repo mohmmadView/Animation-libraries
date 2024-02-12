@@ -671,7 +671,6 @@ export default function animateJS() {
   //* ----------------------------- StartAnimate.js ----------------------------- */
   //! -------------------------------------------------------------------------- */
   let elmAnimateJs = document.querySelector(".animate_js");
-  let elmContainerSvgAnimeJs = document.querySelector("#container-Svg-AnimeJs");
   let containerAnimateJs = document.querySelector("#Code-svgAnimateJs");
   let offsetAnimateJs = anime.setDashoffset(elmAnimateJs);
   function SvgAnimateJs() {
@@ -689,7 +688,6 @@ export default function animateJS() {
   }
   containerAnimateJs.addEventListener("click", () => {
     console.log("containeAnimeJs");
-    // elmContainerSvgAnimeJs.classList.add("hidden");
     elmTextAnimeJs.innerHTML = "";
     elmTextAnimeJs.insertAdjacentHTML(
       "beforeend",
@@ -702,7 +700,6 @@ export default function animateJS() {
   `,
     );
     location.reload();
-    // sourceCodeAnimJs.remove();
   });
   SvgAnimateJs();
 
@@ -711,24 +708,21 @@ export default function animateJS() {
   let elmDivAnimateJs = document.querySelector(".divAnimateJs");
   let elmLineAnimate = document.querySelector("#lineAnimate");
   window.onscroll = () => {
-    winScroll(384, elmLineAnimate, "animate__backInRight"); //! <=== جواب
+    winScroll(384, elmLineAnimate, "animate__backInRight");
     winScroll(845, elmDivAnimateJs, "animate__lightSpeedInLeft");
   };
 
   //TODO --------------- TheEndScrollAnimateJs ----------------- */
-  //@
   //! -------------------------------------------------------------------------- */
   //* ----------------------------- MenuAnimeJs -------------------------------- */
   //! -------------------------------------------------------------------------- */
-  let elmMenuCodeAnimeJs = document.querySelector("#menuCodeAnimeJs");
-  let sourceCodeAnimJs = document.querySelector("#innerSourceCodeAnimeJ");
-  //TODO --------------- animeJs-1 ----------------- */
+  // //TODO --------------- animeJs-1 ----------------- */
   let elemAnimeJs_1 = document.querySelector("#animejs-1");
   let elmTextAnimeJs = document.querySelector(".divMenuAnimeJs");
   let elmDivAnimeJs = document.querySelector("#divAll");
   let createElm = document.createElement("div");
   elemAnimeJs_1.addEventListener("click", animeJs_1);
-  let elmEl = document.querySelectorAll(".el");
+  // let elmEl = document.querySelectorAll(".el");
    let codeAnmieJs_All = [
           `
           
@@ -1052,5 +1046,18 @@ export default function animateJS() {
       delay: 1000,
     });
 }
-function moJs() {
+/**
+ * Checks the window scroll position and adds or removes a class from an element based on the scroll position.
+ *
+ * @param {number} number - The scroll position to compare against window.scrollY
+ * @param {Element} element - The element to add or remove the class from
+ * @param {string} classId - The class to add or remove from the element
+ * @return {void} 
+ */
+function winScroll(number, element, classId) {
+  if (window.scrollY > number) {
+    element.classList.add(classId);
+  } else {
+    element.classList.remove(classId);
+  }
 }

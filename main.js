@@ -1,5 +1,7 @@
 
-import AnimateCss from "./animateCss";
-import animateJS from "./animateJS";
+import AnimateCss from "./src/animateCss";
+import animateJS from "./src/animateJS";
+import MoJs from './src/MoJs'
 AnimateCss()
 animateJS()
+MoJs()

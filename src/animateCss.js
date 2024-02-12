@@ -1,7 +1,7 @@
 import anime from "animejs";
 export default function animateCss(){
   document.querySelector("#ContainerAnimateCss").innerHTML=`
-        <--? ----------------------------------------------------------------------- -->
+      <!--? ----------------------------------------------------------------------- -->
        <!--* ------------------------------ Start_tite_svg ------------------------------- -->
        <!--?----------------------------------------------------------------------- --> 
         <div  style="font-family:'FashionVictim';" class="flex justify-center font-fashion">

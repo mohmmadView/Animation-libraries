@@ -1,6 +1,6 @@
 {
   "homepage": "http://Zarpoosh.github.io/Submit-Form",
-  
+  "type": "module",
   "scripts": {
   
      "dev": "vite", 
