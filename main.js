@@ -1,7 +1,7 @@
-
+import Prism from 'prismjs';
 import AnimateCss from "./src/animateCss";
 import animateJS from "./src/animateJS";
-import MoJs from './src/MoJs'
+import animateMoJs from './src/MoJs'
 AnimateCss()
 animateJS()
-MoJs()
+animateMoJs()

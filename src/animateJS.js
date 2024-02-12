@@ -671,6 +671,7 @@ export default function animateJS() {
   //* ----------------------------- StartAnimate.js ----------------------------- */
   //! -------------------------------------------------------------------------- */
   let elmAnimateJs = document.querySelector(".animate_js");
+  let elmContainerSvgAnimeJs = document.querySelector("#container-Svg-AnimeJs");
   let containerAnimateJs = document.querySelector("#Code-svgAnimateJs");
   let offsetAnimateJs = anime.setDashoffset(elmAnimateJs);
   function SvgAnimateJs() {
@@ -688,6 +689,7 @@ export default function animateJS() {
   }
   containerAnimateJs.addEventListener("click", () => {
     console.log("containeAnimeJs");
+    // elmContainerSvgAnimeJs.classList.add("hidden");
     elmTextAnimeJs.innerHTML = "";
     elmTextAnimeJs.insertAdjacentHTML(
       "beforeend",
@@ -700,6 +702,7 @@ export default function animateJS() {
   `,
     );
     location.reload();
+    // sourceCodeAnimJs.remove();
   });
   SvgAnimateJs();
 
@@ -708,7 +711,7 @@ export default function animateJS() {
   let elmDivAnimateJs = document.querySelector(".divAnimateJs");
   let elmLineAnimate = document.querySelector("#lineAnimate");
   window.onscroll = () => {
-    winScroll(384, elmLineAnimate, "animate__backInRight");
+    winScroll(384, elmLineAnimate, "animate__backInRight"); //! <=== جواب
     winScroll(845, elmDivAnimateJs, "animate__lightSpeedInLeft");
   };
 
@@ -1056,6 +1059,7 @@ export default function animateJS() {
  */
 function winScroll(number, element, classId) {
   if (window.scrollY > number) {
+
     element.classList.add(classId);
   } else {
     element.classList.remove(classId);
