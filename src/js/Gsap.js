@@ -193,25 +193,59 @@ export default function Gsap() {
     </div>
     <div class="img  absolute ">
        <button  class="show p-3  bg-red-400">show</button>
+       <div class="w-2/3 h-full bg-red-400 source"></div>
     </div>
     <div class="img  absolute ">
 <button  class="show p-3  bg-red-400">show</button>
+       <div class="w-2/3 h-full bg-red-400 source">
+        <pre  class="h-full m-0 p-0 "><code id="sourceCode" class="language-js">
+        </code> </pre>
+       </div>
     </div>
-    <div class="img  absolute "> <button  class="show p-3  bg-red-400">show</button></div>
+    <div class="img  absolute "> <button  class="show p-3  bg-red-400">show</button>
+       <div class="w-2/3 h-full bg-red-400 source">
+        <pre  class="h-full m-0 p-0 "><code id="sourceCode" class="language-js">
+
+        </code> </pre>
+       </div>
+    
+    </div>
     <div class="img  absolute ">
 <button  class="show p-3  bg-red-400">show</button>
+       <div class="w-2/3 h-full bg-red-400 source">
+        <pre  class="h-full m-0 p-0 "><code id="sourceCode" class="language-js">
+
+        </code> </pre>
+       </div>
     </div>
     <div class="img  absolute "> 
        <button  class="show p-3  bg-red-400">show</button>
+       <div class="w-2/3 h-full bg-red-400 source">
+        <pre  class="h-full m-0 p-0 "><code id="sourceCode" class="language-js">
+
+        </code> </pre></div>
     </div>
     <div class="img  absolute ">
        <button  class="show p-3  bg-red-400">show</button>
+       <div class="w-2/3 h-full bg-red-400 source">
+        <pre  class="h-full m-0 p-0 "><code id="sourceCode" class="language-js">
+
+        </code> </pre></div>
     </div>
     <div class="img  absolute ">
        <button  class="show p-3  bg-red-400">show</button>
+       <div class="w-2/3 h-full bg-red-400 source">
+        <pre  class="h-full m-0 p-0 "><code id="sourceCode" class="language-js">
+
+        </code> </pre>
+        </div>
     </div>
     <div class="img  absolute ">
        <button  class="show p-3  bg-red-400">show</button>
+       <div class="w-2/3 h-full bg-red-400 source">
+        <pre  class="h-full m-0 p-0 "><code id="sourceCode" class="language-js">
+        </code> </pre>
+       </div>
     </div>
   </div>
 </div>
@@ -1838,7 +1872,10 @@ function gasp_scroll(e) {
 let slider = document.querySelectorAll(".img");
 let sliderArr = Array.from(slider);
 let onShow = false;
+let codeSourceAll = document.querySelectorAll("#sourceCode");
+let codeSourceAllArray = Array.from(codeSourceAll);
 let createElmcode = document.createElement("code");
+let btnShow = document.querySelectorAll(".show");
 const colors = [
   "#ffffff", // سیاه
   "#000000", // سفید
@@ -1875,7 +1912,60 @@ const colors = [
   "#7f8000", // قهوه‌ای مایل به زرد
   "#7f8080", // خاکستری مایل به قهوه‌ای
 ];
+const stringSourceCode =
+ [
+  ` gsap.to(".basket-left", { x:"200" ,rotation:-360 ,duration:1.5 ,yoyo:true })
+  gsap.to(".basket-right", { x:"-200" ,rotation: 360 ,duration:1.5,yoyo:true  });`, // سیاه
+  `
+  gsap.to(".box", {
+  duration: 1,
+  rotation: 360,
+  opacity: 1,
+  delay: 0.5,
+  stagger: 0.2,
+  ease: "sine.out",
+  force3D: true,
+});
+  `, // سفید
+  `
+  gsap.to(".violet-bounce", {
+    rotation: 360,
+    duration: 2,
+    repeat: -1,
+    repeatDelay: 2,
+    ease: "bounce.out",
+  });
 
+  `
+  ,
+   // قرمز
+  `
+  gsap.to(".red-linear", {
+    rotation: 360,
+    duration: 2,
+    repeat: -1,
+    repeatDelay: 2,
+    ease: "none",
+  });
+
+  `
+  
+  , // سبز
+ `
+ gsap.to(".box", {
+  duration: 1,
+  rotation: 360,
+  opacity: 1,
+  delay: 0.5,
+  stagger: 0.2,
+  ease: "sine.out",
+  force3D: true,
+});
+ `
+];
+codeSourceAllArray.forEach((elm,i)=>{
+ elm.innerHTML = stringSourceCode[i]
+})
 let xPos = 0;
 gsap
   .timeline()
@@ -1888,8 +1978,20 @@ gsap
 
     backgroundColor: (i) => colors[i],
     backgroundPosition: (i) => getBgPos(i),
-    backfaceVisibility: "hidden",
+     backfaceVisibility: "hidden",
   })
+  .set(".source",{
+    opacity:0,
+    
+  })
+  .from(".source",{
+    duration: 1.5,
+    y: 200,
+    opacity: 0,
+    stagger: 0.1,
+    ease: "expo",
+  })
+  
   .from(".img", {
     duration: 1.5,
     y: 200,
@@ -1905,8 +2007,10 @@ gsap
        gsap.to(".img > button", { opacity: 1 });
       gsap.to(".img", {
         opacity: (i, t) => (t == current ? 1 : 0.5),
-        ease: "power1",scale: 0.8
-      });
+        ease: "power1",scale: 0.8,
+        
+    })
+     
       gsap.to(e.target, { scale: 1.3, });
   
       gsap.to(".basket-left", { x:"200" ,rotation:-360 ,duration:1.5 ,yoyo:true });
@@ -1916,31 +2020,54 @@ gsap
       gsap.to(".img", { opacity: 1, ease: "power1.inOut" });
       gsap.to(e.target, { scale: 0.8 });
   
+      gsap.to(".img > .basket-left", { x:"0" ,rotation:360 ,duration:1.5 ,backfaceVisibility: "hidden",});
+      gsap.to(".img > .basket-right", { x:"-0" ,rotation: -360 ,duration:1.5 ,backfaceVisibility: "hidden", });
       gsap.to(".img > button", { opacity: 0 });
     
       createElmcode.remove();
       onShow = false;
     });
     $(".img").on("click", (e) => {
-       let parent = e.target.parentNode;
     //  parent.insertAdjacentHTML('beforeend',"<pre  class='w-2/4 h-2/4 bg-amber-400  m-0 p-0 '><code class='language-js'></code></pre>");
-    parent.appendChild(createElmcode);
+//     btnShow.appendChild(createElmcode);
+// console.log(parent);
+  
+   
+  });
+  $(".show").on("click", (e) => {
+//     let parent = e.target.parentNode;
+//     parent.appendChild(createElmcode);
+//     console.log(e.target);
+e.innerHTML="test"
+console.log(e);
+console.log(e.srcElement._gsap.id);
+ $(".source").filter((item) =>{
+  return  item == e.srcElement._gsap.id
+ })
+  
+   
+//     if (!onShow) {
+//       for (let index = 0; index < colors.length; index++) {
+//       let element = colors[index];
+//       console.log(element);
 
-    
-    if (!onShow) {
-      createElmcode.classList.add("flex", "justify-center", "w-full", "h-full");
-      createElmcode.innerHTML = `<pre  class='w-5/6 h-5/6 bg-amber-400  m-0 p-0 '><code class='language-js'>let const =document.querySelector('.img')
-console.log(const);
-Source Code
-</code></pre>`;
-      onShow = true;
-    } else{ createElmcode.remove(), (onShow = false);
-}
-     console.log(e.target);
-    });
-  }, "-=0.5");
- 
+//       createElmcode.classList.add("flex", "justify-center", "w-full", "h-full");
+//       createElmcode.innerHTML =element
+//       }
+//       onShow = true;
+//     } else{ createElmcode.remove(), (onShow = false);
+// }
 
+
+  })
+    $(".source").on("mouseleave",()=>{
+      // gasp.to(".source",{
+      //   opacity:0,
+      //    ease: "power1.inOut"
+      // })
+    })
+  })
+// console.log(document.querySelectorAll(".img"));
 //gsap.globalTimeline.timeScale(0.25)
 // for (let i = 0; i < sliderArr.length; i++) {
 //   const elementSlide = sliderArr[i];

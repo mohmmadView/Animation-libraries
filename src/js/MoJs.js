@@ -1,5 +1,5 @@
 import mojs from '@mojs/core';
-// import Prism from 'prismjs';
+//  import Prism from 'prismjs';
 // new mojs.Html({
 //   // ...
 // });
