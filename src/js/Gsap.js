@@ -193,17 +193,17 @@ export default function Gsap() {
     </div>
     <div class="img  absolute ">
        <button  class="show p-3  bg-red-400">show</button>
-       <div class="w-2/3 h-full bg-red-400 source"></div>
+       <div class="w-2/3 h-full opacity-0 bg-red-400 source"></div>
     </div>
     <div class="img  absolute ">
 <button  class="show p-3  bg-red-400">show</button>
-       <div class="w-2/3 h-full bg-red-400 source">
+       <div class=" h-full  source">
         <pre  class="h-full m-0 p-0 "><code id="sourceCode" class="language-js">
         </code> </pre>
        </div>
     </div>
     <div class="img  absolute "> <button  class="show p-3  bg-red-400">show</button>
-       <div class="w-2/3 h-full bg-red-400 source">
+       <div class=" h-full  source">
         <pre  class="h-full m-0 p-0 "><code id="sourceCode" class="language-js">
 
         </code> </pre>
@@ -212,7 +212,7 @@ export default function Gsap() {
     </div>
     <div class="img  absolute ">
 <button  class="show p-3  bg-red-400">show</button>
-       <div class="w-2/3 h-full bg-red-400 source">
+       <div class=" h-full  source">
         <pre  class="h-full m-0 p-0 "><code id="sourceCode" class="language-js">
 
         </code> </pre>
@@ -220,21 +220,21 @@ export default function Gsap() {
     </div>
     <div class="img  absolute "> 
        <button  class="show p-3  bg-red-400">show</button>
-       <div class="w-2/3 h-full bg-red-400 source">
+       <div class=" h-full  source">
         <pre  class="h-full m-0 p-0 "><code id="sourceCode" class="language-js">
 
         </code> </pre></div>
     </div>
     <div class="img  absolute ">
        <button  class="show p-3  bg-red-400">show</button>
-       <div class="w-2/3 h-full bg-red-400 source">
+       <div class=" h-full  source">
         <pre  class="h-full m-0 p-0 "><code id="sourceCode" class="language-js">
 
         </code> </pre></div>
     </div>
     <div class="img  absolute ">
        <button  class="show p-3  bg-red-400">show</button>
-       <div class="w-2/3 h-full bg-red-400 source">
+       <div class=" h-full  source">
         <pre  class="h-full m-0 p-0 "><code id="sourceCode" class="language-js">
 
         </code> </pre>
@@ -242,7 +242,7 @@ export default function Gsap() {
     </div>
     <div class="img  absolute ">
        <button  class="show p-3  bg-red-400">show</button>
-       <div class="w-2/3 h-full bg-red-400 source">
+       <div class=" h-full  source">
         <pre  class="h-full m-0 p-0 "><code id="sourceCode" class="language-js">
         </code> </pre>
        </div>
@@ -1975,21 +1975,13 @@ gsap
     rotateY:(i)=>i*-36,
     transformOrigin: "50% 50% 1050",
     z: -1050,
-
     backgroundColor: (i) => colors[i],
     backgroundPosition: (i) => getBgPos(i),
-     backfaceVisibility: "hidden",
-  })
-  .set(".source",{
-    opacity:0,
+     backfaceVisibility: "hidden"
     
   })
-  .from(".source",{
-    duration: 1.5,
-    y: 200,
+  .set(".source",{
     opacity: 0,
-    stagger: 0.1,
-    ease: "expo",
   })
   
   .from(".img", {
@@ -2007,44 +1999,55 @@ gsap
        gsap.to(".img > button", { opacity: 1 });
       gsap.to(".img", {
         opacity: (i, t) => (t == current ? 1 : 0.5),
-        ease: "power1",scale: 0.8,
+        ease: "power3",
+        scale:(i,t)=>(t == current ? 1.3 : 0.8),
         
     })
-     
-      gsap.to(e.target, { scale: 1.3, });
+    //  gsap.to(e.target, { scale: 1.3, });
   
       gsap.to(".basket-left", { x:"200" ,rotation:-360 ,duration:1.5 ,yoyo:true });
       gsap.to(".basket-right", { x:"-200" ,rotation: 360 ,duration:1.5,yoyo:true  });
+      
     });
     $(".img").on("mouseleave", (e) => {
+      let current = e.currentTarget;
       gsap.to(".img", { opacity: 1, ease: "power1.inOut" });
-      gsap.to(e.target, { scale: 0.8 });
+      gsap.to(current, { scale: 0.8 });
   
       gsap.to(".img > .basket-left", { x:"0" ,rotation:360 ,duration:1.5 ,backfaceVisibility: "hidden",});
       gsap.to(".img > .basket-right", { x:"-0" ,rotation: -360 ,duration:1.5 ,backfaceVisibility: "hidden", });
       gsap.to(".img > button", { opacity: 0 });
-    
+      gsap.to(".source",{
+        opacity: 0,
+      })
+      
       createElmcode.remove();
       onShow = false;
-    });
-    $(".img").on("click", (e) => {
-    //  parent.insertAdjacentHTML('beforeend',"<pre  class='w-2/4 h-2/4 bg-amber-400  m-0 p-0 '><code class='language-js'></code></pre>");
-//     btnShow.appendChild(createElmcode);
-// console.log(parent);
+    })
+//     $(".img").on("click", (e) => {
+//     //  parent.insertAdjacentHTML('beforeend',"<pre  class='w-2/4 h-2/4 bg-amber-400  m-0 p-0 '><code class='language-js'></code></pre>");
+// //     btnShow.appendChild(createElmcode);
+// // console.log(parent);
   
    
-  });
+//   });
   $(".show").on("click", (e) => {
 //     let parent = e.target.parentNode;
 //     parent.appendChild(createElmcode);
 //     console.log(e.target);
-e.innerHTML="test"
-console.log(e);
-console.log(e.srcElement._gsap.id);
- $(".source").filter((item) =>{
-  return  item == e.srcElement._gsap.id
- })
-  
+let elmShowCode=e.target.nextElementSibling;
+console.log(elmShowCode);
+gsap.to(elmShowCode,{
+  opacity:1
+});
+})
+//  $(".source").click((e) =>{
+// console.log("item", e.target._gsap.target._gsap.target.parentElement.parentElement._gsap.target
+// );
+// gsap.to(e.target,{
+//   x:200
+// })
+//  })
    
 //     if (!onShow) {
 //       for (let index = 0; index < colors.length; index++) {
@@ -2059,13 +2062,10 @@ console.log(e.srcElement._gsap.id);
 // }
 
 
-  })
-    $(".source").on("mouseleave",()=>{
-      // gasp.to(".source",{
-      //   opacity:0,
-      //    ease: "power1.inOut"
-      // })
-    })
+ 
+    // $(".source").on("mouseleave",()=>{
+   
+    // })
   })
 // console.log(document.querySelectorAll(".img"));
 //gsap.globalTimeline.timeScale(0.25)

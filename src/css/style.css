@@ -197,6 +197,7 @@ pre[class*="language-"] {
   height: 100%;
   transform-style: preserve-3d;
   user-select: none;
+  padding: 2%;
 }
 
 .stage {
@@ -227,4 +228,7 @@ pre[class*="language-"] {
 .basket-right{
   right: 0;
   top: 35%; 
+}
+.show{
+  z-index: 50;
 }
