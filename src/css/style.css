@@ -12,9 +12,9 @@ html {
     font-family: "FashionVictim";
     src:
       local("FashionVictim"),
-      url("FashionVictim.woff") format("woff") tech(color-COLRv1),
-      url("FashionVictim.ttf") format("TrueType"),
-      url("FashionVictim.eot") format("opentype");
+      url("../assets/font/FashionVictim.woff") format("woff") 
+      url("../assets/font/FashionVictim.ttf") format("TrueType")
+      url("../assets/font/FashionVictim.eot") format("opentype");
   }
 
   #animateCss {
@@ -231,4 +231,8 @@ pre[class*="language-"] {
 }
 .show{
   z-index: 50;
+}
+.source{
+  width: 100%;
+  height: 100%;
 }

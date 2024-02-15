@@ -70,6 +70,9 @@ export default function Gsap() {
   <div class="ringGsap">
     
     <div class="img  absolute"><button  class="show p-3  bg-red-400">show</button>
+     <div  class="h-full w-[95%] m-3 absolute source z-10" >
+      <pre class="h-full m-0 p-0 language-js" tabindex="0"><code id="sourceCode" class="language-js"><span class="token keyword">undefined</span></code> </pre>
+     </div>
       <svg class=" w-24 h-24  absolute basket-left " version="1.0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
       viewBox="0 0 64 64" enable-background="new 0 0 64 64" xml:space="preserve">
   <g>
@@ -176,7 +179,10 @@ export default function Gsap() {
     </div>
     <div class="img  absolute ">
 <button  class="show p-3  bg-red-400">show</button>
-<svg id="toggleGsap" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+<div  class=" h-full absolute source" style="opacity: 0;">
+      <pre class="h-full m-0 p-0 language-js" tabindex="0"><code id="sourceCode" class="language-js"><span class="token keyword">undefined</span></code> </pre>
+     </div>
+<svg id="toggleGsap" class="w-full h-full absolute " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
 <g id="whole">
       <g id="togglePanel">
         <path d="M331.5,328.5a45.5,45.5,0,0,1,0-91h115a45.5,45.5,0,0,1,0,91Z" fill="#f2f2f2"/>
@@ -2024,22 +2030,23 @@ gsap
       createElmcode.remove();
       onShow = false;
     })
-//     $(".img").on("click", (e) => {
-//     //  parent.insertAdjacentHTML('beforeend',"<pre  class='w-2/4 h-2/4 bg-amber-400  m-0 p-0 '><code class='language-js'></code></pre>");
-// //     btnShow.appendChild(createElmcode);
-// // console.log(parent);
-  
-   
-//   });
   $(".show").on("click", (e) => {
-//     let parent = e.target.parentNode;
-//     parent.appendChild(createElmcode);
-//     console.log(e.target);
+let current = e.currentTarget;
 let elmShowCode=e.target.nextElementSibling;
-console.log(elmShowCode);
-gsap.to(elmShowCode,{
-  opacity:1
-});
+if(!onShow){
+  gsap.to(elmShowCode,{
+    opacity:1,
+    ease:"power1.in"
+  })
+  onShow = true;
+}else{
+  gsap.to(elmShowCode,{
+    opacity:0,
+    ease:"power1.inOut"
+  })
+  onShow = false;
+}
+
 })
 //  $(".source").click((e) =>{
 // console.log("item", e.target._gsap.target._gsap.target.parentElement.parentElement._gsap.target

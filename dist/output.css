@@ -449,9 +449,9 @@ video {
 
   src:
       local("FashionVictim"),
-      url("FashionVictim.woff") format("woff") tech(color-COLRv1),
-      url("FashionVictim.ttf") format("TrueType"),
-      url("FashionVictim.eot") format("opentype");
+      url("../assets/font/FashionVictim.woff") format("woff") 
+      url("../assets/font/FashionVictim.ttf") format("TrueType")
+      url("../assets/font/FashionVictim.eot") format("opentype");
 }
 
 #animateCss {
@@ -785,6 +785,14 @@ video {
 
 .m-2 {
   margin: 0.5rem;
+}
+
+.m-auto {
+  margin: auto;
+}
+
+.m-3 {
+  margin: 0.75rem;
 }
 
 .mx-auto {
@@ -1161,6 +1169,18 @@ video {
 
 .w-screen {
   width: 100vw;
+}
+
+.w-\[\] {
+  width: ;
+}
+
+.w-\[95\] {
+  width: 95;
+}
+
+.w-\[95\%\] {
+  width: 95%;
 }
 
 .flex-shrink {
@@ -3511,6 +3531,11 @@ pre[class*="language-"] {
 
 .show{
   z-index: 50;
+}
+
+.source{
+  width: 100%;
+  height: 100%;
 }
 
 @media (min-width: 640px) {
