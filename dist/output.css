@@ -787,10 +787,6 @@ video {
   margin: 0.5rem;
 }
 
-.m-auto {
-  margin: auto;
-}
-
 .m-3 {
   margin: 0.75rem;
 }
@@ -1151,6 +1147,10 @@ video {
   width: 20rem;
 }
 
+.w-\[95\%\] {
+  width: 95%;
+}
+
 .w-\[this-is\\\\\] {
   width: this-is\\;
 }
@@ -1169,18 +1169,6 @@ video {
 
 .w-screen {
   width: 100vw;
-}
-
-.w-\[\] {
-  width: ;
-}
-
-.w-\[95\] {
-  width: 95;
-}
-
-.w-\[95\%\] {
-  width: 95%;
 }
 
 .flex-shrink {
