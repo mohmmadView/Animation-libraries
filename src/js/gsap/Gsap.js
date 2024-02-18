@@ -51,23 +51,23 @@ export default function Gsap() {
     });
   });
   
-  gsap.to(".svgBox", {
-    duration: 2,
-    x: 300, // use transform shorthand (this is now using SVG units not px, the SVG viewBox is 100 units wide)
-    xPercent: -80,
-    // or target SVG attributes
-    attr: {
-      fill: "#8d3dae",
-      rx: 50,
-    },
-  });
+  // gsap.to(".svgBox", {
+  //   duration: 2,
+  //   x: 300, // use transform shorthand (this is now using SVG units not px, the SVG viewBox is 100 units wide)
+  //   xPercent: -80,
+  //   // or target SVG attributes
+  //   attr: {
+  //     fill: "#8d3dae",
+  //     rx: 50,
+  //   },
+  // });
   //create an object
-  let test = { myNum: 10, myColor: "red" };
-  gsap.to("test", test, {
-    myNum: 200,
-    myColor: "blue",
-    onUpdate: () => console.log(test.myNum, test.myColor),
-  });
+  // let test = { myNum: 10, myColor: "red" };
+  // gsap.to("test", test, {
+  //   myNum: 200,
+  //   myColor: "blue",
+  //   onUpdate: () => console.log(test.myNum, test.myColor),
+  // });
 
   const canvas = document.getElementById("canvas");
   const ctx = canvas.getContext("2d");
@@ -129,37 +129,10 @@ export default function Gsap() {
   });
 
 
- gsap.timeline({ repeat: 2, repeatDelay: 1 });
-tl.to(".racket", {
-  duration: 1,
-  rotation: 90,
-});
-tl.to(".racket", {
-  duration: 1,
-  x: "80vw",
-  ease: "expo",
-});
-tl.to(".racket", {
-  duration: 1,
-  ease: "expo",
-});
 
 //register the plugin (just once)
-// gsap.registerPlugin(MotionPathPlugin);
+gsap.registerPlugin(MotionPathPlugin);
 
-gsap.set(".astronaut", { scale: 0.5, autoAlpha: 1 });
-
-gsap.to(".astronaut", {
-  duration: 5,
-  ease: "power1.inOut",
-  immediateRender: true,
-  motionPath: {
-    path: "#path",
-    align: "#path",
-    alignOrigin: [0.5, 0.5],
-    autoRotate: 90,
-  },
-});
 
 window.addEventListener("scroll", gasp_scroll);
 function gasp_scroll(e) {
@@ -331,8 +304,34 @@ gsap
   
       gsap.to(".basket-left", { x:"200" ,rotation:-360 ,duration:1.5 ,yoyo:true });
       gsap.to(".basket-right", { x:"-200" ,rotation: 360 ,duration:1.5,yoyo:true  });
-     
-  
+      gsap.to(".astronaut", {
+        duration: 5,
+        ease: "power1.inOut",
+        immediateRender: true,
+        motionPath: {
+          path: "#path",
+          align: "#path",
+          alignOrigin: [0.5, 0.5],
+          autoRotate: 90,
+        },
+      });
+      gsap.timeline({ repeat: 2, repeatDelay: 1 });
+      tl.to(".racket", {
+        duration: 1,
+        rotation: 120,
+      });
+      tl.to(".racket", {
+        duration: 1,
+        x: "300",
+        y: "200",
+        ease: "expo",
+      });
+      tl.to(".racket", {
+        duration: 1,
+        rotation: 90,
+        ease: "expo",
+      });
+      
     });
     $(".img").on("mouseleave", (e) => {
       let current = e.currentTarget;
@@ -347,13 +346,39 @@ gsap
       })
       gsap.to(".box", {
         duration: 1,
-        rotation: 360,
+        rotation: 180,
         opacity: 1,
         delay: 0.5,
         stagger: 0.2,
         ease: "sine.out",
         force3D: true,
       });
+          gsap.to(".astronaut", {
+        duration: 5,
+        ease: "power1.Out",
+        immediateRender: true,
+        motionPath: {
+          path: "#path",
+          align: "#path",
+          alignOrigin: [0.5, 0.5],
+          autoRotate: 90,
+        },
+      });
+   
+      tl.to(".racket", {
+        duration: 1.5,
+        rotation: -360,
+      });
+      tl.to(".racket", {
+        duration: 1,
+        y: "-100",
+        ease: "expo",
+      });
+      tl.to(".racket", {
+        duration: 1,
+        ease: "expo",
+      });
+      // gsap.to("rect", {duration: 1, rotation: 360, transformOrigin: "center center"});
       createElmcode.remove();
       onShow = false;
     })
@@ -402,6 +427,9 @@ if(!onShow){
 
   // })
 // }
+
+.set(".astronaut", { scale: 0.5, autoAlpha: 1 });
+
 
 $(window).on("mousedown touchstart", dragStart);
 $(window).on("mouseup touchend", dragEnd);
