@@ -212,14 +212,18 @@ const stringSourceCode =
 
   `
   ,
-   // قرمز
+   //? box click fade all
   `
-  gsap.to(".red-linear", {
-    rotation: 360,
-    duration: 2,
-    repeat: -1,
-    repeatDelay: 2,
-    ease: "none",
+  document.querySelectorAll(".box").forEach(function (box) {
+    box.addEventListener("click", function () {
+      gsap.to(".box", {
+        duration: 0.5,
+        opacity: 0,
+        y: 0,
+        stagger: 0.1,
+        ease: "back.in",
+      });
+    });
   });
 
   `
@@ -325,15 +329,49 @@ const stringSourceCode =
       });
  `
  ,
- ` gsap.to(".box", {
-  duration: 1,
-  rotation: 360,
-  opacity: 1,
-  delay: 0.5,
-  stagger: 0.2,
-  ease: "sine.out",
-  force3D: true,
-});`
+ `  // ? source code racket
+ gsap.timeline({ repeat: 5, repeatDelay: 1 });
+         tl.to(".racket", {
+        duration: 1,
+        rotation: 90,
+        ease: "expo",
+      });
+      tl.to(".racket", {
+        duration: 1.5,
+        x: 400,
+        ease: "expo",
+      });
+      tl.to(".racket", {
+        duration: 1,
+        rotation: 180,
+        ease: "expo",
+      });
+      tl.to(".racket", {
+        duration: 1,
+        y: 200,
+        ease: "expo",
+      });
+         tl.to(".racket", {
+        duration: 1,
+        rotation: -90,
+        ease: "expo",
+      });
+        tl.to(".racket", {
+        duration: 1,
+        x: 0,
+        ease: "expo",
+      });
+          tl.to(".racket", {
+        duration: 1,
+        rotation: 0,
+        ease: "expo",
+      });
+          tl.to(".racket", {
+        duration: 1,
+        y: 0,
+        ease: "expo",
+      });
+ `
 ,
 `
 gsap.to(".violet-bounce", {
