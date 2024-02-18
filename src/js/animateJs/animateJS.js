@@ -42,7 +42,6 @@ function SvgAnimateStrokeDash() {
     winScroll(384, elmLineAnimate, "animate__backInRight"); //! <=== جواب
     winScroll(845, elmDivAnimateJs, "animate__lightSpeedInLeft");
   };
-
   //TODO --------------- TheEndScrollAnimateJs ----------------- */
   //! -------------------------------------------------------------------------- */
   //* ----------------------------- MenuAnimeJs -------------------------------- */
@@ -180,11 +179,8 @@ function SvgAnimateStrokeDash() {
       delay: anime.stagger(200, { grid: [14, 5], from: "center" }),
     });
 
-    //  }
   }
-
   //TODO --------------- animeJs-6 ----------------- */
-
   var animation = anime({
     targets: ".seek-anim-demo .el",
     translateX: 180,
