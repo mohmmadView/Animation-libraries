@@ -237,7 +237,49 @@ const stringSourceCode =
 });
  ` 
  ,
- `6`
+ `  // ? source code racket
+ gsap.timeline({ repeat: 5, repeatDelay: 1 });
+         tl.to(".racket", {
+        duration: 1,
+        rotation: 90,
+        ease: "expo",
+      });
+      tl.to(".racket", {
+        duration: 1.5,
+        x: 400,
+        ease: "expo",
+      });
+      tl.to(".racket", {
+        duration: 1,
+        rotation: 180,
+        ease: "expo",
+      });
+      tl.to(".racket", {
+        duration: 1,
+        y: 200,
+        ease: "expo",
+      });
+         tl.to(".racket", {
+        duration: 1,
+        rotation: -90,
+        ease: "expo",
+      });
+        tl.to(".racket", {
+        duration: 1,
+        x: 0,
+        ease: "expo",
+      });
+          tl.to(".racket", {
+        duration: 1,
+        rotation: 0,
+        ease: "expo",
+      });
+          tl.to(".racket", {
+        duration: 1,
+        y: 0,
+        ease: "expo",
+      });
+ `
  ,
  `  // ? source code racket
  gsap.timeline({ repeat: 5, repeatDelay: 1 });
