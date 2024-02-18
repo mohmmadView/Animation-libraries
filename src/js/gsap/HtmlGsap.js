@@ -170,7 +170,7 @@ document.querySelector("#ContainerGsap").innerHTML = `
         <pre  class="h-full m-0 p-0 "><code id="sourceCode" class="language-js">
 
         </code> </pre></div>
-        <img class="w-32 h-32 top-20 absolute racket" src=${svgRacket} />
+        <img class="w-32 h-32  top-20 absolute racket" src=${svgRacket} />
     </div>
     <div class="img  absolute ">
        <button  class="show p-3  bg-red-400">show</button>

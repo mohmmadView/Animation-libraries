@@ -171,48 +171,19 @@ let codeSourceAll = document.querySelectorAll("#sourceCode");
 let codeSourceAllArray = Array.from(codeSourceAll);
 let createElmcode = document.createElement("code");
 let btnShow = document.querySelectorAll(".show");
-const colors = [
-  "#ffffff", // سیاه
-  "#000000", // سفید
-  "#ff0000", // قرمز
-  "#00ff00", // سبز
-  "#0000ff", // آبی
-  "#ffff00", // زرد
-  "#ff00ff", // بنفش
-  "#00ffff", // فیروزه‌ای
-  "#808080", // خاکستری
-  "#c0c0c0", // نقره‌ای
-  "#f0f0f0", // سفید دودی
-  "#d3d3d3", // خاکستری روشن
-  "#a9a9a9", // خاکستری تیره
-  "#ff7f00", // نارنجی
-  "#00ff7f", // سبز روشن
-  "#7f00ff", // بنفش روشن
-  "#ff7fff", // صورتی
-  "#7fff00", // زرد لیمویی
-  "#7fffff", // آبی آسمانی
-  "#f000ff", // سرخابی
-  "#00f0ff", // آبی لاجوردی
-  "#ffff7f", // زرد کمرنگ
-  "#d2b48c", // قهوه‌ای
-  "#ffa500", // نارنجی تیره
-  "#008000", // سبز تیره
-  "#008080", // آبی تیره
-  "#800000", // قهوه‌ای سوخته
-  "#800080", // بنفش تیره
-  "#ffa07a", // رنگ پوست
-  "#ff4500", // نارنجی سوخته
-  "#00ff80", // سبزآبی
-  "#7f0080", // بنفش مایل به قرمز
-  "#7f8000", // قهوه‌ای مایل به زرد
-  "#7f8080", // خاکستری مایل به قهوه‌ای
+//? ==================================\\
+//* ======bg-color-slider-gallery======\\
+//? ==================================\\
+const bgColorsGallery = [
+  "#ffffff",  "#d2b48c", "#ff0000", "#00ff00", "#0000ff", "#ffff00", "#ffa07a", "#008000",
+ "#00ffff", "#808080", "#ff0bc0", "#7f00ff", "#08d3d3", "#800000", "#ff7f00","#ffa500", "#7fff00"
 ];
 const stringSourceCode =
- [
+ [            // ? source code basketball
   ` gsap.to(".basket-left",
    { x:"200" ,rotation:-360 ,duration:1.5 ,yoyo:true })
   gsap.to(".basket-right",
-   { x:"-200" ,rotation: 360 ,duration:1.5,yoyo:true  });`, // سیاه
+   { x:"-200" ,rotation: 360 ,duration:1.5,yoyo:true  });`,
   `
   gsap.to(".box", {
   duration: 1,
@@ -258,7 +229,74 @@ const stringSourceCode =
   ease: "sine.out",
   force3D: true,
 });
+ ` 
+ ,
+ `6`
+ ,
+ `  // ? source code racket
+ gsap.timeline({ repeat: 5, repeatDelay: 1 });
+         tl.to(".racket", {
+        duration: 1,
+        rotation: 90,
+        ease: "expo",
+      });
+      tl.to(".racket", {
+        duration: 1.5,
+        x: 400,
+        ease: "expo",
+      });
+      tl.to(".racket", {
+        duration: 1,
+        rotation: 180,
+        ease: "expo",
+      });
+      tl.to(".racket", {
+        duration: 1,
+        y: 200,
+        ease: "expo",
+      });
+         tl.to(".racket", {
+        duration: 1,
+        rotation: -90,
+        ease: "expo",
+      });
+        tl.to(".racket", {
+        duration: 1,
+        x: 0,
+        ease: "expo",
+      });
+          tl.to(".racket", {
+        duration: 1,
+        rotation: 0,
+        ease: "expo",
+      });
+          tl.to(".racket", {
+        duration: 1,
+        y: 0,
+        ease: "expo",
+      });
  `
+ ,
+ ` gsap.to(".box", {
+  duration: 1,
+  rotation: 360,
+  opacity: 1,
+  delay: 0.5,
+  stagger: 0.2,
+  ease: "sine.out",
+  force3D: true,
+});`
+,
+`
+gsap.to(".violet-bounce", {
+  rotation: 360,
+  duration: 2,
+  repeat: -1,
+  repeatDelay: 2,
+  ease: "bounce.out",
+});
+9
+`
 ];
 codeSourceAllArray.forEach((elm,i)=>{
  elm.innerHTML = stringSourceCode[i]
@@ -272,7 +310,7 @@ gsap
     rotateY:(i)=>i*-36,
     transformOrigin: "50% 50% 1050",
     z: -1050,
-    backgroundColor: (i) => colors[i],
+    backgroundColor: (i) => bgColorsGallery[i],
     backgroundPosition: (i) => getBgPos(i),
      backfaceVisibility: "hidden"
     
@@ -315,23 +353,48 @@ gsap
           autoRotate: 90,
         },
       });
-      gsap.timeline({ repeat: 2, repeatDelay: 1 });
-      tl.to(".racket", {
-        duration: 1,
-        rotation: 120,
-      });
-      tl.to(".racket", {
-        duration: 1,
-        x: "300",
-        y: "200",
-        ease: "expo",
-      });
-      tl.to(".racket", {
+      gsap.timeline({ repeat: 5, repeatDelay: 1 });
+         tl.to(".racket", {
         duration: 1,
         rotation: 90,
         ease: "expo",
       });
-      
+      tl.to(".racket", {
+        duration: 1.5,
+        x: 400,
+        ease: "expo",
+      });
+      tl.to(".racket", {
+        duration: 1,
+        rotation: 180,
+        ease: "expo",
+      });
+      tl.to(".racket", {
+        duration: 1,
+        y: 200,
+        ease: "expo",
+      });
+         tl.to(".racket", {
+        duration: 1,
+        rotation: -90,
+        ease: "expo",
+      });
+        tl.to(".racket", {
+        duration: 1,
+        x: 0,
+        ease: "expo",
+      });
+          tl.to(".racket", {
+        duration: 1,
+        rotation: 0,
+        ease: "expo",
+      });
+          tl.to(".racket", {
+        duration: 1,
+        y: 0,
+        ease: "expo",
+      });
+
     });
     $(".img").on("mouseleave", (e) => {
       let current = e.currentTarget;
@@ -365,19 +428,19 @@ gsap
         },
       });
    
-      tl.to(".racket", {
-        duration: 1.5,
-        rotation: -360,
-      });
-      tl.to(".racket", {
-        duration: 1,
-        y: "-100",
-        ease: "expo",
-      });
-      tl.to(".racket", {
-        duration: 1,
-        ease: "expo",
-      });
+      // tl.to(".racket", {
+      //   duration: 1.5,
+      //   rotation: -360,
+      // });
+      // tl.to(".racket", {
+      //   duration: 1,
+      //   y: "-100",
+      //   ease: "expo",
+      // });
+      // tl.to(".racket", {
+      //   duration: 1,
+      //   ease: "expo",
+      // });
       // gsap.to("rect", {duration: 1, rotation: 360, transformOrigin: "center center"});
       createElmcode.remove();
       onShow = false;
