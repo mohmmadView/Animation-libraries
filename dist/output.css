@@ -719,20 +719,20 @@ video {
   left: 50%;
 }
 
+.right-1 {
+  right: 0.25rem;
+}
+
+.right-3 {
+  right: 0.75rem;
+}
+
 .top-10 {
   top: 2.5rem;
 }
 
 .top-20 {
   top: 5rem;
-}
-
-.right-1 {
-  right: 0.25rem;
-}
-
-.bottom-0 {
-  bottom: 0px;
 }
 
 .isolate {
@@ -745,6 +745,14 @@ video {
 
 .z-10 {
   z-index: 10;
+}
+
+.z-0 {
+  z-index: 0;
+}
+
+.z-50 {
+  z-index: 50;
 }
 
 .float-start {
@@ -801,10 +809,6 @@ video {
 
 .m-2 {
   margin: 0.5rem;
-}
-
-.m-3 {
-  margin: 0.75rem;
 }
 
 .mx-auto {
@@ -870,6 +874,14 @@ video {
 
 .mt-8 {
   margin-top: 2rem;
+}
+
+.mt-0 {
+  margin-top: 0px;
+}
+
+.mt-14 {
+  margin-top: 3.5rem;
 }
 
 .box-border {
@@ -1175,10 +1187,6 @@ video {
   width: 20rem;
 }
 
-.w-\[95\%\] {
-  width: 95%;
-}
-
 .w-\[this-is\\\\\] {
   width: this-is\\;
 }
@@ -1245,16 +1253,6 @@ video {
 
 .rotate-90 {
   --tw-rotate: 90deg;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.rotate-3 {
-  --tw-rotate: 3deg;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.rotate-45 {
-  --tw-rotate: 45deg;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
@@ -2277,6 +2275,11 @@ video {
   background-color: rgb(37 99 235 / 0.2);
 }
 
+.bg-cyan-400 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(34 211 238 / var(--tw-bg-opacity));
+}
+
 .bg-gray-600 {
   --tw-bg-opacity: 1;
   background-color: rgb(75 85 99 / var(--tw-bg-opacity));
@@ -2418,16 +2421,6 @@ video {
 
 .bg-zinc-50\/15 {
   background-color: rgb(250 250 250 / 0.15);
-}
-
-.bg-cyan-200 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(165 243 252 / var(--tw-bg-opacity));
-}
-
-.bg-cyan-400 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(34 211 238 / var(--tw-bg-opacity));
 }
 
 .bg-opacity-10 {
@@ -2608,6 +2601,10 @@ video {
 
 .p-6 {
   padding: 1.5rem;
+}
+
+.p-4 {
+  padding: 1rem;
 }
 
 .px-10 {
@@ -3553,7 +3550,6 @@ pre[class*="language-"] {
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
-  padding: 2%;
 }
 
 .stage {

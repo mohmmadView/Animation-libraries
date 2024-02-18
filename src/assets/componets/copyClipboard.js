@@ -11,7 +11,7 @@ btn.onclick=()=>{
     console.log(`test clipboard ${btn}`);
     navigator.clipboard.writeText(` ${ListMessage}`);
     console.log(containerElm);
-    containerElm.insertAdjacentHTML("afterbegin",`<h1 id="messageCopy" class="text-white text-lg p-2 border rounded-xl bottom-0	absolute mt-20 bg-yellow-600/70 ">copied</h1>`)
+    containerElm.insertAdjacentHTML("afterbegin",`<h1 id="messageCopy" class="text-white text-lg p-4 border z-50 rounded-xl bottom-4 right-3	absolute mt-20 bg-yellow-600/70 ">copied</h1>`)
    setTimeout(()=>{
         let elmMessageCopy = document.querySelector("#messageCopy")
         console.log(elmMessageCopy);

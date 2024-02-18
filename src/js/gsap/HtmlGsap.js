@@ -66,15 +66,15 @@ document.querySelector("#ContainerGsap").innerHTML = `
   <div class="ringGsap">
     
     <div class="img  absolute"><button  class="show p-3  bg-red-400">show</button>
-     <div  class="h-full w-[95%] m-3 absolute source z-10" >  <button  class="clipboard absolute right-1 p-3  bg-cyan-400">copy</button>
-      <pre class="h-full m-0 p-0 language-js" tabindex="0"><code id="sourceCode" class="language-js"><span class="token keyword">undefined</span></code> </pre>
+     <div  class="h-full w-full mt-14 absolute source z-10" >  <button  class="clipboard absolute right-1 p-3  bg-cyan-400">copy</button>
+      <pre class="w-full h-5/6 p-0 language-js" tabindex="0"><code id="sourceCode" class="language-js"><span class="token keyword">undefined</span></code> </pre>
      </div>
      <img class=" w-24 h-24  absolute basket-left " src=${svgBasketball} alt="basketball" />
       <img class=" w-24 h-24  absolute basket-right " src=${svgBasketball} alt="basketball" />
     </div>
     <div class="img  absolute ">
 <button  class="show p-3  bg-red-400">show</button>
-<div  class=" h-full absolute source" style="opacity: 0;">  <button  class="clipboard absolute right-1 p-3  bg-cyan-400">copy</button>
+<div  class="h-full w-full mt-14 absolute source z-10" style="opacity: 0;">  <button  class="clipboard absolute right-1 p-3  bg-cyan-400">copy</button>
       <pre class="h-full m-0 p-0 language-js" tabindex="0"><code id="sourceCode" class="language-js"><span class="token keyword">undefined</span></code> </pre>
      </div>
 <svg id="toggleGsap" class="w-full h-full absolute " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
@@ -94,15 +94,15 @@ document.querySelector("#ContainerGsap").innerHTML = `
     </div>
     <div class="img  absolute ">
        <button  class="show p-3  bg-red-400">show</button>
-       <div class="w-2/3 h-full opacity-0 bg-red-400 source"> <button  class="clipboard absolute right-1 p-3  bg-cyan-400">copy</button>
-       <pre  class="h-full m-0 p-0 "><code id="sourceCode" class="language-js">
+       <div class="h-full w-full mt-14 absolute source z-10"> <button  class="clipboard absolute right-1 p-3  bg-cyan-400">copy</button>
+       <pre  class="h-5/6 m-0 p-0 "><code id="sourceCode" class="language-js">
         </code> </pre>
        </div>
     </div>
     <div class="img  absolute ">
         <button  class="show p-3  bg-red-400">show</button>
-       <div class=" h-full  source"> <button  class="clipboard absolute right-1 p-3  bg-cyan-400">copy</button>
-        <pre  class="h-full m-0 p-0 "><code id="sourceCode" class="language-js">
+       <div class=" h-full w-full mt-14 absolute source z-10"> <button  class="clipboard absolute right-1 p-3  bg-cyan-400">copy</button>
+        <pre  class="h-5/6 m-0 p-0 "><code id="sourceCode" class="language-js">
         </code> </pre>
        </div>
       <div class="w-full h-full absolute top-10 left-0">
@@ -117,8 +117,8 @@ document.querySelector("#ContainerGsap").innerHTML = `
       </div>
     </div>
     <div class="img  absolute "> <button  class="show p-3  bg-red-400">show</button>
-       <div class=" h-full  source"> <button  class="clipboard absolute right-1 p-3  bg-cyan-400">copy</button>
-        <pre  class="h-full m-0 p-0 "><code id="sourceCode" class="language-js">
+       <div class="h-full w-full mt-14 absolute source z-10"> <button  class="clipboard absolute right-1 p-3  bg-cyan-400">copy</button>
+        <pre  class="h-5/6 m-0 p-0 "><code id="sourceCode" class="language-js">
 
         </code> </pre>
        </div>
@@ -126,16 +126,16 @@ document.querySelector("#ContainerGsap").innerHTML = `
     </div>
     <div class="img  absolute ">
 <button  class="show p-3  bg-red-400">show</button>
-       <div class=" h-full  source"> <button  class="clipboard absolute right-1 p-3  bg-cyan-400">copy</button>
-        <pre  class="h-full m-0 p-0 "><code id="sourceCode" class="language-js">
+       <div class="h-full w-full mt-14 absolute source z-10"> <button  class="clipboard absolute right-1 p-3  bg-cyan-400">copy</button>
+        <pre  class="h-5/6 m-0 p-0 "><code id="sourceCode" class="language-js">
 
         </code> </pre>
        </div>
     </div>
     <div class="img  absolute "> 
        <button  class="show p-3  bg-red-400">show</button>
-       <div class=" h-full  source"> <button  class="clipboard absolute right-1 p-3  bg-cyan-400">copy</button>
-        <pre  class="h-full m-0 p-0 "><code id="sourceCode" class="language-js">
+       <div class="h-full w-full mt-14 absolute source z-10"> <button  class="clipboard absolute right-1 p-3  bg-cyan-400">copy</button>
+        <pre  class="h-5/6 m-0 p-0 "><code id="sourceCode" class="language-js">
 
         </code> </pre></div>
       
@@ -170,24 +170,24 @@ document.querySelector("#ContainerGsap").innerHTML = `
     <div class="img  absolute ">
        <button  class="show p-3  bg-red-400">show</button>
       
-       <div class=" h-full  source">  <button  class="clipboard absolute right-1 p-3  bg-cyan-400">copy</button>
-        <pre  class="h-full m-0 p-0 "><code id="sourceCode" class="language-js">
+       <div class="h-full w-full mt-14 absolute source z-10">  <button  class="clipboard absolute right-1 p-3  bg-cyan-400">copy</button>
+        <pre  class="h-5/6 m-0 p-0 "><code id="sourceCode" class="language-js">
 
         </code> </pre></div>
         <img class="w-32 h-32  top-20 absolute racket" src=${svgRacket} />
     </div>
     <div class="img  absolute ">
        <button  class="show p-3  bg-red-400">show</button>
-       <div class=" h-full  source">  <button  class="clipboard absolute right-1 p-3  bg-cyan-400">copy</button>
-        <pre  class="h-full m-0 p-0 "><code id="sourceCode" class="language-js">
+       <div class=" h-full w-full mt-14 absolute source z-10">  <button  class="clipboard absolute right-1 p-3  bg-cyan-400">copy</button>
+        <pre  class="h-5/6 m-0 p-0 "><code id="sourceCode" class="language-js">
 
         </code> </pre>
         </div>
     </div>
     <div class="img  absolute ">
        <button  class="show p-3  bg-red-400">show</button>
-       <div class=" h-full  source"> <button  class="clipboard absolute right-1 p-3  bg-cyan-400">copy</button>
-        <pre  class="h-full m-0 p-0 "><code id="sourceCode" class="language-js">
+       <div class=" h-full w-full mt-14 absolute source z-10"> <button  class="clipboard absolute right-1 p-3  bg-cyan-400">copy</button>
+        <pre  class="h-5/6 m-0 p-0 "><code id="sourceCode" class="language-js">
         </code> </pre>
        </div>
     </div>
