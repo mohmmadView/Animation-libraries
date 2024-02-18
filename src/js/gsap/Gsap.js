@@ -5,6 +5,7 @@ import { MotionPathPlugin } from "gsap/MotionPathPlugin";
 import { TextPlugin } from "gsap/TextPlugin";
 import gasp from "gasp";
 import innerHtmlGsap from "./HtmlGsap";
+import clipboardCopy from "../../assets/componets/copyClipboard";
 export default function Gsap() {
   innerHtmlGsap()
  
@@ -165,12 +166,14 @@ function gasp_scroll(e) {
 //* ==========gsap-gallery=============\\
 //? ==================================\\
 let slider = document.querySelectorAll(".img");
-let sliderArr = Array.from(slider);
+let sliderArray = Array.from(slider);
 let onShow = false;
 let codeSourceAll = document.querySelectorAll("#sourceCode");
 let codeSourceAllArray = Array.from(codeSourceAll);
 let createElmcode = document.createElement("code");
 let btnShow = document.querySelectorAll(".show");
+let btnClipboardNode =document.querySelectorAll(".clipboard");
+let elmBtnClipboard = Array.from(btnClipboardNode);
 //? ==================================\\
 //* ======bg-color-slider-gallery======\\
 //? ==================================\\
@@ -178,6 +181,9 @@ const bgColorsGallery = [
   "#ffffff",  "#d2b48c", "#ff0000", "#00ff00", "#0000ff", "#ffff00", "#ffa07a", "#008000",
  "#00ffff", "#808080", "#ff0bc0", "#7f00ff", "#08d3d3", "#800000", "#ff7f00","#ffa500", "#7fff00"
 ];
+//? ==================================\\
+//! =====sourceCode-slider-gallery=====\\
+//? ==================================\\
 const stringSourceCode =
  [            // ? source code basketball
   ` gsap.to(".basket-left",
@@ -300,6 +306,7 @@ gsap.to(".violet-bounce", {
 ];
 codeSourceAllArray.forEach((elm,i)=>{
  elm.innerHTML = stringSourceCode[i]
+  clipboardCopy(elmBtnClipboard[i],stringSourceCode[i],sliderArray[i]);
 })
 let xPos = 0;
 gsap
