@@ -331,7 +331,8 @@ gsap
   
       gsap.to(".basket-left", { x:"200" ,rotation:-360 ,duration:1.5 ,yoyo:true });
       gsap.to(".basket-right", { x:"-200" ,rotation: 360 ,duration:1.5,yoyo:true  });
-      
+     
+  
     });
     $(".img").on("mouseleave", (e) => {
       let current = e.currentTarget;
@@ -344,9 +345,30 @@ gsap
       gsap.to(".source",{
         opacity: 0,
       })
-      
+      gsap.to(".box", {
+        duration: 1,
+        rotation: 360,
+        opacity: 1,
+        delay: 0.5,
+        stagger: 0.2,
+        ease: "sine.out",
+        force3D: true,
+      });
       createElmcode.remove();
       onShow = false;
+    })
+    $(".img").on("click", (e) => {
+        document.querySelectorAll(".box").forEach(function (box) {
+    box.addEventListener("click", function () {
+      gsap.to(".box", {
+        duration: 0.5,
+        opacity: 0,
+        y: 0,
+        stagger: 0.1,
+        ease: "back.in",
+      });
+    });
+  });
     })
   $(".show").on("click", (e) => {
 let current = e.currentTarget;
@@ -366,55 +388,11 @@ if(!onShow){
 }
 
 })
-//  $(".source").click((e) =>{
-// console.log("item", e.target._gsap.target._gsap.target.parentElement.parentElement._gsap.target
-// );
-// gsap.to(e.target,{
-//   x:200
-// })
-//  })
-   
-//     if (!onShow) {
-//       for (let index = 0; index < colors.length; index++) {
-//       let element = colors[index];
-//       console.log(element);
 
-//       createElmcode.classList.add("flex", "justify-center", "w-full", "h-full");
-//       createElmcode.innerHTML =element
-//       }
-//       onShow = true;
-//     } else{ createElmcode.remove(), (onShow = false);
-// }
-
-
- 
-    // $(".source").on("mouseleave",()=>{
-   
-    // })
   })
 
-  console.log(document.querySelectorAll(".box"));
-  gsap.to(".box", {
-    duration: 1,
-    rotation: 360,
-    opacity: 1,
-    delay: 0.5,
-    stagger: 0.2,
-    ease: "sine.out",
-    force3D: true,
-  });
-  
-  document.querySelectorAll(".box").forEach(function (box) {
-    box.addEventListener("click", function () {
-      gsap.to(".box", {
-        duration: 0.5,
-        opacity: 0,
-        y: -100,
-        stagger: 0.1,
-        ease: "back.in",
-      });
-    });
-  });
+ 
+ 
   // elmShow[i].addEventListener("click", (e) => {
    
   // });
