@@ -1,8 +1,5 @@
 import mojs from '@mojs/core';
-//  import Prism from 'prismjs';
-// new mojs.Html({
-//   // ...
-// });
+
 export default function animateMojs(){
     document.querySelector("#ContainerMoJs").innerHTML=`
 <!--?----------------------------------------------------------------------- -->
