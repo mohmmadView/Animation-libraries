@@ -6,12 +6,12 @@
  * @param {Element} containerElm - The container element where the message copy confirmation will be displayed
  * @return {void} 
  */
-export default function clipboardCopy(btn,ListMessage,containerElm){
+export default function clipboardCopy(btn,ListMessage,containerElm,posMsg){
 btn.onclick=()=>{
     console.log(`test clipboard ${btn}`);
     navigator.clipboard.writeText(` ${ListMessage}`);
     console.log(containerElm);
-    containerElm.insertAdjacentHTML("afterbegin",`<h1 id="messageCopy" class=" text-white text-lg p-4 border z-50 rounded-xl bottom-4 right-3	absolute mt-20 bg-yellow-600/70 ">copied</h1>`)
+    containerElm.insertAdjacentHTML("afterbegin",`<h1 id="messageCopy" class="${posMsg} ">copied</h1>`)
    setTimeout(()=>{
         let elmMessageCopy = document.querySelector("#messageCopy")
         console.log(elmMessageCopy);

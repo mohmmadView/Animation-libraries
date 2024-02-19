@@ -386,7 +386,7 @@ gsap.to(".violet-bounce", {
 ];
 codeSourceAllArray.forEach((elm,i)=>{
  elm.innerHTML = stringSourceCode[i]
-  clipboardCopy(elmBtnClipboard[i],stringSourceCode[i],sliderArray[i]);
+  clipboardCopy(elmBtnClipboard[i],stringSourceCode[i],sliderArray[i],' text-white text-lg p-4 border z-50 rounded-xl bottom-4 right-3	absolute mt-20 bg-yellow-600/70');
 })
 let xPos = 0;
 gsap

@@ -735,6 +735,22 @@ video {
   top: 5rem;
 }
 
+.top-0 {
+  top: 0px;
+}
+
+.right-0 {
+  right: 0px;
+}
+
+.right-5 {
+  right: 1.25rem;
+}
+
+.left-3 {
+  left: 0.75rem;
+}
+
 .isolate {
   isolation: isolate;
 }
@@ -1097,6 +1113,10 @@ video {
 
 .h-screen {
   height: 100vh;
+}
+
+.h-10 {
+  height: 2.5rem;
 }
 
 .w-1\/5 {
@@ -2544,10 +2564,6 @@ video {
 
 .fill-yellow-400 {
   fill: #facc15;
-}
-
-.fill-white {
-  fill: #fff;
 }
 
 .object-contain {
