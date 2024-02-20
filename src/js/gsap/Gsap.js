@@ -52,24 +52,6 @@ export default function Gsap() {
     });
   });
   
-  // gsap.to(".svgBox", {
-  //   duration: 2,
-  //   x: 300, // use transform shorthand (this is now using SVG units not px, the SVG viewBox is 100 units wide)
-  //   xPercent: -80,
-  //   // or target SVG attributes
-  //   attr: {
-  //     fill: "#8d3dae",
-  //     rx: 50,
-  //   },
-  // });
-  //create an object
-  // let test = { myNum: 10, myColor: "red" };
-  // gsap.to("test", test, {
-  //   myNum: 200,
-  //   myColor: "blue",
-  //   onUpdate: () => console.log(test.myNum, test.myColor),
-  // });
-
   const canvas = document.getElementById("canvas");
   const ctx = canvas.getContext("2d");
   ctx.fillStyle = "#1A1A1A";
@@ -138,7 +120,6 @@ gsap.registerPlugin(MotionPathPlugin);
 window.addEventListener("scroll", gasp_scroll);
 function gasp_scroll(e) {
   if (window.scrollY > 3662) {
-    console.log("scroll");
     gsap.to("#miniBus", {
       x: -280,
       duration: 3,
@@ -174,6 +155,14 @@ let createElmcode = document.createElement("code");
 let btnShow = document.querySelectorAll(".show");
 let btnClipboardNode =document.querySelectorAll(".clipboard");
 let elmBtnClipboard = Array.from(btnClipboardNode);
+//! nav-animate
+var targets = gsap.utils.toArray("#icons g");
+var targetStarts = [20, 120, 220, 320, 420, 520];
+var anim;
+var activeDot = 0;
+var targetDot = 0;
+var maxDur = 0.6;
+
 //? ==================================\\
 //* ======bg-color-slider-gallery======\\
 //? ==================================\\
@@ -241,48 +230,8 @@ const stringSourceCode =
 });
  ` 
  ,
- `  // ? source code racket
- gsap.timeline({ repeat: 5, repeatDelay: 1 });
-         tl.to(".racket", {
-        duration: 1,
-        rotation: 90,
-        ease: "expo",
-      });
-      tl.to(".racket", {
-        duration: 1.5,
-        x: 400,
-        ease: "expo",
-      });
-      tl.to(".racket", {
-        duration: 1,
-        rotation: 180,
-        ease: "expo",
-      });
-      tl.to(".racket", {
-        duration: 1,
-        y: 200,
-        ease: "expo",
-      });
-         tl.to(".racket", {
-        duration: 1,
-        rotation: -90,
-        ease: "expo",
-      });
-        tl.to(".racket", {
-        duration: 1,
-        x: 0,
-        ease: "expo",
-      });
-          tl.to(".racket", {
-        duration: 1,
-        rotation: 0,
-        ease: "expo",
-      });
-          tl.to(".racket", {
-        duration: 1,
-        y: 0,
-        ease: "expo",
-      });
+ `  // ? yellow
+ 
  `
  ,
  `  // ? source code racket
@@ -425,8 +374,6 @@ gsap
         scale:(i,t)=>(t == current ? 1.3 : 0.8),
         
     })
-    //  gsap.to(e.target, { scale: 1.3, });
-  
       gsap.to(".basket-left", { x:"200" ,rotation:-360 ,duration:1.5 ,yoyo:true });
       gsap.to(".basket-right", { x:"-200" ,rotation: 360 ,duration:1.5,yoyo:true  });
       gsap.to(".astronaut", {
@@ -481,8 +428,16 @@ gsap
         y: 0,
         ease: "expo",
       });
+//? nav-animate
+$(".nav-animate").on("click", (e) => {
+targets.forEach((obj, i) => {
+  console.log(obj,i);
+  obj.index = i;
+  obj.addEventListener("click", letsStretch);
+});
 
     });
+  });
     $(".img").on("mouseleave", (e) => {
       let current = e.currentTarget;
       gsap.to(".img", { opacity: 1, ease: "power1.inOut" });
@@ -579,6 +534,58 @@ if(!onShow){
 // }
 
 .set(".astronaut", { scale: 0.5, autoAlpha: 1 });
+
+
+function letsStretch() {
+  targetDot = this.index;
+  console.log("func-test");
+  if (targetDot != activeDot) {
+    if (anim && anim.isActive()) {
+      anim.progress(1);
+    }
+
+    let oldX = targetStarts[activeDot];
+    let newX = targetStarts[targetDot];
+    let travel = Math.abs(oldX - newX);
+    let factor = gsap.utils.mapRange(100, 500, 0.5, 1, travel);
+    let dur = maxDur * factor;
+
+    anim = gsap.timeline({ defaults: { duration: dur, ease: "back.in(2)" } });
+    if (newX > oldX) {
+      anim.to("#stretchy", {
+        attr: { width: travel + 60 }
+      });
+
+      anim.to(
+        "#stretchy",
+        { attr: { x: newX, width: 60 }, ease: "back" },
+        "+=0.08"
+      );
+    } else {
+      anim.to("#stretchy", {
+        attr: { x: newX, width: travel + 60 }
+      });
+      anim.to("#stretchy", { attr: { width: 60 }, ease: "back" }, "+=0.08");
+    }
+
+    anim.to(
+      "#stretchy",
+      {
+        duration: dur,
+        ease: "sine.inOut",
+        attr: { height: 30, y: 45 },
+        yoyo: true,
+        repeat: 1
+      },
+      0
+    );
+
+  } else {
+    return;
+  }
+
+  activeDot = targetDot;
+}
 
 
 $(window).on("mousedown touchstart", dragStart);

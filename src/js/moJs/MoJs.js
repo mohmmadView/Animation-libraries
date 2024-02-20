@@ -9,38 +9,13 @@ export default function animateMojs(){
    sourceCodeMojs.forEach((elm,i)=>{
     elm.insertAdjacentHTML("afterbegin",`<img class="clipboardMojs w-8 h-8 cursor-pointer" src=${svgClipboard}></img>`)
     let elmClipboard =document.querySelectorAll(".clipboardMojs");
-    console.log(elm);
      clipboardCopy(Array.from(elmClipboard)[i],elm.innerText,elm,"inline-block");
     
    })
-console.log(sourceCodeMojs);
   //!====>move moJs <=====\\
   let scr = window.scrollY;
   let ElmMoveJs = document.querySelector("#moveMoJs");
-//   window.addEventListener("scroll", () => {
-//     if (1818 < window.scrollY){ 
-//       console.log("test 1818");
-
-//    new mojs.Shape({
-//       parent: ElmMoveJs,
-//       shape:"circle",
-//       radius: 50, 
-//       radiusX: 80,
-//       fill: "yellow", // 
-//     left: "25%",
-//     isShowStart: true, 
-//     });
-// }else{
-//  new mojs.Shape({
-//       parent: ElmMoveJs,
-  
-//     });
-//   }
-//   })
-  //! move Mo.js \\
-
   //? ======> MoveJs <======\\
-
   new mojs.Shape({
     parent: "#circle",
     shape: "circle", // shape 'circle' is default

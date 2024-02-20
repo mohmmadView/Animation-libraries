@@ -238,3 +238,81 @@ pre[class*="language-"] {
 .menuAnimeJs{
   cursor: pointer;
 }
+.nav-animate{
+  color: white;
+  display: flex;
+  background: #111;
+  overflow: hidden;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  background: repeating-linear-gradient(
+      0deg,
+      hsla(103, 11%, 32%, 0.09) 0px,
+      hsla(103, 11%, 32%, 0.09) 1px,
+      transparent 1px,
+      transparent 11px
+      ),
+ repeating-linear-gradient(
+      90deg,
+      hsla(103, 11%, 32%, 0.09) 0px,
+      hsla(103, 11%, 32%, 0.09) 1px,
+      transparent 1px,
+      transparent 11px
+    ),
+    linear-gradient(90deg, hsl(317, 13%, 6%), hsl(317, 13%, 6%));
+}
+#demo {
+  width: 90vw;
+  height: auto;
+  max-width: 720px;
+  overflow: visible;
+  margin: 1rem auto;
+}
+#icons path {
+  fill: white;
+}
+
+#stretchy {
+  fill: #5da662;
+}
+
+#icons g {
+  cursor: pointer;
+}
+
+#icons rect {
+  fill: transparent;
+  stroke: rgba(255, 255, 255, 0.15);
+  stroke-width: 2px;
+  rx: 8px;
+  ry: 8px;
+}
+.nav-animate > h2 span {
+  font-weight: 700;
+  color: #5cceee;
+}
+
+.nav-animate a {
+  background: #5cceee;
+  color: white;
+  padding: 10px;
+  text-decoration: none;
+  border-radius: 3px;
+  margin-top: 10px;
+}
+
+.nav-animate a:hover {
+  background: white;
+  color: #5cceee;
+}
+
+.branding {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  bottom: 20px;
+}
